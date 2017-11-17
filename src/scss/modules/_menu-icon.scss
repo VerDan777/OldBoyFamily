@@ -1,0 +1,107 @@
+.menu-icon {
+    // positioning
+    position: fixed;
+    right: 26px;
+    top: 40px;
+    z-index: 5;
+
+    // box model
+    height: 40px;
+    width: 40px;
+
+    // visual
+    background-color: $accent;
+    border-radius: 50%;
+    border: 1px solid transparent;
+
+    &::before {
+        content: "";
+
+        // positioning
+        position: absolute;
+        left: 5px;
+        top: 25px;
+
+        transform-origin: 0 50%;
+
+        // box model
+        display: block;
+        height: 2px;
+        width: 28px;
+
+        // visual
+        background-color: $white;
+        transition: all 0.3s ease-out;
+    }
+
+    &__middle {
+        // positioning
+        position: absolute;
+        left: 5px;
+        top: 18px;
+
+        // box model
+        display: block;
+        height: 2px;
+        width: 28px;
+
+        // visual
+        background-color: $white;
+        transition: all 0.3s ease-out;
+    }
+
+    &::after {
+        content: "";
+
+        // positioning
+        position: absolute;
+        left: 5px;
+        top: 11px;
+
+        transform-origin: 0 50%;
+
+        // box model
+        display: block;
+        height: 2px;
+        width: 28px;
+
+        // visual
+        background-color: $white;
+        transition: all 0.3s ease-out;
+    }
+    &--close-x {
+        // visual
+        background-color: transparent;
+        border: 1px solid rgba($white, 0.2);
+
+        @include atTabletsLandscape {
+            // visual
+            background-color: $white;
+        }
+
+        &::before {
+            // positioning
+            left: 9px;
+            top: 28px;
+            transform: rotate(-45deg);
+
+            // visual
+            // background-color: $red;
+        }
+
+        .menu-icon__middle {
+            // visual
+            opacity: 0;
+        }
+
+        &::after {
+            // positioning
+            left: 9px;
+            top: 8px;
+            transform: rotate(45deg);
+
+            // visual
+            // background-color: $red;
+        }
+    }
+}

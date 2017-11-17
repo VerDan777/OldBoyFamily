@@ -1,0 +1,21 @@
+html {
+    // box model
+    height: 100%;
+    width: 100%;
+}
+body {
+    // box model
+    margin: 0;
+    padding: 0;
+
+    // typography
+    font-size: 18px;
+
+    // visual
+    background-color: #f9f6f2;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}

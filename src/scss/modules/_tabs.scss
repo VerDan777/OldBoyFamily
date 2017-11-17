@@ -1,0 +1,32 @@
+.tabs {
+    // display: inline-block;
+
+    &__list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__item {
+        // box model
+        margin: 50px;
+        // visual
+        background-color: $mainColor;
+        text-align: center;
+        padding: 8px 16px;
+
+    }
+
+    &__link {
+        // typography
+        color: $white;
+        text-decoration: none;
+        font-family: $mainFont;
+        border-color: #ddd #ddd #fff;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+}

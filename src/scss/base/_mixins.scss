@@ -1,0 +1,41 @@
+@mixin atSmall {
+    @media(max-width: 340px) {
+        @content;
+}}
+
+@mixin atTabletsPortrait {
+    @media(min-width: 700px) {
+        @content;
+    }
+}
+
+@mixin atTabletsLandscape {
+    @media(min-width: 900px) {
+        @content;
+    }
+}
+
+@mixin atDesktop {
+    @media(min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin centerer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@mixin centerer-x {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+@mixin centerer-y {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+}

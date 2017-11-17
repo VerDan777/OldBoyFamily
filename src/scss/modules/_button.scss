@@ -1,0 +1,34 @@
+.button {
+    // box model
+    // margin-left: 25px;
+    padding: 8px 12px;
+    display: inline-block;
+
+    // typography
+    color: #fff;
+
+    // visual
+    border: 1px solid $accent;
+    border-radius: 5px;
+    background: $accent;
+    cursor: pointer;
+    transition: 0.3s ease-in-out all;
+    text-decoration: none;
+
+    &--footer {
+        margin-left: 0;
+    }
+
+    &--download {
+        margin-left: 0;
+    }
+
+    &:hover {
+        // typography
+        color: #495057;
+
+        // visual
+        background: none;
+        border-color: #fff;
+    }
+}
