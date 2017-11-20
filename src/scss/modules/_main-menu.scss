@@ -1,23 +1,67 @@
 .main-menu {
-    display: none;
-    background-color: $accent;
+    // positioning
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left:-100%;
+    z-index: 4;
+
+    // box model
+    width: 100%;
+    // align-items: center;
     padding: 25px 25px;
-    // display: flex;
-    align-items: center;
+    
+    // visual
+    background-color: $accent;
     box-shadow: 0px 7px 16px -8px rgba(0, 0, 0, 0.75);
+    transition: 0.3s ease-out;
+    visibility: hidden;
+    opacity: 1;
+
+    @include atDesktop {
+        // positioninig
+        position: static;
+
+        // visual
+        visibility: visible;
+    }
+
+    &--shown {
+        // positioning
+        left: 0;
+        visibility: visible;
+        opacity: 0.99;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
 
 
     &__list {
         margin: 0;
         padding-left: 30px;
-        margin-right: auto;
+        // margin-right: auto;
         list-style: none;
         display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+
+        @include atDesktop {
+            flex-direction: row;
+        }
     }
 
     &__item {
         // box model
         padding-right: 45px;
+        padding-bottom: 30px;
+
+        @include atDesktop {
+            // box model
+            padding-bottom: 0;
+        }
     }
     &__link {
         // box model

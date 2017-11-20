@@ -5,6 +5,10 @@
     background-repeat: no-repeat;
     height: 300px;
 
+    @include atTabletsLandscape {
+        height: 400px;
+    }
+
     @include atDesktop {
         height: 700px;
     }
