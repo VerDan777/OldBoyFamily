@@ -6,6 +6,7 @@ gulp.task('build', (fn)=> {
         'clean',
         'copy',
         'styles',
+        'scripts',
         'Images',
         fn
     );

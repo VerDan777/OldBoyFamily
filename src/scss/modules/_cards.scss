@@ -23,7 +23,13 @@
         }
         @include atDesktop {
             max-width: 33.33%;
-            margin-right: 15px;
+            margin-right: 14px;
+        }
+
+        &--main {
+            @include atDesktop {
+                max-width: 19%;
+            }
         }
     }
     &__container {
@@ -40,7 +46,7 @@
 
         @include atDesktop {
             justify-content: flex-start;
-            padding: 0;
+            padding: 0 15px;
         }
     }
 

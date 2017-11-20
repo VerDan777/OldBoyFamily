@@ -8,48 +8,13 @@ html(lang="en")
         title Главная
     body
         header.site-header
-            .logo: img(src="./img/logo-new.png")
+            .site-header__container
+                .logo: img(src="./img/logo-new.png")
+                form.form
+                        input.form__input(type="text" placeholder="Поиск" area-label="Поиск")
+                        button.button(type="submit") Искать
             .site-header__container
                 .menu-icon: .menu-icon__middle
-                nav.main-menu
-                    ul.main-menu__list
-                        li.main-menu__item
-                            a.main__menu__link(href="#") Полиграфия
-                            .main__menu__dropdown
-                                a.main-menu__link.main-menu__sublink(href="#") Баннеры
-                                a.main-menu__link.main-menu__sublink(href="#") Баннеры
-                        li.main-menu__item
-                            a.main__menu__link(href="#") Лого
-                            .main__menu__dropdown
-                                a.main-menu__link.main-menu__sublink(href="#") Баннеры
-                                a.main-menu__link.main-menu__sublink(href="#") Баннеры
-                        li.main-menu__item
-                            a.main__menu__link(href="#") Документы
-                            .main__menu__dropdown
-                                a.main-menu__link.main-menu__sublink(href="#") Баннеры
-                                a.main-menu__link.main-menu__sublink(href="#") Баннеры
-                        li.main-menu__item
-                            a.main__menu__link(href="#") Видео
-                            .main__menu__dropdown
-                                a.main-menu__link.main-menu__sublink(href="#") Баннеры
-                                a.main-menu__link.main-menu__sublink(href="#") Баннеры
-                        li.main-menu__item
-                            a.main__menu__link(href="#") Веб-Баннеры
-                            .main__menu__dropdown
-                                a.main-menu__link.main-menu__sublink(href="#") Баннеры
-                                a.main-menu__link.main-menu__sublink(href="#") Баннеры
-                        li.main-menu__item
-                            a.main__menu__link(href="#") Команда
-                            .main__menu__dropdown
-                                a.main-menu__link.main-menu__sublink(href="#") Баннеры
-                                a.main-menu__link.main-menu__sublink(href="#") Баннеры
-                                
-
-
-                form.form
-                    input.form__input(type="text" placeholder="Поиск" area-label="Поиск")
-                    button.button(type="submit") Искать
-                
                 .socials
                     a.socials__link(href="")
                         svg.socials__svg(xmlns="http://www.w3.org/2000/svg"
@@ -89,21 +54,54 @@ html(lang="en")
                     a.socials__link.socials__link--info
                         svg.socials__svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 496.158 496.158;" xml:space="preserve" width="51.5px" height="51.5px" class="")
                             g
-                                path(fill="#D5A353" class="st0"  d="M511.5,256c0-141.4-114.6-256-256-256C114.1,0-0.5,114.6-0.5,256c0,141.4,114.6,256,256,256C396.9,512,511.5,397.4,511.5,256z" id="info" stroke="rgb(255, 255, 255)" stroke-linecap="butt" stroke-linejoin="miter" opacity="1")
+                                path(fill="#D5A353" class="st0" d="M511.5,256c0-141.4-114.6-256-256-256C114.1,0-0.5,114.6-0.5,256c0,141.4,114.6,256,256,256C396.9,512,511.5,397.4,511.5,256z" id="info" stroke="rgb(255, 255, 255)" stroke-linecap="butt" stroke-linejoin="miter" opacity="1")
                                 path(fill="#fff" class="st1" d="M192.1,217.8c0-8.3,2.7-16.7,8-25.3c5.3-8.5,13.1-15.6,23.4-21.2c10.2-5.6,22.2-8.4,35.8-8.4c12.7,0,23.9,2.3,33.6,7c9.7,4.7,17.2,11,22.5,19.1c5.3,8,7.9,16.8,7.9,26.2c0,7.4-1.5,14-4.5,19.6c-3,5.6-6.6,10.4-10.8,14.5c-4.2,4.1-11.6,10.9-22.4,20.5c-3,2.7-5.4,5.1-7.2,7.2c-1.8,2.1-3.1,3.9-4,5.6c-0.9,1.7-1.6,3.4-2,5.1c-0.5,1.7-1.2,4.7-2.2,9c-1.7,9.1-6.9,13.6-15.6,13.6c-4.5,0-8.4-1.5-11.5-4.5c-3.1-3-4.7-7.4-4.7-13.3c0-7.3,1.1-13.7,3.4-19.1c2.3-5.4,5.3-10.1,9.1-14.2c3.8-4.1,8.8-8.9,15.2-14.5c5.6-4.9,9.6-8.6,12.1-11.1c2.5-2.5,4.6-5.3,6.3-8.3c1.7-3.1,2.6-6.4,2.6-10c0-7-2.6-12.9-7.8-17.7c-5.2-4.8-11.9-7.2-20.1-7.2c-9.6,0-16.7,2.4-21.3,7.3c-4.5,4.9-8.4,12-11.5,21.5c-3,9.9-8.6,14.8-16.9,14.8c-4.9,0-9-1.7-12.4-5.2C193.8,225.6,192.1,221.9,192.1,217.8z M256.1,361.7c-5.3,0-10-1.7-14-5.2c-4-3.5-6-8.3-6-14.5c0-5.5,1.9-10.1,5.8-13.9c3.8-3.8,8.6-5.6,14.2-5.6c5.5,0,10.1,1.9,13.9,5.6c3.8,3.8,5.6,8.4,5.6,13.9c0,6.1-2,10.9-5.9,14.4C265.8,359.9,261.3,361.7,256.1,361.7z" data-original="#FFFFFF" class="" stroke="rgb(255, 255, 255)" stroke-linecap="butt" stroke-linejoin="miter" id="question")
-
+        nav.main-menu
+            ul.main-menu__list
+                li.main-menu__item
+                    a.main-menu__link(href="#") Полиграфия
+                    .main-menu__dropdown
+                        a.main-menu__link.main-menu__sublink(href="#") Баннеры
+                        a.main-menu__link.main-menu__sublink(href="#") Баннеры
+                li.main-menu__item
+                    a.main-menu__link(href="#") Лого
+                    .main-menu__dropdown
+                        a.main-menu__link.main-menu__sublink(href="#") Баннеры
+                        a.main-menu__link.main-menu__sublink(href="#") Баннеры
+                li.main-menu__item
+                    a.main-menu__link(href="#") Документы
+                    .main-menu__dropdown
+                        a.main-menu__link.main-menu__sublink(href="#") Баннеры
+                        a.main-menu__link.main-menu__sublink(href="#") Баннеры
+                li.main-menu__item
+                    a.main-menu__link(href="#") Видео
+                    .main-menu__dropdown
+                        a.main-menu__link.main-menu__sublink(href="#") Баннеры
+                        a.main-menu__link.main-menu__sublink(href="#") Баннеры
+                li.main-menu__item
+                    a.main-menu__link(href="#") Веб-Баннеры
+                    .main-menu__dropdown
+                        a.main-menu__link.main-menu__sublink(href="#") Баннеры
+                        a.main-menu__link.main-menu__sublink(href="#") Баннеры
+                li.main-menu__item
+                    a.main-menu__link(href="#") Команда
+                    .main-menu__dropdown
+                        a.main-menu__link.main-menu__sublink(href="#") Баннеры
+                        a.main-menu__link.main-menu__sublink(href="#") Баннеры
         section.hero
 
         section.cards
             .tabs
                 //- li.tabs__item: a.tabs__link(id="signboard-tab" data-toggle="tab" href="#signboard" role="tab" aria-controls="home" aria-selected="false") Новые
                 //- li.tabs__item: a.tabs__link(id="repost-tab" data-toggle="tab" href="#repost" role="tab" aria-controls="home" aria-selected="false") Частоиспользуемые
-            .tab-pane
+            .tabs-pane
                 ul.tabs__list(id="myTab" role="tablist")
-                    li.tabs__item: a.tabs__link(id="banners-tab" data-toggle="tab" href="#banners" role="tab" aria-controls="home" aria-selected="true") Последние
-                .cards__container
-                    .cards
-                        .cards__card
+                    li.tabs__item: a.tabs__link.tabs__content(data-tab="tab-1") Последние
+                    //- li.tabs__item: a.tabs__link(data-tab="tab-2") Новые
+                    //- li.tabs__item: a.tabs__link(data-tab="tab-3") Часто используемые
+                .tabs__content.tabs__content--current(id="tab-1")
+                    .cards__container
+                        .cards__card.cards__card--main
                             .cards__img: img(src="./img/graduated.jpg" alt="card img")
                             .cards__body
                                 h4.cards__title Баннер выпускник
@@ -116,8 +114,7 @@ html(lang="en")
                                 a.cards__badge(href="#") ВКонтакте
                                 a.cards__badge(href="#") Баннер
 
-                    .cards
-                        .cards__card
+                        .cards__card.cards__card--main
                             .cards__img: img(src="./img/open.png" alt="card img")
                             .cards__body
                                 h4.cards__title Баннер открытие
@@ -130,25 +127,7 @@ html(lang="en")
                                 a.cards__badge(href="#") ВКонтакте
                                 a.cards__badge(href="#") Баннер
 
-                    .cards
-                        .cards__card
-                            .cards__img: img(src="./img/repost.jpg" alt="card img")
-                            .cards__body
-                                h4.cards__title Баннеры репост
-                                p.cards__text Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.
-                                p.cards__format Форматы: JPEG, PSD, AI
-                                a.button.button--download(href="#") Скачать архив
-                            .cards__footer
-                                a.cards__badge(href="#") Веб
-                                a.cards__badge(href="#") Квадратные
-                                a.cards__badge(href="#") ВКонтакте
-                                a.cards__badge(href="#") Баннер
-                    
-                    ul.tabs__list(id="myTab" role="tablist")
-                        li.tabs__item: a.tabs__link(id="banners-tab" data-toggle="tab" href="#banners" role="tab" aria-controls="home" aria-selected="true") Новые
-
-                    .cards
-                        .cards__card
+                        .cards__card.cards__card--main
                             .cards__img: img(src="./img/repost.jpg" alt="card img")
                             .cards__body
                                 h4.cards__title Баннеры репост
@@ -161,11 +140,52 @@ html(lang="en")
                                 a.cards__badge(href="#") ВКонтакте
                                 a.cards__badge(href="#") Баннер
 
-                    ul.tabs__list(id="myTab" role="tablist")
-                        li.tabs__item: a.tabs__link(id="banners-tab" data-toggle="tab" href="#banners" role="tab" aria-controls="home" aria-selected="true") Частоиспользуемые
+                        .cards__card.cards__card--main
+                            .cards__img: img(src="./img/graduated.jpg" alt="card img")
+                            .cards__body
+                                h4.cards__title Баннер выпускник
+                                p.cards__text Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.
+                                p.cards__format Форматы: JPEG, PSD, AI
+                                a.button.button--download(href="#") Скачать архив
+                            .cards__footer
+                                a.cards__badge(href="#") Веб
+                                a.cards__badge(href="#") Квадратные
+                                a.cards__badge(href="#") ВКонтакте
+                                a.cards__badge(href="#") Баннер
 
-                    .cards
-                        .cards__card
+                        .cards__card.cards__card--main
+                            .cards__img: img(src="./img/graduated.jpg" alt="card img")
+                            .cards__body
+                                h4.cards__title Баннер выпускник
+                                p.cards__text Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.
+                                p.cards__format Форматы: JPEG, PSD, AI
+                                a.button.button--download(href="#") Скачать архив
+                            .cards__footer
+                                a.cards__badge(href="#") Веб
+                                a.cards__badge(href="#") Квадратные
+                                a.cards__badge(href="#") ВКонтакте
+                                a.cards__badge(href="#") Баннер
+                        
+                        //- ul.tabs__list(id="myTab" role="tablist")
+                        //-     li.tabs__item: a.tabs__link(id="banners-tab" data-toggle="tab" href="#banners" role="tab" aria-controls="home" aria-selected="true") Новые
+
+                        .cards__card.cards__card--main
+                            .cards__img: img(src="./img/repost.jpg" alt="card img")
+                            .cards__body
+                                h4.cards__title Баннеры репост
+                                p.cards__text Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.
+                                p.cards__format Форматы: JPEG, PSD, AI
+                                a.button.button--download(href="#") Скачать архив
+                            .cards__footer
+                                a.cards__badge(href="#") Веб
+                                a.cards__badge(href="#") Квадратные
+                                a.cards__badge(href="#") ВКонтакте
+                                a.cards__badge(href="#") Баннер
+
+                        //- ul.tabs__list(id="myTab" role="tablist")
+                        //-     li.tabs__item: a.tabs__link(id="banners-tab" data-toggle="tab" href="#banners" role="tab" aria-controls="home" aria-selected="true") Частоиспользуемые
+
+                        .cards__card.cards__card--main
                             .cards__img: img(src="./img/graduated.jpg" alt="card img")
                             .cards__body
                                 h4.cards__title Баннеры репост
@@ -176,9 +196,9 @@ html(lang="en")
                                 a.cards__badge(href="#") Веб
                                 a.cards__badge(href="#") Квадратные
                                 a.cards__badge(href="#") ВКонтакте
-                                a.cards__badge(href="#") Баннер
-                    .cards
-                        .cards__card
+                                a.cards__badge(href="#") Баннерs
+
+                        .cards__card.cards__card--main
                             .cards__img: img(src="./img/open.png" alt="card img")
                             .cards__body
                                 h4.cards__title Баннеры репост
@@ -190,8 +210,8 @@ html(lang="en")
                                 a.cards__badge(href="#") Квадратные
                                 a.cards__badge(href="#") ВКонтакте
                                 a.cards__badge(href="#") Баннер
-                    .cards
-                        .cards__card
+
+                        .cards__card.cards__card--main
                             .cards__img: img(src="./img/repost.jpg" alt="card img")
                             .cards__body
                                 h4.cards__title Баннеры репост
@@ -203,6 +223,48 @@ html(lang="en")
                                 a.cards__badge(href="#") Квадратные
                                 a.cards__badge(href="#") ВКонтакте
                                 a.cards__badge(href="#") Баннер
+
+                        .cards__card.cards__card--main
+                            .cards__img: img(src="./img/repost.jpg" alt="card img")
+                            .cards__body
+                                h4.cards__title Баннеры репост
+                                p.cards__text Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.
+                                p.cards__format Форматы: JPEG, PSD, AI
+                                a.button.button--download(href="#") Скачать архив
+                            .cards__footer
+                                a.cards__badge(href="#") Веб
+                                a.cards__badge(href="#") Квадратные
+                                a.cards__badge(href="#") ВКонтакте
+                                a.cards__badge(href="#") Баннер
+
+                .tabs__content(id="tab-2")
+                    .cards__card.cards__card--main
+                        .cards__img: img(src="./img/repost.jpg" alt="card img")
+                        .cards__body
+                            h4.cards__title Баннеры репост
+                            p.cards__text Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.
+                            p.cards__format Форматы: JPEG, PSD, AI
+                            a.button.button--download(href="#") Скачать архив
+                        .cards__footer
+                            a.cards__badge(href="#") Веб
+                            a.cards__badge(href="#") Квадратные
+                            a.cards__badge(href="#") ВКонтакте
+                            a.cards__badge(href="#") Баннер
+
+                .tabs__content(id="tab-3")
+                    .cards__card.cards__card--main
+                        .cards__img: img(src="./img/repost.jpg" alt="card img")
+                        .cards__body
+                            h4.cards__title Баннеры репост
+                            p.cards__text Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.
+                            p.cards__format Форматы: JPEG, PSD, AI
+                            a.button.button--download(href="#") Скачать архив
+                        .cards__footer
+                            a.cards__badge(href="#") Веб
+                            a.cards__badge(href="#") Квадратные
+                            a.cards__badge(href="#") ВКонтакте
+                            a.cards__badge(href="#") Баннер
+
 
         footer.site-footer
             .site-footer__container

@@ -9,13 +9,20 @@ gulp.task('watch', () => {
         }
     });
 
+    // Pug
     watch('./src/**/*.pug', () => {
         gulp.start('pugChanged');
-    })
+    });
 
+    // Styles
     watch('./src/scss/**/*.scss', () => {
         gulp.start('cssInject');
-    })
+    });
+
+    // Scripts
+    watch('./src/js/**/*.js',()=> {
+        gulp.start('jsChanged');
+    });
 });
 
 gulp.task('pugChanged', ['PugRender'], () => {
@@ -26,3 +33,7 @@ gulp.task('cssInject', ['styles'], () => {
     gulp.src('./dist/styles.css')
     .pipe(browserSync.stream());
 });
+
+gulp.task('jsChanged',['scripts'], ()=> {
+    browserSync.reload();
+})

@@ -144,6 +144,10 @@ body {
   border: 1px solid #d5a353;
 }
 
+.form__input--footer {
+  margin-bottom: 20px;
+}
+
 .form--footer {
   margin-bottom: 20px;
 }
@@ -555,6 +559,10 @@ body {
     display: block;
   }
 
+  .hero {
+    height: 700px;
+  }
+
   .socials {
     display: block;
   }
@@ -562,6 +570,10 @@ body {
   .form__input {
     width: 500px;
     margin-left: 0;
+  }
+
+  .form__input--footer {
+    margin-bottom: 0;
   }
 
   .form--footer {
@@ -578,13 +590,17 @@ body {
 
   .cards__card {
     max-width: 33.33%;
-    margin-right: 15px;
+    margin-right: 14px;
+  }
+
+  .cards__card--main {
+    max-width: 19%;
   }
 
   .cards__container {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
-    padding: 0;
+    padding: 0 15px;
   }
 }

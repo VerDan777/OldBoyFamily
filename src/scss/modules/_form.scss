@@ -25,7 +25,11 @@
         }
 
         &--footer {
-            // margin-bottom: 20px;
+            margin-bottom: 20px;
+            
+            @include atDesktop {
+                margin-bottom: 0;
+            }
         }
     }
     &--footer {
