@@ -25,6 +25,9 @@
     box-shadow: 0px 7px 16px -8px rgba(0, 0, 0, 0.75);
     background: #222222;
 
+
+  
+
     &__container {
         // display: flex;
         // flex-direction: column;
@@ -39,5 +42,15 @@
         @include atDesktop {
             justify-content: space-between;
         }
+    }
+}
+.fixed {
+
+    @include atDesktop {
+        position: fixed;
+        top: 0;
+        z-index: 4;
+        left: 0;
+        width: 100%;
     }
 }

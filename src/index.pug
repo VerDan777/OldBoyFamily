@@ -4,91 +4,108 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css", integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M", crossorigin="anonymous")
         link(rel="stylesheet", href="styles.css")
         title Главная
     body
-        header.site-header
-            .site-header__container
-                .logo: img(src="./img/logo-new.png")
-                form.form
-                        input.form__input(type="text" placeholder="Поиск" area-label="Поиск")
-                        button.button(type="submit") Искать
-            .site-header__container
-                .menu-icon: .menu-icon__middle
-                .socials
-                    a.socials__link(href="")
-                        svg.socials__svg(xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                            width="51.5px" height="51.5px")
-                            path(fill-rule="evenodd"  stroke="#d5a353" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill="#d5a353" id="facebook"
-                            d="M25.500,0.500 C39.307,0.500 50.500,11.693 50.500,25.500 C50.500,39.307 39.307,50.500 25.500,50.500 C11.693,50.500 0.500,39.307 0.500,25.500 C0.500,11.693 11.693,0.500 25.500,0.500 Z")
-                            path(fill-rule="evenodd"  fill="rgb(255, 255, 255)" id="facebook"
-                            d="M27.485,34.492 L23.487,34.492 L23.487,25.995 L21.489,25.995 L21.489,22.722 L23.487,22.722 L23.487,20.758 C23.487,18.088 24.615,16.499 27.819,16.499 L30.488,16.499 L30.488,19.773 L28.821,19.773 C27.573,19.773 27.490,20.231 27.490,21.083 L27.485,22.722 L30.507,22.722 L30.153,25.995 L27.485,25.995 L27.485,34.492 Z")
-                    a.socials__link
+        .body 
+            header.site-header
+                .site-header__container
+                    .logo: img(src="./img/logo-new.png")
+                    form.form
+                            input.form__input(type="text" placeholder="Поиск" area-label="Поиск")
+                            button.button(type="submit") Искать
+                .site-header__container
+                    .menu-icon: .menu-icon__middle
+                    .socials
+                        a.socials__link(href="")
+                            svg.socials__svg(xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="51.5px" height="51.5px")
+                                path(fill-rule="evenodd"  stroke="#d5a353" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill="#d5a353" id="facebook"
+                                d="M25.500,0.500 C39.307,0.500 50.500,11.693 50.500,25.500 C50.500,39.307 39.307,50.500 25.500,50.500 C11.693,50.500 0.500,39.307 0.500,25.500 C0.500,11.693 11.693,0.500 25.500,0.500 Z")
+                                path(fill-rule="evenodd"  fill="rgb(255, 255, 255)" id="facebook"
+                                d="M27.485,34.492 L23.487,34.492 L23.487,25.995 L21.489,25.995 L21.489,22.722 L23.487,22.722 L23.487,20.758 C23.487,18.088 24.615,16.499 27.819,16.499 L30.488,16.499 L30.488,19.773 L28.821,19.773 C27.573,19.773 27.490,20.231 27.490,21.083 L27.485,22.722 L30.507,22.722 L30.153,25.995 L27.485,25.995 L27.485,34.492 Z")
+                        a.socials__link
+                            svg.socials__svg(
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="51.5px" height="51.5px")
+                                path(fill-rule="evenodd"  stroke="#d5a353" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill="#d5a353" id="google"
+                                d="M25.500,0.500 C39.307,0.500 50.500,11.693 50.500,25.500 C50.500,39.307 39.307,50.500 25.500,50.500 C11.693,50.500 0.500,39.307 0.500,25.500 C0.500,11.693 11.693,0.500 25.500,0.500 Z")
+                                path(fill-rule="evenodd"  fill="rgb(255, 255, 255)" id="google"
+                                d="M36.850,26.569 L36.850,29.180 L34.922,29.180 L34.922,26.569 L32.271,26.569 L32.271,24.671 L34.922,24.671 L34.922,22.060 L36.850,22.060 L36.850,24.671 L39.500,24.671 L39.500,26.569 L36.850,26.569 ZM23.115,33.499 C18.910,33.499 15.501,30.141 15.501,26.000 C15.501,21.858 18.910,18.500 23.115,18.500 C25.095,18.500 26.897,19.246 28.252,20.465 L26.007,22.630 C25.227,21.979 24.218,21.586 23.115,21.586 C20.640,21.586 18.633,23.562 18.633,26.000 C18.633,28.438 20.640,30.413 23.115,30.413 C25.030,30.413 26.664,29.231 27.305,27.566 L23.019,27.566 L23.019,24.433 L27.305,24.433 L30.537,24.433 L30.562,24.433 C30.672,24.939 30.729,25.462 30.729,26.000 C30.729,30.141 27.320,33.499 23.115,33.499 Z")
+                        a.socials__link
                         svg.socials__svg(
-                            xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                            width="51.5px" height="51.5px")
-                            path(fill-rule="evenodd"  stroke="#d5a353" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill="#d5a353" id="google"
-                            d="M25.500,0.500 C39.307,0.500 50.500,11.693 50.500,25.500 C50.500,39.307 39.307,50.500 25.500,50.500 C11.693,50.500 0.500,39.307 0.500,25.500 C0.500,11.693 11.693,0.500 25.500,0.500 Z")
-                            path(fill-rule="evenodd"  fill="rgb(255, 255, 255)" id="google"
-                            d="M36.850,26.569 L36.850,29.180 L34.922,29.180 L34.922,26.569 L32.271,26.569 L32.271,24.671 L34.922,24.671 L34.922,22.060 L36.850,22.060 L36.850,24.671 L39.500,24.671 L39.500,26.569 L36.850,26.569 ZM23.115,33.499 C18.910,33.499 15.501,30.141 15.501,26.000 C15.501,21.858 18.910,18.500 23.115,18.500 C25.095,18.500 26.897,19.246 28.252,20.465 L26.007,22.630 C25.227,21.979 24.218,21.586 23.115,21.586 C20.640,21.586 18.633,23.562 18.633,26.000 C18.633,28.438 20.640,30.413 23.115,30.413 C25.030,30.413 26.664,29.231 27.305,27.566 L23.019,27.566 L23.019,24.433 L27.305,24.433 L30.537,24.433 L30.562,24.433 C30.672,24.939 30.729,25.462 30.729,26.000 C30.729,30.141 27.320,33.499 23.115,33.499 Z")
-                    a.socials__link
-                        svg.socials__svg(
-                            xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                            width="51.5px" height="51.5px")
-                            path(fill-rule="evenodd"  stroke="#d5a353" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill="#d5a353" id="twitter"
-                            d="M25.500,0.500 C39.307,0.500 50.500,11.693 50.500,25.500 C50.500,39.307 39.307,50.500 25.500,50.500 C11.693,50.500 0.500,39.307 0.500,25.500 C0.500,11.693 11.693,0.500 25.500,0.500 Z")
-                            path(fill-rule="evenodd"  fill="rgb(255, 255, 255)" id="twitter"
-                            d="M33.500,20.157 C32.875,20.439 32.202,20.629 31.497,20.714 C32.217,20.277 32.770,19.585 33.030,18.760 C32.355,19.164 31.610,19.459 30.815,19.616 C30.179,18.930 29.273,18.502 28.270,18.502 C26.344,18.502 24.782,20.082 24.782,22.036 C24.782,22.312 24.813,22.582 24.873,22.840 C21.975,22.693 19.405,21.286 17.685,19.148 C17.385,19.669 17.214,20.277 17.214,20.925 C17.214,22.150 17.830,23.233 18.765,23.866 C18.193,23.847 17.655,23.688 17.185,23.423 C17.185,23.438 17.185,23.453 17.185,23.467 C17.185,25.181 18.387,26.608 19.983,26.934 C19.690,27.014 19.383,27.058 19.064,27.058 C18.840,27.058 18.621,27.035 18.408,26.994 C18.852,28.397 20.140,29.420 21.666,29.449 C20.472,30.396 18.968,30.961 17.334,30.961 C17.053,30.961 16.775,30.944 16.502,30.912 C18.045,31.914 19.878,32.500 21.848,32.500 C28.262,32.500 31.770,27.114 31.770,22.445 C31.770,22.291 31.766,22.140 31.760,21.988 C32.441,21.489 33.033,20.867 33.500,20.159 L33.500,20.157 Z")
-                    a.socials__link
-                        svg.socials__svg(
-                            xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                            width="51.5px" height="51.5px")
-                            path(fill-rule="evenodd"  stroke="#d5a353" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill="#d5a353" id="linkedin"
-                            d="M25.500,0.500 C39.307,0.500 50.500,11.693 50.500,25.500 C50.500,39.307 39.307,50.500 25.500,50.500 C11.693,50.500 0.500,39.307 0.500,25.500 C0.500,11.693 11.693,0.500 25.500,0.500 Z")
-                            path(fill-rule="evenodd"  fill="rgb(255, 255, 255)" id="linkedin"
-                            d="M31.078,31.507 L31.078,26.095 C31.078,24.734 30.581,23.807 29.339,23.807 C28.393,23.807 27.828,24.432 27.582,25.037 C27.489,25.252 27.468,25.555 27.468,25.857 L27.468,31.507 L24.039,31.507 C24.039,31.507 24.084,22.338 24.039,21.390 L27.468,21.390 L27.468,22.823 C27.461,22.834 27.452,22.846 27.445,22.856 L27.468,22.856 L27.468,22.823 C27.923,22.134 28.736,21.152 30.558,21.152 C32.814,21.152 34.507,22.597 34.507,25.705 L34.507,31.507 L31.078,31.507 ZM20.426,20.008 L20.403,20.008 C19.252,20.008 18.509,19.231 18.509,18.259 C18.509,17.267 19.275,16.510 20.448,16.510 C21.622,16.510 22.344,17.267 22.365,18.259 C22.365,19.231 21.622,20.008 20.426,20.008 ZM22.140,31.507 L18.712,31.507 L18.712,21.390 L22.140,21.390 L22.140,31.507 Z")
-                    a.socials__link.socials__link--info
-                        svg.socials__svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 496.158 496.158;" xml:space="preserve" width="51.5px" height="51.5px" class="")
-                            g
-                                path(fill="#D5A353" class="st0" d="M511.5,256c0-141.4-114.6-256-256-256C114.1,0-0.5,114.6-0.5,256c0,141.4,114.6,256,256,256C396.9,512,511.5,397.4,511.5,256z" id="info" stroke="rgb(255, 255, 255)" stroke-linecap="butt" stroke-linejoin="miter" opacity="1")
-                                path(fill="#fff" class="st1" d="M192.1,217.8c0-8.3,2.7-16.7,8-25.3c5.3-8.5,13.1-15.6,23.4-21.2c10.2-5.6,22.2-8.4,35.8-8.4c12.7,0,23.9,2.3,33.6,7c9.7,4.7,17.2,11,22.5,19.1c5.3,8,7.9,16.8,7.9,26.2c0,7.4-1.5,14-4.5,19.6c-3,5.6-6.6,10.4-10.8,14.5c-4.2,4.1-11.6,10.9-22.4,20.5c-3,2.7-5.4,5.1-7.2,7.2c-1.8,2.1-3.1,3.9-4,5.6c-0.9,1.7-1.6,3.4-2,5.1c-0.5,1.7-1.2,4.7-2.2,9c-1.7,9.1-6.9,13.6-15.6,13.6c-4.5,0-8.4-1.5-11.5-4.5c-3.1-3-4.7-7.4-4.7-13.3c0-7.3,1.1-13.7,3.4-19.1c2.3-5.4,5.3-10.1,9.1-14.2c3.8-4.1,8.8-8.9,15.2-14.5c5.6-4.9,9.6-8.6,12.1-11.1c2.5-2.5,4.6-5.3,6.3-8.3c1.7-3.1,2.6-6.4,2.6-10c0-7-2.6-12.9-7.8-17.7c-5.2-4.8-11.9-7.2-20.1-7.2c-9.6,0-16.7,2.4-21.3,7.3c-4.5,4.9-8.4,12-11.5,21.5c-3,9.9-8.6,14.8-16.9,14.8c-4.9,0-9-1.7-12.4-5.2C193.8,225.6,192.1,221.9,192.1,217.8z M256.1,361.7c-5.3,0-10-1.7-14-5.2c-4-3.5-6-8.3-6-14.5c0-5.5,1.9-10.1,5.8-13.9c3.8-3.8,8.6-5.6,14.2-5.6c5.5,0,10.1,1.9,13.9,5.6c3.8,3.8,5.6,8.4,5.6,13.9c0,6.1-2,10.9-5.9,14.4C265.8,359.9,261.3,361.7,256.1,361.7z" data-original="#FFFFFF" class="" stroke="rgb(255, 255, 255)" stroke-linecap="butt" stroke-linejoin="miter" id="question")
-        nav.main-menu
-            ul.main-menu__list
-                li.main-menu__item
-                    a.main-menu__link(href="#") Полиграфия
-                    .main-menu__dropdown
-                        a.main-menu__link.main-menu__sublink(href="#") Баннеры
-                        a.main-menu__link.main-menu__sublink(href="#") Баннеры
-                li.main-menu__item
-                    a.main-menu__link(href="#") Лого
-                    .main-menu__dropdown
-                        a.main-menu__link.main-menu__sublink(href="#") Баннеры
-                        a.main-menu__link.main-menu__sublink(href="#") Баннеры
-                li.main-menu__item
-                    a.main-menu__link(href="#") Документы
-                    .main-menu__dropdown
-                        a.main-menu__link.main-menu__sublink(href="#") Баннеры
-                        a.main-menu__link.main-menu__sublink(href="#") Баннеры
-                li.main-menu__item
-                    a.main-menu__link(href="#") Видео
-                    .main-menu__dropdown
-                        a.main-menu__link.main-menu__sublink(href="#") Баннеры
-                        a.main-menu__link.main-menu__sublink(href="#") Баннеры
-                li.main-menu__item
-                    a.main-menu__link(href="#") Веб-Баннеры
-                    .main-menu__dropdown
-                        a.main-menu__link.main-menu__sublink(href="#") Баннеры
-                        a.main-menu__link.main-menu__sublink(href="#") Баннеры
-                li.main-menu__item
-                    a.main-menu__link(href="#") Команда
-                    .main-menu__dropdown
-                        a.main-menu__link.main-menu__sublink(href="#") Баннеры
-                        a.main-menu__link.main-menu__sublink(href="#") Баннеры
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="51.5px" height="51.5px")
+                                path(fill-rule="evenodd"  stroke="#d5a353" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill="#d5a353" id="twitter"
+                                d="M25.500,0.500 C39.307,0.500 50.500,11.693 50.500,25.500 C50.500,39.307 39.307,50.500 25.500,50.500 C11.693,50.500 0.500,39.307 0.500,25.500 C0.500,11.693 11.693,0.500 25.500,0.500 Z")
+                                path(fill-rule="evenodd"  fill="rgb(255, 255, 255)" id="twitter"
+                                d="M33.500,20.157 C32.875,20.439 32.202,20.629 31.497,20.714 C32.217,20.277 32.770,19.585 33.030,18.760 C32.355,19.164 31.610,19.459 30.815,19.616 C30.179,18.930 29.273,18.502 28.270,18.502 C26.344,18.502 24.782,20.082 24.782,22.036 C24.782,22.312 24.813,22.582 24.873,22.840 C21.975,22.693 19.405,21.286 17.685,19.148 C17.385,19.669 17.214,20.277 17.214,20.925 C17.214,22.150 17.830,23.233 18.765,23.866 C18.193,23.847 17.655,23.688 17.185,23.423 C17.185,23.438 17.185,23.453 17.185,23.467 C17.185,25.181 18.387,26.608 19.983,26.934 C19.690,27.014 19.383,27.058 19.064,27.058 C18.840,27.058 18.621,27.035 18.408,26.994 C18.852,28.397 20.140,29.420 21.666,29.449 C20.472,30.396 18.968,30.961 17.334,30.961 C17.053,30.961 16.775,30.944 16.502,30.912 C18.045,31.914 19.878,32.500 21.848,32.500 C28.262,32.500 31.770,27.114 31.770,22.445 C31.770,22.291 31.766,22.140 31.760,21.988 C32.441,21.489 33.033,20.867 33.500,20.159 L33.500,20.157 Z")
+                        //- a.socials__link
+                        //-     svg.socials__svg(
+                        //-         xmlns="http://www.w3.org/2000/svg"
+                        //-         xmlns:xlink="http://www.w3.org/1999/xlink"
+                        //-         width="51.5px" height="51.5px")
+                        //-         path(fill-rule="evenodd"  stroke="#d5a353" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill="#d5a353" id="linkedin"
+                        //-         d="M25.500,0.500 C39.307,0.500 50.500,11.693 50.500,25.500 C50.500,39.307 39.307,50.500 25.500,50.500 C11.693,50.500 0.500,39.307 0.500,25.500 C0.500,11.693 11.693,0.500 25.500,0.500 Z")
+                        //-         path(fill-rule="evenodd"  fill="rgb(255, 255, 255)" id="linkedin"
+                        //-         d="M31.078,31.507 L31.078,26.095 C31.078,24.734 30.581,23.807 29.339,23.807 C28.393,23.807 27.828,24.432 27.582,25.037 C27.489,25.252 27.468,25.555 27.468,25.857 L27.468,31.507 L24.039,31.507 C24.039,31.507 24.084,22.338 24.039,21.390 L27.468,21.390 L27.468,22.823 C27.461,22.834 27.452,22.846 27.445,22.856 L27.468,22.856 L27.468,22.823 C27.923,22.134 28.736,21.152 30.558,21.152 C32.814,21.152 34.507,22.597 34.507,25.705 L34.507,31.507 L31.078,31.507 ZM20.426,20.008 L20.403,20.008 C19.252,20.008 18.509,19.231 18.509,18.259 C18.509,17.267 19.275,16.510 20.448,16.510 C21.622,16.510 22.344,17.267 22.365,18.259 C22.365,19.231 21.622,20.008 20.426,20.008 ZM22.140,31.507 L18.712,31.507 L18.712,21.390 L22.140,21.390 L22.140,31.507 Z")
+                        a.socials__link.socials__link--info
+                            svg.socials__svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 496.158 496.158;" xml:space="preserve" width="51.5px" height="51.5px" class="")
+                                g
+                                    path(fill="#D5A353" class="st0" d="M511.5,256c0-141.4-114.6-256-256-256C114.1,0-0.5,114.6-0.5,256c0,141.4,114.6,256,256,256C396.9,512,511.5,397.4,511.5,256z" id="info" stroke="rgb(255, 255, 255)" stroke-linecap="butt" stroke-linejoin="miter" opacity="1")
+                                    path(fill="#fff" class="st1" d="M192.1,217.8c0-8.3,2.7-16.7,8-25.3c5.3-8.5,13.1-15.6,23.4-21.2c10.2-5.6,22.2-8.4,35.8-8.4c12.7,0,23.9,2.3,33.6,7c9.7,4.7,17.2,11,22.5,19.1c5.3,8,7.9,16.8,7.9,26.2c0,7.4-1.5,14-4.5,19.6c-3,5.6-6.6,10.4-10.8,14.5c-4.2,4.1-11.6,10.9-22.4,20.5c-3,2.7-5.4,5.1-7.2,7.2c-1.8,2.1-3.1,3.9-4,5.6c-0.9,1.7-1.6,3.4-2,5.1c-0.5,1.7-1.2,4.7-2.2,9c-1.7,9.1-6.9,13.6-15.6,13.6c-4.5,0-8.4-1.5-11.5-4.5c-3.1-3-4.7-7.4-4.7-13.3c0-7.3,1.1-13.7,3.4-19.1c2.3-5.4,5.3-10.1,9.1-14.2c3.8-4.1,8.8-8.9,15.2-14.5c5.6-4.9,9.6-8.6,12.1-11.1c2.5-2.5,4.6-5.3,6.3-8.3c1.7-3.1,2.6-6.4,2.6-10c0-7-2.6-12.9-7.8-17.7c-5.2-4.8-11.9-7.2-20.1-7.2c-9.6,0-16.7,2.4-21.3,7.3c-4.5,4.9-8.4,12-11.5,21.5c-3,9.9-8.6,14.8-16.9,14.8c-4.9,0-9-1.7-12.4-5.2C193.8,225.6,192.1,221.9,192.1,217.8z M256.1,361.7c-5.3,0-10-1.7-14-5.2c-4-3.5-6-8.3-6-14.5c0-5.5,1.9-10.1,5.8-13.9c3.8-3.8,8.6-5.6,14.2-5.6c5.5,0,10.1,1.9,13.9,5.6c3.8,3.8,5.6,8.4,5.6,13.9c0,6.1-2,10.9-5.9,14.4C265.8,359.9,261.3,361.7,256.1,361.7z" data-original="#FFFFFF" class="" stroke="rgb(255, 255, 255)" stroke-linecap="butt" stroke-linejoin="miter" id="question")
+            nav.main-menu
+                ul.main-menu__list
+                    li.main-menu__item
+                        a.main-menu__link(href="catalog.html") Полиграфия
+                        .main-menu__dropdown
+                            a.main-menu__link.main-menu__sublink(href="#") Баннеры
+                            a.main-menu__link.main-menu__sublink(href="#") Баннеры
+                    li.main-menu__item
+                        a.main-menu__link(href="#") Лого
+                        .main-menu__dropdown
+                            a.main-menu__link.main-menu__sublink(href="#") Баннеры
+                            a.main-menu__link.main-menu__sublink(href="#") Баннеры
+                    li.main-menu__item
+                        a.main-menu__link(href="#") Документы
+                        .main-menu__dropdown
+                            a.main-menu__link.main-menu__sublink(href="#") Баннеры
+                            a.main-menu__link.main-menu__sublink(href="#") Баннеры
+                    li.main-menu__item
+                        a.main-menu__link(href="#") Видео
+                        .main-menu__dropdown
+                            a.main-menu__link.main-menu__sublink(href="#") Баннеры
+                            a.main-menu__link.main-menu__sublink(href="#") Баннеры
+                    li.main-menu__item
+                        a.main-menu__link(href="#") Веб-Баннеры
+                        .main-menu__dropdown
+                            a.main-menu__link.main-menu__sublink(href="#") Баннеры
+                            a.main-menu__link.main-menu__sublink(href="#") Баннеры
+                    li.main-menu__item
+                        a.main-menu__link(href="#") Команда
+                        .main-menu__dropdown
+                            a.main-menu__link.main-menu__sublink(href="#") Баннеры
+                            a.main-menu__link.main-menu__sublink(href="#") Баннеры
         section.hero
+            #carouselExampleSlidesOnly.carousel.slide(data-ride="carousel")
+                .carousel-inner
+                    .carousel-item.active
+                        img.d-block.w-100(src="./img/bg2.jpg" alt="First slide")
+                    .carousel-item
+                        img.d-block.w-100(src="./img/sertificate.jpg" alt="Second slide")
+                    .carousel-item
+                        img.d-block.w-100(src="./img/bw.jpg" alt="Third slide")
+
+                a.carousel-control-prev(href="#carouselExampleIndicators" role="button" data-slide="prev")
+                        span.carousel-control-prev-icon(aria-hidden="true")
+                        span.sr-only Previous
+                a.carousel-control-next(href="#carouselExampleIndicators" role="button" data-slide="next")
+                    span.carousel-control-next-icon(aria-hidden="true")
+                    span.sr-only Next
 
         section.cards
             .tabs
@@ -314,5 +331,8 @@ html(lang="en")
                                 path(fill="#D5A353" class="st0"  d="M511.5,256c0-141.4-114.6-256-256-256C114.1,0-0.5,114.6-0.5,256c0,141.4,114.6,256,256,256C396.9,512,511.5,397.4,511.5,256z" id="info" stroke="rgb(255, 255, 255)" stroke-linecap="butt" stroke-linejoin="miter" opacity="1")
                                 path(fill="#fff" class="st1" d="M192.1,217.8c0-8.3,2.7-16.7,8-25.3c5.3-8.5,13.1-15.6,23.4-21.2c10.2-5.6,22.2-8.4,35.8-8.4c12.7,0,23.9,2.3,33.6,7c9.7,4.7,17.2,11,22.5,19.1c5.3,8,7.9,16.8,7.9,26.2c0,7.4-1.5,14-4.5,19.6c-3,5.6-6.6,10.4-10.8,14.5c-4.2,4.1-11.6,10.9-22.4,20.5c-3,2.7-5.4,5.1-7.2,7.2c-1.8,2.1-3.1,3.9-4,5.6c-0.9,1.7-1.6,3.4-2,5.1c-0.5,1.7-1.2,4.7-2.2,9c-1.7,9.1-6.9,13.6-15.6,13.6c-4.5,0-8.4-1.5-11.5-4.5c-3.1-3-4.7-7.4-4.7-13.3c0-7.3,1.1-13.7,3.4-19.1c2.3-5.4,5.3-10.1,9.1-14.2c3.8-4.1,8.8-8.9,15.2-14.5c5.6-4.9,9.6-8.6,12.1-11.1c2.5-2.5,4.6-5.3,6.3-8.3c1.7-3.1,2.6-6.4,2.6-10c0-7-2.6-12.9-7.8-17.7c-5.2-4.8-11.9-7.2-20.1-7.2c-9.6,0-16.7,2.4-21.3,7.3c-4.5,4.9-8.4,12-11.5,21.5c-3,9.9-8.6,14.8-16.9,14.8c-4.9,0-9-1.7-12.4-5.2C193.8,225.6,192.1,221.9,192.1,217.8z M256.1,361.7c-5.3,0-10-1.7-14-5.2c-4-3.5-6-8.3-6-14.5c0-5.5,1.9-10.1,5.8-13.9c3.8-3.8,8.6-5.6,14.2-5.6c5.5,0,10.1,1.9,13.9,5.6c3.8,3.8,5.6,8.4,5.6,13.9c0,6.1-2,10.9-5.9,14.4C265.8,359.9,261.3,361.7,256.1,361.7z" data-original="#FFFFFF" class="" stroke="rgb(255, 255, 255)" stroke-linecap="butt" stroke-linejoin="miter" id="question")
 
-
+    script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js", integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN", crossorigin="anonymous")
     script(src="scripts.js")
+    //- script(src="header.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js", integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4", crossorigin="anonymous")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js", integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1", crossorigin="anonymous")

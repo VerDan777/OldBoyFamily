@@ -1,15 +1,15 @@
 .hero {
-    background-image: url('./img/sertificate.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    height: 300px;
+    // background-image: url('./img/sertificate.jpg');
+    // background-size: cover;
+    // background-position: center center;
+    // background-repeat: no-repeat;
+    // height: 300px;
 
-    @include atTabletsLandscape {
-        height: 400px;
-    }
+    // @include atTabletsLandscape {
+    //     height: 400px;
+    // }
 
-    @include atDesktop {
-        height: 700px;
-    }
+    // @include atDesktop {
+    //     height: 700px;
+    // }
 }

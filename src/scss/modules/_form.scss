@@ -11,6 +11,11 @@
         color: #495057;
         border-radius: 5px;
         border: 1px solid $accent;
+        width: auto;
+        @include atSmall {
+            // box model
+            width: 180px;
+        }
 
         @include atTabletsLandscape {
             // box model
@@ -39,5 +44,21 @@
             flex-direction: row;
             margin-bottom: 0;
         }
+    }
+}
+
+.carousel-item {
+    height: 300px !important;
+
+    @include atDesktop {
+        height: auto;
+    }
+}
+.d-block {
+    width: 100% !important;
+    height: 100% !important;
+
+    @include atDesktop {
+        height: auto;
     }
 }
