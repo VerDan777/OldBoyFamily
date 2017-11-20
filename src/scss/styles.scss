@@ -8,6 +8,7 @@
 @import "./base/_globals";
 
 // Modules
+@import "./modules/_container";
 @import "./modules/_site-header";
 @import "./modules/_logo";
 @import "./modules/_main-menu";
@@ -19,3 +20,5 @@
 @import "./modules/_cards";
 @import "./modules/_tabs";
 @import "./modules/_site-footer";
+@import "./modules/_breadcrumb";
+@import "./modules/_pagination";

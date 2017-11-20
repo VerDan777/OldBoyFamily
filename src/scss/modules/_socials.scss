@@ -1,4 +1,16 @@
 .socials {
     padding-top: 30px;
     padding-bottom: 27px;
+
+    @include atTabletsLandscape {
+        display: none;
+    }
+
+    @include atDesktop {
+        display: block;
+    }
+}
+
+.socials__link--info {
+    padding-left: 49px;
 }

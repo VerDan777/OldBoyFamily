@@ -5,7 +5,7 @@ let tasks = [
     './gulp/tasks/build.js',
     './gulp/tasks/copy.js',
     './gulp/tasks/clean.js',
-    // './gulp/tasks/gh-pages.js',
+    './gulp/tasks/gh-pages.js',
     './gulp/tasks/image-min.js'
 ]
 

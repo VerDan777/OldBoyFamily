@@ -1,14 +1,47 @@
 .cards {
     
+
     &__card {
         // box model
         margin-bottom: 100px;
         border: 1px solid rgba(0,0,0,.125);
-        
+        &:last-child {
+            margin-bottom: 0; 
+        }
+
+        @include atTabletsPortrait {
+            // box model
+            width: 49%;
+            margin-right: 5px;
+        }
+
+        @include atTabletsLandscape {
+            // box model
+            width: 32%;
+            margin-right: 5px;
+            justify-content: flex-start;
+        }
+        @include atDesktop {
+            max-width: 33.33%;
+            margin-right: 15px;
+        }
     }
     &__container {
         // box model
-        padding: 0 20px;
+        padding: 0 25px;
+
+        @include atTabletsPortrait {
+            // box model
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        @include atDesktop {
+            justify-content: flex-start;
+            padding: 0;
+        }
     }
 
     &__body {

@@ -1,5 +1,4 @@
 .form {
-
     &--footer {
         display: flex;
         flex-direction: column;
@@ -13,8 +12,28 @@
         border-radius: 5px;
         border: 1px solid $accent;
 
+        @include atTabletsLandscape {
+            // box model
+            width: 250px;
+            margin-left: 200px;
+        }
+        
+        @include atDesktop {
+            // box model
+            width: 500px;
+            margin-left: 0;
+        }
+
         &--footer {
-            margin-bottom: 20px;
+            // margin-bottom: 20px;
+        }
+    }
+    &--footer {
+        margin-bottom: 20px;
+        
+        @include atDesktop {
+            flex-direction: row;
+            margin-bottom: 0;
         }
     }
 }
