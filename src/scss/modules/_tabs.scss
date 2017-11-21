@@ -12,7 +12,13 @@
 
     &__item {
         // box model
-        margin: 50px;
+        margin: 50px 0;
+        margin-right: 45px;
+        padding-right: 45px;
+
+        &:last-child {
+            margin-right: 0;
+        }
         // visual
         background-color: $mainColor;
         text-align: center;
@@ -23,10 +29,20 @@
     &__link {
         // typography
         color: $white !important;
+        cursor: pointer;
         text-decoration: none;
         font-family: $mainFont;
         border-color: #ddd #ddd #fff;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
+
+    }
+
+    &__content {
+        display: none;
+    }
+
+    &__current {
+        display: inherit;
     }
 }

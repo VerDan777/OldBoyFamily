@@ -1,16 +1,31 @@
 .socials {
-    padding-top: 30px;
+    padding-top: 15px;
     padding-bottom: 27px;
+    // order: 1;
+    // width: 150px;
+
+    @include atTabletsPortrait {
+        order: 2;
+    }
 
     @include atTabletsLandscape {
-        display: none;
+        // display: none;
     }
 
     @include atDesktop {
         display: block;
+        margin-left: auto;
+    }
+
+    &__link {
+        padding-right: 10px;
     }
 }
 
 .socials__link--info {
-    padding-left: 49px;
+    // padding-left: 49px;
+
+    @include atTabletsPortrait {
+        padding-left: 0;
+    }
 }

@@ -1,4 +1,6 @@
 .form {
+    // display: flex;
+    // order: -2;
     &--footer {
         display: flex;
         flex-direction: column;
@@ -41,6 +43,7 @@
         margin-bottom: 20px;
         
         @include atDesktop {
+            // box model
             flex-direction: row;
             margin-bottom: 0;
         }
@@ -48,9 +51,11 @@
 }
 
 .carousel-item {
-    height: 300px !important;
+    // box model
+    // height: 300px !important;
 
     @include atDesktop {
+        // box model
         height: auto;
     }
 }

@@ -3,11 +3,13 @@
     height: 80px;
     margin-top: 15px;
     margin-bottom: 20px;
-    // padding: 0 30px;
-    padding-left: 30px;
-    
+
+    @include atTabletsPortrait {
+        order: -1;
+    }
     @include atDesktop {
         padding-right: 30px;
+        padding-left: 30px;
         margin-right: 16px;
     }
     
