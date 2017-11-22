@@ -60,50 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */,
-/* 1 */,
-/* 2 */,
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var menu = __webpack_require__(4);
-// var header = require("./modules/Header.js");
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var $ = __webpack_require__(5);
-
-function MobileMenu() {
-  var $mainMenu = $(".main-menu");
-  var $menuIcon = $(".menu-icon");
-  var $menuLinks = $(".main-menu__link");
-
-  $menuIcon.on("click", toggleMenu);
-  $menuLinks.on("click", toggleMenu);
-  $menuLinks.on("tap", toggleMenu);
-
-  function toggleMenu() {
-    $mainMenu.toggleClass("main-menu--shown");
-    $menuIcon.toggleClass("menu-icon--close-x");
-  }
-}
-
-module.exports = new MobileMenu();
-
-/***/ }),
-/* 5 */
+/* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10361,6 +10322,95 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
+
+/***/ }),
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var menu = __webpack_require__(5);
+var tabs = __webpack_require__(6);
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var $ = __webpack_require__(0);
+
+function MobileMenu() {
+  var $mainMenu = $(".main-menu");
+  var $menuIcon = $(".menu-icon");
+  var $menuLinks = $(".main-menu__link");
+
+  $menuIcon.on("click", toggleMenu);
+  $menuLinks.on("click", toggleMenu);
+  $menuLinks.on("tap", toggleMenu);
+
+  function toggleMenu() {
+    $mainMenu.toggleClass("main-menu--shown");
+    $menuIcon.toggleClass("menu-icon--close-x");
+  }
+}
+
+module.exports = new MobileMenu();
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Tabs = function () {
+    function Tabs() {
+        _classCallCheck(this, Tabs);
+
+        this.TabsItem = (0, _jquery2.default)('.tabs__item');
+        this.TabsContent = (0, _jquery2.default)('.tabs__content');
+        this.TabsCurrent = (0, _jquery2.default)('.tabs__current');
+        this.events();
+    }
+
+    _createClass(Tabs, [{
+        key: 'events',
+        value: function events() {
+            (0, _jquery2.default)('.tabs__item').click(function () {
+                var tab_id = (0, _jquery2.default)(this).attr('data-tab');
+                (0, _jquery2.default)('.tabs__item').removeClass('tabs__current');
+                (0, _jquery2.default)('.tabs__content').removeClass('tabs__current');
+
+                (0, _jquery2.default)(this).addClass('tabs__current');
+                (0, _jquery2.default)("#" + tab_id).addClass('tabs__current');
+            });
+        }
+    }]);
+
+    return Tabs;
+}();
+
+exports.default = Tabs;
 
 /***/ })
 /******/ ]);

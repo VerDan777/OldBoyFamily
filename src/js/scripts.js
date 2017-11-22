@@ -1,2 +1,2 @@
 var menu = require("./modules/MobileMenu");
-// var header = require("./modules/Header.js");
+var tabs = require("./modules/Tabs.js");

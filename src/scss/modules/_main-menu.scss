@@ -12,7 +12,7 @@
     display: flex;
     text-align: center;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 
     // visual
     background-color: $accent;
@@ -39,12 +39,16 @@
         left: 0;
         visibility: visible;
         opacity: 0.99;
+        overflow-y: scroll;
     }
 
 
     &__list {
         margin: 0;
-        padding-left: 30px;
+        padding-top: 75px;
+        padding-left: 0;
+        text-align: left;
+        width: 100%;
         list-style: none;
         display: flex;
         flex-direction: column;
@@ -62,12 +66,15 @@
         padding-right: 45px;
         padding-bottom: 30px;
         display: block;
+        position: relative;
+        width: 100%;
 
         @include atDesktop {
             // box model
             padding-bottom: 0;
         }
     }
+
     &__link {
         // box model
         padding: 0 8px;
@@ -86,10 +93,27 @@
 
     &__sublink {
         // display: none;
+        font-size: 1rem;
     }
+
     &__dropdown {
         // box model
         display: none;
+
+        &-item {
+            border: 1px solid #fff;
+        }
+        &--shown {
+            // box model
+            display: block;
+            height: 100%;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 3px;
+        right: 11px;
     }
 
     @include atDesktop {
