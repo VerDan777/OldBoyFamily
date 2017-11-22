@@ -58,6 +58,8 @@
         @include atDesktop {
             flex-direction: row;
             justify-content: flex-start;
+            padding-top: 0;
+            padding-left: 30px;
         }
     }
 
@@ -72,6 +74,7 @@
         @include atDesktop {
             // box model
             padding-bottom: 0;
+            width: auto;
         }
     }
 
@@ -100,13 +103,11 @@
         // box model
         display: none;
 
-        &-item {
-            border: 1px solid #fff;
-        }
         &--shown {
             // box model
             display: block;
             height: 100%;
+            
         }
     }
 
@@ -114,9 +115,17 @@
         position: absolute;
         top: 3px;
         right: 11px;
+
+        @include atDesktop {
+            // display: none;
+        }
     }
 
     @include atDesktop {
         display: block;
     }
 }
+// .main-menu__item:hover .main-menu__dropdown {
+//     display: block;
+//     transition: 0.3s ease-in-out all;
+// }

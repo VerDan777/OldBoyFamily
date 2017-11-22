@@ -1,6 +1,4 @@
 $('.main-menu__icon').click(function() {
-    // e.preventDefault();
-
   var $this = $(this);
 
   if ($this.next().hasClass('main-menu__dropdown--shown')) {
@@ -8,8 +6,8 @@ $('.main-menu__icon').click(function() {
       $this.next().slideUp(350);
   } else {
       $this.parent().parent().find('li .main-menu__dropdown').removeClass('shown');
-      $this.parent().find('.main-menu__dropdown').slideUp(300);
-      $this.next().slideToggle(350);
+      $this.parent().find('.main-menu__dropdown').slideUp(250);
+      $this.next().slideToggle(250);
       $this.next().toggleClass('main-menu__dropdown--shown');
   }
 });
