@@ -10347,18 +10347,37 @@ var accardeon = __webpack_require__(7);
 var $ = __webpack_require__(0);
 
 function MobileMenu() {
-  var $mainMenu = $(".main-menu");
-  var $menuIcon = $(".menu-icon");
-  var $menuLinks = $(".main-menu__link");
+    var $mainMenu = $(".main-menu");
+    var $menuIcon = $(".menu-icon");
+    var $menuLinks = $(".main-menu__link");
+    var $ArrowIcon = $(".main-menu__icon");
 
-  $menuIcon.on("click", toggleMenu);
-  $menuLinks.on("click", toggleMenu);
-  $menuLinks.on("tap", toggleMenu);
+    $menuIcon.on("click", toggleMenu);
+    $menuLinks.on("click", toggleMenu);
+    $menuLinks.on("tap", toggleMenu);
+    $ArrowIcon.on("click", Accardeon);
+    // $ArrowIcon.on("tap", Accardeon);
 
-  function toggleMenu() {
-    $mainMenu.toggleClass("main-menu--shown");
-    $menuIcon.toggleClass("menu-icon--close-x");
-  }
+    function toggleMenu() {
+        $mainMenu.toggleClass("main-menu--shown");
+        $menuIcon.toggleClass("menu-icon--close-x");
+    }
+
+    function Accardeon() {
+        var $this = $(this);
+
+        if ($this.next().hasClass('main-menu__dropdown--shown')) {
+            $this.next().removeClass('main-menu__dropdown--shown');
+            $this.next().slideUp(350);
+            $this.toggleClass('main-menu__icon--rotate');
+        } else {
+            $this.parent().parent().find('li .main-menu__dropdown').removeClass('shown');
+            $this.parent().find('.main-menu__dropdown').slideUp(250);
+            $this.next().slideToggle(250);
+            $this.next().toggleClass('main-menu__dropdown--shown');
+            $this.toggleClass('main-menu__icon--rotate');
+        }
+    }
 }
 
 module.exports = new MobileMenu();
@@ -10370,48 +10389,20 @@ module.exports = new MobileMenu();
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
+var $ = __webpack_require__(0);
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+function Tabs() {
+    $('.tabs__item').on("click", TabsChanged);
 
-var _jquery = __webpack_require__(0);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Tabs = function () {
-    function Tabs() {
-        _classCallCheck(this, Tabs);
-
-        this.TabsItem = (0, _jquery2.default)('.tabs__item');
-        this.TabsContent = (0, _jquery2.default)('.tabs__content');
-        this.TabsCurrent = (0, _jquery2.default)('.tabs__current');
-        this.events();
+    function TabsChanged() {
+        var tab_id = $(this).attr('data-tab');
+        $('.tabs__item').removeClass('tabs__current');
+        $('.tabs__content').removeClass('tabs__current');
+        $(this).addClass('tabs__current');
+        $("#" + tab_id).addClass('tabs__current');
     }
-
-    _createClass(Tabs, [{
-        key: 'events',
-        value: function events() {
-            (0, _jquery2.default)('.tabs__item').click(function () {
-                var tab_id = (0, _jquery2.default)(this).attr('data-tab');
-                (0, _jquery2.default)('.tabs__item').removeClass('tabs__current');
-                (0, _jquery2.default)('.tabs__content').removeClass('tabs__current');
-
-                (0, _jquery2.default)(this).addClass('tabs__current');
-                (0, _jquery2.default)("#" + tab_id).addClass('tabs__current');
-            });
-        }
-    }]);
-
-    return Tabs;
-}();
-
-exports.default = Tabs;
+}
+module.exports = new Tabs();
 
 /***/ }),
 /* 7 */

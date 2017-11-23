@@ -88,15 +88,22 @@
         font-weight: 400;
         font-size: 1.50rem;
         text-decoration: none;
+
+        @include atTabletsPortrait {
+            // typography
+            font-size: 1.25rem;
+        }
     }
 
-    &__button-drop {
-
-    }
 
     &__sublink {
         // display: none;
         font-size: 1.25rem;
+
+        @include atTabletsPortrait {
+            // typography
+            font-size: 1rem;
+        }
     }
 
     &__dropdown {
@@ -127,6 +134,7 @@
         position: absolute;
         top: 3px;
         right: 11px;
+        cursor: pointer;
 
         @include atDesktop {
             // display: none;

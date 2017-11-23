@@ -1,5 +1,4 @@
 .tabs {
-    // display: inline-block;
 
     &-pane {
         // box model
@@ -7,18 +6,20 @@
     }
 
     &__list {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        text-align: center;
+        // box model
         display: flex;
         justify-content: center;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+
+        // visual
+        list-style: none;
     }
 
     &__item {
         // box model
         margin: 50px 0;
-        // margin-right: 45px;
         padding-right: 45px;
         
         &:first-child {
@@ -31,12 +32,17 @@
             margin-right: 0;
         }
 
+        @include atTabletsPortrait {
+            // visual
+            border-radius: 5px;
+        }
+
         // visual
         background-color: $mainColor;
         text-align: center;
         padding: 8px 16px;
 
-        &:hover {
+        &:hover, &:active, &:focus {
             // visual
             transition: 0.3s ease-in-out all;
             background-color: $accent;
@@ -61,10 +67,12 @@
     }
 
     &__content {
+        // box model
         display: none;
     }
 
     &__current {
+        // box model
         display: inherit;
     }
 }
