@@ -23,6 +23,11 @@ gulp.task('watch', () => {
     watch('./src/js/**/*.js',()=> {
         gulp.start('jsChanged');
     });
+
+    // Wordpress
+    watch('./wp/**/*.php', ()=> {
+        gulp.start('copyPHP')
+    })
 });
 
 gulp.task('pugChanged', ['PugRender'], () => {
