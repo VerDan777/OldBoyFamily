@@ -43,6 +43,17 @@
                 margin-bottom: 0;
             }
         }
+
+        &-group {
+            // box model
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            @include atTabletsPortrait {
+                flex-direction: row;
+            }
+        }
     }
     &--footer {
         margin-bottom: 20px;
@@ -53,6 +64,8 @@
             margin-bottom: 0;
         }
     }
+
+    
 }
 
 .carousel-item {
