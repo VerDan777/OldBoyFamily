@@ -16,7 +16,7 @@
 
     // visual
     background-color: $accent;
-    box-shadow: 0px 7px 16px -8px rgba(0, 0, 0, 0.75);
+    // box-shadow: 0px 7px 16px -8px rgba(0, 0, 0, 0.75);
     transition: 0.3s ease-out all;
     visibility: hidden;
     opacity: 1;
@@ -30,7 +30,7 @@
         padding: 15px 25px;
         // visual
         visibility: visible;
-        box-shadow: 0px 7px 16px -8px rgba(0, 0, 0, 0.75);
+        // box-shadow: 0px 7px 16px -8px rgba(0, 0, 0, 0.75);
         
     }
 
@@ -86,7 +86,7 @@
         letter-spacing: 1px;
         text-transform: uppercase;
         font-weight: 400;
-        font-size: 1.25rem;
+        font-size: 1.50rem;
         text-decoration: none;
     }
 
@@ -96,12 +96,24 @@
 
     &__sublink {
         // display: none;
-        font-size: 1rem;
+        font-size: 1.25rem;
     }
 
     &__dropdown {
         // box model
         display: none;
+        list-style: none;
+
+        li {
+            // box model
+            padding-bottom: 15px;
+            &::before {
+                content: '•';
+                color: $white;
+                display: inline-block;
+                width: 3px;
+            }
+        }
 
         &--shown {
             // box model
@@ -118,6 +130,11 @@
 
         @include atDesktop {
             // display: none;
+        }
+
+        &--rotate {
+            transition: 0.25s ease-in-out all;
+            transform: rotate(-180deg);
         }
     }
 

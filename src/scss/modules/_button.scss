@@ -18,9 +18,12 @@
     &--footer {
         margin-left: 0;
 
-        @include atTabletsPortrait {
+        @include atTabletsLandscape {
             margin-left: 25px;
         }
+    }
+    &--catalog {
+        padding: 8px 12px;
     }
 
     &--download {
@@ -29,10 +32,10 @@
 
     &:hover {
         // typography
-        color: #495057;
+        color: $white;
 
         // visual
         background: none;
-        border-color: #fff;
+        border-color: $accent;
     }
 }

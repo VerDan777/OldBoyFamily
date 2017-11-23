@@ -30,6 +30,11 @@
         padding-left: 0;
     }
 }
+.socials__svg:hover #info {
+    cursor: pointer;
+    fill: $white;
+    transition: 0.3s ease-in-out all;
+}
 
 .socials__svg:hover #vk {
     cursor: pointer;
@@ -48,5 +53,4 @@
 }
 .socials__svg:hover #whatsapp1 {
     fill: #d5a353;
-    
 }

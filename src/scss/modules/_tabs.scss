@@ -20,19 +20,32 @@
         margin: 50px 0;
         // margin-right: 45px;
         padding-right: 45px;
-
+        
+        &:first-child {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
         &:last-child {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
             margin-right: 0;
         }
+
         // visual
         background-color: $mainColor;
         text-align: center;
         padding: 8px 16px;
 
-        @include atDesktop {
-            margin-right: 45px;
+        &:hover {
+            // visual
+            transition: 0.3s ease-in-out all;
+            background-color: $accent;
         }
 
+        @include atTabletsPortrait {
+            // box model
+            margin-right: 45px;
+        }
     }
 
     &__link {

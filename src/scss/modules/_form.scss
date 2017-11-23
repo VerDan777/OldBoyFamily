@@ -2,9 +2,15 @@
     // display: flex;
     // order: -2;
     &--footer {
+        // box model
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        @include atTabletsLandscape {
+            // box model
+            flex-direction: row;
+        }
     }
     &__input {
         // box model
@@ -22,7 +28,6 @@
         @include atTabletsLandscape {
             // box model
             width: 250px;
-            margin-left: 200px;
         }
         
         @include atDesktop {
@@ -34,7 +39,7 @@
         &--footer {
             margin-bottom: 20px;
             
-            @include atDesktop {
+            @include atTabletsLandscape {
                 margin-bottom: 0;
             }
         }

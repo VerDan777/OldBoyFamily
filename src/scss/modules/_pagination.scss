@@ -14,13 +14,12 @@
         // visual
         border: 1px solid $accent;
         &--prev {
-            // border-top-left-radius: 5px;
-            // border-bottom-left-radius: 5px;
-            
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
         }
         &--next {
-            // border-top-right-radius: 5px;
-            // border-bottom-right-radius: 5px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
         }
     }
 
