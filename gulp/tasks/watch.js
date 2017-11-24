@@ -29,7 +29,7 @@ gulp.task('watch', () => {
         gulp.start('copyPHP')
     })
 
-    watch("./src/dist/styles.min.css", function() {
+    watch("./src/dist/styles.css", function() {
         gulp.start("copyWpCSS");
     });
 

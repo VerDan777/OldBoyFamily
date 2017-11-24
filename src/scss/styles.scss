@@ -1,6 +1,9 @@
 // Normalize
 // @import "normalize.scss";
 
+// Wordpress
+@import "./base/_wordpress";
+
 // Base
 @import "./fonts/_fonts";
 @import "./base/_vars";

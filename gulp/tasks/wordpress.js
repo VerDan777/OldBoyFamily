@@ -3,7 +3,7 @@ const rename = require('gulp-rename');
 
 gulp.task('copyWpPHP', ()=> {
     return gulp.src('./wp/*.php')
-        .pipe(gulp.dest('C:/xampp/htdocs/OldBoyFamily/wp-content/themes/OldBoyFamily'));   
+        .pipe(gulp.dest('C:/xampp/htdocs/OldBoyFamily/wp-content/themes/OldBoyFamily'));
 });
 
 gulp.task('copyWpCSS', ()=> {

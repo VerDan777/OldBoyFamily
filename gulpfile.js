@@ -8,8 +8,8 @@ let tasks = [
     './gulp/tasks/gh-pages.js',
     './gulp/tasks/image-min.js',
     './gulp/tasks/scripts.js',
-    './gulp/tasks/wordpress.js',
-    './gulp/tasks/php.js'
+    './gulp/tasks/php.js',
+    './gulp/tasks/wordpress.js'
 ]
 
 for(var i=0; i < tasks.length; i++) {
