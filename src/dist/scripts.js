@@ -10337,6 +10337,7 @@ var menu = __webpack_require__(5);
 var tabs = __webpack_require__(6);
 var accardeon = __webpack_require__(7);
 var validation = __webpack_require__(8);
+var slider = __webpack_require__(10);
 
 /***/ }),
 /* 5 */
@@ -12120,6 +12121,31 @@ if ( $.ajaxPrefilter ) {
 }
 return $;
 }));
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var $ = __webpack_require__(0);
+
+function Slider() {
+    var images = new Array('./img/sertificate.jpg', './img/bw.jpg', './img/bg2.jpg');
+    var nextImage = 0;
+    SlideShow();
+
+    function SlideShow() {
+        if (nextImage >= images.length) {
+            nextImage = 0;
+        }
+        $('.hero').css('background-image', 'url("' + images[nextImage++] + '")').fadeIn(500, function () {
+            setTimeout(SlideShow, 10000);
+        });
+    }
+}
+module.exports = new Slider();
 
 /***/ })
 /******/ ]);

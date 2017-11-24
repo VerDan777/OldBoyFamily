@@ -1,11 +1,21 @@
 .form {
     // display: flex;
     // order: -2;
+    @include atTabletsPortrait {
+        // box model
+        padding-right: 4%;
+    }
+
     &--footer {
         // box model
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        @include atTabletsPortrait {
+            // box model
+            padding-right: 0;
+        }
 
         @include atTabletsLandscape {
             // box model
@@ -20,6 +30,7 @@
         border-radius: 5px;
         border: 1px solid $accent;
         width: auto;
+
         @include atSmall {
             // box model
             width: 180px;
@@ -51,21 +62,23 @@
             align-items: center;
             
             @include atTabletsPortrait {
+                flex-direction: column;
+            }
+
+            @include atTabletsLandscape {
                 flex-direction: row;
             }
         }
     }
     &--footer {
         margin-bottom: 20px;
-        
+
         @include atDesktop {
             // box model
             flex-direction: row;
             margin-bottom: 0;
         }
     }
-
-    
 }
 
 .carousel-item {

@@ -6,7 +6,9 @@
 
     @include atTabletsPortrait {
         order: -1;
+        padding-right: 25px;
     }
+
     @include atDesktop {
         padding-right: 30px;
         padding-left: 30px;

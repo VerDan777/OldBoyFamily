@@ -81,6 +81,8 @@
     &__link {
         // box model
         padding: 0 8px;
+        padding-bottom: 20px;
+        display: inline-block;
         color: #fff !important;
         font-family: 'RexBold', sans-serif;
         letter-spacing: 1px;
@@ -90,6 +92,8 @@
         text-decoration: none;
 
         @include atTabletsPortrait {
+            // box model
+            padding-bottom: 0;
             // typography
             font-size: 1.25rem;
         }
@@ -150,7 +154,3 @@
         display: block;
     }
 }
-// .main-menu__item:hover .main-menu__dropdown {
-//     display: block;
-//     transition: 0.3s ease-in-out all;
-// }

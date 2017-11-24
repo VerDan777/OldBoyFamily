@@ -1,33 +1,14 @@
 .hero {
-    // background-image: url('./img/sertificate.jpg');
-    // background-size: cover;
-    // background-position: center center;
-    // background-repeat: no-repeat;
-    // height: 700px;
-
-    // @include atTabletsLandscape {
-    //     height: 400px;
-    // }
-
-    // @include atDesktop {
-    //     height: 700px;
-    // }
-    // &__outer {
-    //     height: 100%;
-    // }
-    // &__slider {
-    //     height: 100%;
-    // }
-
-    &-item {
-        height: 100%;
+    background-image: url('./img/sertificate.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 300px;
+    @include atTabletsLandscape {
+        height: 400px;
     }
-    &__slider-img {
+
+    @include atDesktop {
         height: 700px;
-        width: 100%;
-        display: block;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
     }
 }
