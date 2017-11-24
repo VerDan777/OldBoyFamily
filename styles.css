@@ -1,6 +1,8 @@
-@charset "UTF-8";
-
-html {
+@charset "UTF-8";/*
+    Theme Name: OldBoy Family
+    Description: Special theme for OldBoy Family
+    Author: Daniil Vereschagin
+*/html {
   height: 100%;
   width: 100%;
 }
@@ -141,6 +143,8 @@ body {
 
 .main-menu__link {
   padding: 0 8px;
+  padding-bottom: 20px;
+  display: inline-block;
   color: #fff !important;
   font-family: 'RexBold', sans-serif;
   letter-spacing: 1px;
@@ -189,17 +193,12 @@ body {
   transform: rotate(-180deg);
 }
 
-.hero-item {
-  height: 100%;
-}
-
-.hero__slider-img {
-  height: 700px;
-  width: 100%;
-  display: block;
+.hero {
+  background-image: url("./img/sertificate.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
+  height: 300px;
 }
 
 .socials {
@@ -642,18 +641,17 @@ body {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
   }
 
   .logo {
     -webkit-box-ordinal-group: 0;
     -ms-flex-order: -1;
     order: -1;
+    padding-right: 25px;
   }
 
   .main-menu__link {
+    padding-bottom: 0;
     font-size: 1.25rem;
   }
 
@@ -672,11 +670,19 @@ body {
     padding-left: 0;
   }
 
+  .form {
+    padding-right: 4%;
+  }
+
+  .form--footer {
+    padding-right: 0;
+  }
+
   .form__input-group {
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
 
   .cards__card {
@@ -726,6 +732,10 @@ body {
     align-items: center;
   }
 
+  .hero {
+    height: 400px;
+  }
+
   .form--footer {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -739,6 +749,13 @@ body {
 
   .form__input--footer {
     margin-bottom: 0;
+  }
+
+  .form__input-group {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
   }
 
   .button--footer {
@@ -823,6 +840,10 @@ body {
 
   .main-menu {
     display: block;
+  }
+
+  .hero {
+    height: 700px;
   }
 
   .socials {
