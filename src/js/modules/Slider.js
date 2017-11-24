@@ -10,7 +10,7 @@ function Slider() {
             nextImage=0;
         }   
         $('.hero').css(
-            'background-image', 'url("'+images[nextImage++]+'")').fadeIn(500, ()=> {setTimeout(SlideShow,10000)})
+            'background-image', 'url("'+images[nextImage++]+'")').fadeIn(500, ()=> {setTimeout(SlideShow, 10000)})
     }
 }
 module.exports = new Slider;

@@ -28,6 +28,15 @@ gulp.task('watch', () => {
     watch('./wp/**/*.php', ()=> {
         gulp.start('copyPHP')
     })
+
+    watch("./src/dist/styles.min.css", function() {
+        gulp.start("copyWpCSS");
+    });
+
+    watch("./src/dist/*.js", function() {
+        gulp.start("copyWpJS");
+    });
+
 });
 
 gulp.task('pugChanged', ['PugRender'], () => {

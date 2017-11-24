@@ -3,9 +3,6 @@ const webpack = require('webpack-stream');
 const notify = require('gulp-notify');
 const config = {
     entry: {
-        slider: "./src/js/slider.js",
-        menu: "./src/js/menu.js",
-        tabs: "./src/js/tabs.js",
         scripts: "./src/js/scripts.js"
     },
     output: {

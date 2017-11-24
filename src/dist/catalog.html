@@ -259,10 +259,11 @@
     <footer class="site-footer">
       <div class="site-footer__container"><a href="index.html">
           <div class="logo logo--footer"><img src="./img/logo-new.png"/></div></a>
-        <form class="form form--footer" id="subscribe-form">
+        <form class="form form--footer" id="subscribe-form" method="post" action="send.php">
           <div class="form__input-group">
             <input class="form__input form__input--footer" type="email" placeholder="Подписаться на рассылку" area-label="Поиск"/>
-            <input class="button button--footer" type="submit" name="email" value="Подписаться"/>
+            <input class="button button--footer" type="submit" required="true" name="field[email]" value="Подписаться"/>
+            <div id="form-messages"></div>
           </div>
         </form>
         <div class="socials"><a class="socials__link" href="https://vk.com/oldboyfamily" target="_blank">

@@ -1,18 +1,18 @@
 const gulp = require('gulp');
-const rename = requir('gulp-rename');
+const rename = require('gulp-rename');
 
 gulp.task('copyWpPHP', ()=> {
     return gulp.src('./wp/*.php')
         .pipe(gulp.dest('C:/xampp/htdocs/OldBoyFamily/wp-content/themes/OldBoyFamily'));   
 });
 
-gulp.tasks('copyWpCSS', ()=> {
+gulp.task('copyWpCSS', ()=> {
     return gulp.src('./src/dist/styles.min.css')
         .pipe(rename('style.css'))
         .pipe(gulp.dest('C:/xampp/htdocs/OldBoyFamily/wp-content/themes/OldBoyFamily'))
 });
 
-gulp.tasks('copyWpJS', ()=> {
-    return gulp.src('./dist/*.js')
+gulp.task('copyWpJS', ()=> {
+    return gulp.src('./src/dist/*.js')
         .pipe(gulp.dest('C:/xampp/htdocs/OldBoyFamily/wp-content/themes/OldBoyFamily'));
 })
