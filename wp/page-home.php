@@ -2,6 +2,7 @@
 /*
     Template Name: Home Page
 */
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +17,7 @@
   </head>
   <body>
     <header class="site-header">
-      <div class="logo"><img src="./img/logo-new.png"/></div>
+      <div class="logo"><img src="<?php bloginfo('stylesheet_directory');?>./img/logo-new.png"/></div>
       <div class="socials"><a class="socials__link" href="https://vk.com/oldboyfamily" target="_blank">
           <svg class="socials__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewbox="0 0 112.196 112.196" style="enable-background:new 0 0 112.196 112.196;" xml:space="preserve" width="40px" height="40px">
             <circle id="vk" fill="#D5A353" cx="56.098" cy="56.098" r="56.098" data-original="#4D76A1" data-old_color="#d5a353"></circle>
@@ -146,215 +147,44 @@
         </ul>
         <div class="tabs__content tabs__current" id="tab-1">
           <div class="cards__container">
-            <div class="cards__card cards__card--main">
-              <div class="cards__img"><img src="./img/graduated.jpg" alt="card img"/></div>
-              <div class="cards__body">
-                <h4 class="cards__title">Баннер выпускник</h4>
-                <p class="cards__text">Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.</p>
-                <p class="cards__format">Форматы: JPEG, PSD, AI</p><a class="button button--download" href="#">Скачать архив</a>
+          
+          <?php
+            $args = array(
+              'category_name'=> 'card-item'
+            );
+
+              query_posts($args);
+
+              if(have_posts()) {
+                while(have_posts()) {
+                  the_post();
+
+                  // vars
+                  $card_img = get_field('card-img');
+                  $card_title = get_field('card-title');
+                  $card_text = get_field('card-text');
+                  $card_format = get_field('card-format');
+                  $card_link = get_field('card-link');
+            ?> 
+
+                <div class="cards__card cards__card--main">
+                  <div class="cards__img"><img src="<?php echo $card_img; ?>" alt="card img"/></div>
+                  <div class="cards__body">
+                    <h4 class="cards__title"><?php echo $card_title; ?></h4>
+                    <p class="cards__text"><?php echo $card_text; ?></p>
+                    <p class="cards__format"><?php echo $card_format; ?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать архив</a>
+                  </div>
+                  <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
               </div>
-              <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
-            </div>
-            <div class="cards__card cards__card--main">
-              <div class="cards__img"><img src="./img/open.png" alt="card img"/></div>
-              <div class="cards__body">
-                <h4 class="cards__title">Баннер открытие</h4>
-                <p class="cards__text">Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.</p>
-                <p class="cards__format">Форматы: JPEG, PSD, AI</p><a class="button button--download" href="#">Скачать архив</a>
-              </div>
-              <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
-            </div>
-            <div class="cards__card cards__card--main">
-              <div class="cards__img"><img src="./img/repost.jpg" alt="card img"/></div>
-              <div class="cards__body">
-                <h4 class="cards__title">Баннеры репост</h4>
-                <p class="cards__text">Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.</p>
-                <p class="cards__format">Форматы: JPEG, PSD, AI</p><a class="button button--download" href="#">Скачать архив</a>
-              </div>
-              <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
-            </div>
-            <div class="cards__card cards__card--main">
-              <div class="cards__img"><img src="./img/graduated.jpg" alt="card img"/></div>
-              <div class="cards__body">
-                <h4 class="cards__title">Баннер выпускник</h4>
-                <p class="cards__text">Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.</p>
-                <p class="cards__format">Форматы: JPEG, PSD, AI</p><a class="button button--download" href="#">Скачать архив</a>
-              </div>
-              <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
-            </div>
-            <div class="cards__card cards__card--main">
-              <div class="cards__img"><img src="./img/graduated.jpg" alt="card img"/></div>
-              <div class="cards__body">
-                <h4 class="cards__title">Баннер выпускник</h4>
-                <p class="cards__text">Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.</p>
-                <p class="cards__format">Форматы: JPEG, PSD, AI</p><a class="button button--download" href="#">Скачать архив</a>
-              </div>
-              <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
-            </div>
-          </div>
-        </div>
-        <div class="tabs__content" id="tab-2">
-          <div class="cards__container">                   
-            <div class="cards__card cards__card--main">
-              <div class="cards__img"><img src="./img/repost.jpg" alt="card img"/></div>
-              <div class="cards__body">
-                <h4 class="cards__title">Баннеры репост</h4>
-                <p class="cards__text">Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.</p>
-                <p class="cards__format">Форматы: JPEG, PSD, AI</p><a class="button button--download" href="#">Скачать архив</a>
-              </div>
-              <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
-            </div>
-            <div class="cards__card cards__card--main">
-              <div class="cards__img"><img src="./img/open.png" alt="card img"/></div>
-              <div class="cards__body">
-                <h4 class="cards__title">Баннер открытие</h4>
-                <p class="cards__text">Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.</p>
-                <p class="cards__format">Форматы: JPEG, PSD, AI</p><a class="button button--download" href="#">Скачать архив</a>
-              </div>
-              <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
-            </div>
-            <div class="cards__card cards__card--main">
-              <div class="cards__img"><img src="./img/open.png" alt="card img"/></div>
-              <div class="cards__body">
-                <h4 class="cards__title">Баннер открытие</h4>
-                <p class="cards__text">Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.</p>
-                <p class="cards__format">Форматы: JPEG, PSD, AI</p><a class="button button--download" href="#">Скачать архив</a>
-              </div>
-              <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
-            </div>
-            <div class="cards__card cards__card--main">
-              <div class="cards__img"><img src="./img/open.png" alt="card img"/></div>
-              <div class="cards__body">
-                <h4 class="cards__title">Баннер открытие</h4>
-                <p class="cards__text">Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.</p>
-                <p class="cards__format">Форматы: JPEG, PSD, AI</p><a class="button button--download" href="#">Скачать архив</a>
-              </div>
-              <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
-            </div>
-            <div class="cards__card cards__card--main">
-              <div class="cards__img"><img src="./img/open.png" alt="card img"/></div>
-              <div class="cards__body">
-                <h4 class="cards__title">Баннер открытие</h4>
-                <p class="cards__text">Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.</p>
-                <p class="cards__format">Форматы: JPEG, PSD, AI</p><a class="button button--download" href="#">Скачать архив</a>
-              </div>
-              <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
-            </div>
-            <div class="cards__card cards__card--main">
-              <div class="cards__img"><img src="./img/open.png" alt="card img"/></div>
-              <div class="cards__body">
-                <h4 class="cards__title">Баннер открытие</h4>
-                <p class="cards__text">Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.</p>
-                <p class="cards__format">Форматы: JPEG, PSD, AI</p><a class="button button--download" href="#">Скачать архив</a>
-              </div>
-              <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
-            </div>
-            <div class="cards__card cards__card--main">
-              <div class="cards__img"><img src="./img/graduated.jpg" alt="card img"/></div>
-              <div class="cards__body">
-                <h4 class="cards__title">Баннеры репост</h4>
-                <p class="cards__text">Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.</p>
-                <p class="cards__format">Форматы: JPEG, PSD, AI</p><a class="button button--download" href="#">Скачать архив</a>
-              </div>
-              <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннеры</a></div>
-            </div>
-          </div>
-        </div>
-        <div class="tabs__content" id="tab-3">
-          <div class="cards__container">
-            <div class="cards__card cards__card--main">
-              <div class="cards__img"><img src="./img/open.png" alt="card img"/></div>
-              <div class="cards__body">
-                <h4 class="cards__title">Баннеры репост</h4>
-                <p class="cards__text">Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.</p>
-                <p class="cards__format">Форматы: JPEG, PSD, AI</p><a class="button button--download" href="#">Скачать архив</a>
-              </div>
-              <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
-            </div>
-            <div class="cards__card cards__card--main">
-              <div class="cards__img"><img src="./img/repost.jpg" alt="card img"/></div>
-              <div class="cards__body">
-                <h4 class="cards__title">Баннеры репост</h4>
-                <p class="cards__text">Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.</p>
-                <p class="cards__format">Форматы: JPEG, PSD, AI</p><a class="button button--download" href="#">Скачать архив</a>
-              </div>
-              <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
-            </div>
-            <div class="cards__card cards__card--main">
-              <div class="cards__img"><img src="./img/repost.jpg" alt="card img"/></div>
-              <div class="cards__body">
-                <h4 class="cards__title">Баннеры репост</h4>
-                <p class="cards__text">Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.</p>
-                <p class="cards__format">Форматы: JPEG, PSD, AI</p><a class="button button--download" href="#">Скачать архив</a>
-              </div>
-              <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
-            </div>
-            <div class="cards__card cards__card--main">
-              <div class="cards__img"><img src="./img/open.png" alt="card img"/></div>
-              <div class="cards__body">
-                <h4 class="cards__title">Баннер открытие</h4>
-                <p class="cards__text">Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.</p>
-                <p class="cards__format">Форматы: JPEG, PSD, AI</p><a class="button button--download" href="#">Скачать архив</a>
-              </div>
-              <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
-            </div>
-            <div class="cards__card cards__card--main">
-              <div class="cards__img"><img src="./img/open.png" alt="card img"/></div>
-              <div class="cards__body">
-                <h4 class="cards__title">Баннер открытие</h4>
-                <p class="cards__text">Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.</p>
-                <p class="cards__format">Форматы: JPEG, PSD, AI</p><a class="button button--download" href="#">Скачать архив</a>
-              </div>
-              <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
-            </div>
-            <div class="cards__card cards__card--main">
-              <div class="cards__img"><img src="./img/open.png" alt="card img"/></div>
-              <div class="cards__body">
-                <h4 class="cards__title">Баннер открытие</h4>
-                <p class="cards__text">Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.</p>
-                <p class="cards__format">Форматы: JPEG, PSD, AI</p><a class="button button--download" href="#">Скачать архив</a>
-              </div>
-              <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
-            </div>
-            <div class="cards__card cards__card--main">
-              <div class="cards__img"><img src="./img/open.png" alt="card img"/></div>
-              <div class="cards__body">
-                <h4 class="cards__title">Баннер открытие</h4>
-                <p class="cards__text">Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.</p>
-                <p class="cards__format">Форматы: JPEG, PSD, AI</p><a class="button button--download" href="#">Скачать архив</a>
-              </div>
-              <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
-            </div>
-            <div class="cards__card cards__card--main">
-              <div class="cards__img"><img src="./img/open.png" alt="card img"/></div>
-              <div class="cards__body">
-                <h4 class="cards__title">Баннер открытие</h4>
-                <p class="cards__text">Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.</p>
-                <p class="cards__format">Форматы: JPEG, PSD, AI</p><a class="button button--download" href="#">Скачать архив</a>
-              </div>
-              <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
-            </div>
-            <div class="cards__card cards__card--main">
-              <div class="cards__img"><img src="./img/open.png" alt="card img"/></div>
-              <div class="cards__body">
-                <h4 class="cards__title">Баннер открытие</h4>
-                <p class="cards__text">Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.</p>
-                <p class="cards__format">Форматы: JPEG, PSD, AI</p><a class="button button--download" href="#">Скачать архив</a>
-              </div>
-              <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
-            </div>
-            <div class="cards__card cards__card--main">
-              <div class="cards__img"><img src="./img/open.png" alt="card img"/></div>
-              <div class="cards__body">
-                <h4 class="cards__title">Баннер открытие</h4>
-                <p class="cards__text">Иллюстрация для использования в социальных сетях. Скидка 20% для выпускников.</p>
-                <p class="cards__format">Форматы: JPEG, PSD, AI</p><a class="button button--download" href="#">Скачать архив</a>
-              </div>
-              <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
-            </div>
-          </div>
-        </div>
-      </div>
+          <?php
+         } 
+          }
+         ?>
+
+        <div class="tabs__content" id="tab-2"></div>
+      
+        <div class="tabs__content" id="tab-3"></div>
+
     </section>
     <?php get_footer(); ?>
   </body>

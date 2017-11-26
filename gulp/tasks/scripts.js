@@ -3,7 +3,8 @@ const webpack = require('webpack-stream');
 const notify = require('gulp-notify');
 const config = {
     entry: {
-        scripts: "./src/js/scripts.js"
+        scripts: "./src/js/scripts.js",
+        slider: "./src/js/Slider.js"
     },
     output: {
         filename: "[name].js"

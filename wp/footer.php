@@ -1,6 +1,6 @@
 <footer class="site-footer">
       <div class="site-footer__container"><a href="index.html">
-          <div class="logo logo--footer"><img src="./img/logo-new.png"/></div></a>
+          <div class="logo logo--footer"><img src="<?php bloginfo('stylesheet_directory');?>./img/logo-new.png"/></div></a>
         <form class="form form--footer" id="subscribe-form" method="post" action="send.php">
           <div class="form__input-group">
             <input class="form__input form__input--footer" type="email" placeholder="Подписаться на рассылку" area-label="Поиск"/>
@@ -24,7 +24,7 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="<?php bloginfo("stylesheet_directory"); ?>/scripts.js"></script>
-    <script src="<?php blofinfo("stylesheet_directory"); ?>/ajax.js"></script>
+    <script src="<?php blofinfo("stylesheet_directory"); ?>/slider.js"></script>
   </body>
 </html>
 <?php wp_footer(); ?>
