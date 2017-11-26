@@ -288,7 +288,7 @@ body {
 }
 
 .button {
-  padding: 5px 12px;
+  padding: 8px 12px;
   display: inline-block;
   color: #fff;
   border: 1px solid #d5a353;
@@ -900,5 +900,9 @@ body {
 @media (max-width: 340px) {
   .form__input {
     width: 180px;
+  }
+
+  .pagination__link {
+    padding: 8px 6px;
   }
 }

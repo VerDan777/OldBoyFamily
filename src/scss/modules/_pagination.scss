@@ -35,6 +35,11 @@
         text-decoration: none;
         letter-spacing: 1px;
         line-height: 1.25;
+
+        @include atSmall {
+            // box model
+            padding: 8px 6px;
+        }
         // visual
         background-color: #fff;
         &:hover {
