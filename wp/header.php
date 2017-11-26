@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"/>
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>"/>
-    <title>Главная</title>
+    <title>OldBoyFamily - <?php the_title(); ?></title>
   </head>
   <body>
     <header class="site-header">
-      <div class="logo"><img src="./img/logo-new.png"/></div>
+      <a href="<?php echo esc_url(home_url('/index')); ?>"><div class="logo"><img src="<?php bloginfo('stylesheet_directory'); ?>./img/logo-new.png"/></div></a>
       <div class="socials"><a class="socials__link" href="https://vk.com/oldboyfamily" target="_blank">
           <svg class="socials__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewbox="0 0 112.196 112.196" style="enable-background:new 0 0 112.196 112.196;" xml:space="preserve" width="40px" height="40px">
             <circle id="vk" fill="#D5A353" cx="56.098" cy="56.098" r="56.098" data-original="#4D76A1" data-old_color="#d5a353"></circle>

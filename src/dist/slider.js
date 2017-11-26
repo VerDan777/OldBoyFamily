@@ -10347,7 +10347,7 @@ var slider = __webpack_require__(7);
 var $ = __webpack_require__(0);
 
 function Slider() {
-    var images = new Array('./img/sertificate.jpg', './img/bw.jpg', './img/bg2.jpg');
+    var images = new Array('http://localhost/OldBoyFamily/wp-content/themes/OldBoyFamily/img/sertificate.jpg', 'http://localhost/OldBoyFamily/wp-content/themes/OldBoyFamily/img/bw.jpg', 'http://localhost/OldBoyFamily/wp-content/themes/OldBoyFamily/img/bg2.jpg');
     var nextImage = 0;
     SlideShow();
 

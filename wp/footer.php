@@ -1,5 +1,5 @@
 <footer class="site-footer">
-      <div class="site-footer__container"><a href="index.html">
+      <div class="site-footer__container"><a href="<?php echo esc_url(home_url('/index')); ?>">
           <div class="logo logo--footer"><img src="<?php bloginfo('stylesheet_directory');?>./img/logo-new.png"/></div></a>
         <form class="form form--footer" id="subscribe-form" method="post" action="send.php">
           <div class="form__input-group">
@@ -24,7 +24,7 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="<?php bloginfo("stylesheet_directory"); ?>/scripts.js"></script>
-    <script src="<?php blofinfo("stylesheet_directory"); ?>/slider.js"></script>
+    <script src="<?php bloginfo("stylesheet_directory"); ?>/slider.js"></script>
   </body>
 </html>
 <?php wp_footer(); ?>
