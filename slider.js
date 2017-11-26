@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -10324,20 +10324,21 @@ return jQuery;
 
 
 /***/ }),
-/* 1 */
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var menu = __webpack_require__(2);
-var tabs = __webpack_require__(3);
-var accardeon = __webpack_require__(4);
-var subscribe = __webpack_require__(5);
-// var validation = require("./modules/Validation.js");
+var slider = __webpack_require__(7);
 
 /***/ }),
-/* 2 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10345,137 +10346,21 @@ var subscribe = __webpack_require__(5);
 
 var $ = __webpack_require__(0);
 
-function MobileMenu() {
-    var $mainMenu = $(".main-menu");
-    var $menuIcon = $(".menu-icon");
-    var $menuLinks = $(".main-menu__link");
-    var $ArrowIcon = $(".main-menu__icon");
+function Slider() {
+    var images = new Array('http://localhost/OldBoyFamily/wp-content/themes/OldBoyFamily/img/sertificate.jpg', 'http://localhost/OldBoyFamily/wp-content/themes/OldBoyFamily/img/bw.jpg', 'http://localhost/OldBoyFamily/wp-content/themes/OldBoyFamily/img/bg2.jpg');
+    var nextImage = 0;
+    SlideShow();
 
-    $menuIcon.on("click", toggleMenu);
-    $menuLinks.on("click", toggleMenu);
-    $menuLinks.on("tap", toggleMenu);
-    $ArrowIcon.on("click", Accardeon);
-    // $ArrowIcon.on("tap", Accardeon);
-
-    function toggleMenu() {
-        $mainMenu.toggleClass("main-menu--shown");
-        $menuIcon.toggleClass("menu-icon--close-x");
-    }
-
-    function Accardeon() {
-        var $this = $(this);
-
-        if ($this.next().hasClass('main-menu__dropdown--shown')) {
-            $this.next().removeClass('main-menu__dropdown--shown');
-            $this.next().slideUp(350);
-            $this.toggleClass('main-menu__icon--rotate');
-        } else {
-            $this.parent().parent().find('li .main-menu__dropdown').removeClass('shown');
-            $this.parent().find('.main-menu__dropdown').slideUp(250);
-            $this.next().slideToggle(250);
-            $this.next().toggleClass('main-menu__dropdown--shown');
-            $this.toggleClass('main-menu__icon--rotate');
+    function SlideShow() {
+        if (nextImage >= images.length) {
+            nextImage = 0;
         }
-    }
-}
-
-module.exports = new MobileMenu();
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var $ = __webpack_require__(0);
-
-function Tabs() {
-    $('.tabs__item').on("click", TabsChanged);
-
-    function TabsChanged() {
-        var tab_id = $(this).attr('data-tab');
-        $('.tabs__item').removeClass('tabs__current');
-        $('.tabs__content').removeClass('tabs__current');
-        $(this).addClass('tabs__current');
-        $("#" + tab_id).addClass('tabs__current');
-    }
-}
-module.exports = new Tabs();
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _jquery = __webpack_require__(0);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Accardeon = function () {
-    function Accardeon() {
-        _classCallCheck(this, Accardeon);
-
-        var $this = (0, _jquery2.default)(this);
-        $this.Icon = (0, _jquery2.default)('.main-menu__icon');
-        $this.events();
-    }
-
-    _createClass(Accardeon, [{
-        key: 'events',
-        value: function events() {
-            $this.Icon.click(function () {
-                if ($this.next().hasClass('main-menu__dropdown--shown')) {
-                    $this.next().removeClass('main-menu__dropdown--shown');
-                    $this.next().slideUp(350);
-                } else {
-                    $this.parent().parent().find('li .main-menu__dropdown').removeClass('shown');
-                    $this.parent().find('.main-menu__dropdown').slideUp(250);
-                    $this.next().slideToggle(250);
-                    $this.next().toggleClass('main-menu__dropdown--shown');
-                }
-            });
-        }
-    }]);
-
-    return Accardeon;
-}();
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var $ = __webpack_require__(0);
-
-function Subscribe() {
-
-    var $form = $("#subscribe-form");
-    var $form_message = $("#form-message");
-
-    $form.submit(Submit);
-
-    function Submit(e) {
-        e.preventDefault();
-        var $formData = $($form).serialize();
-        $.ajax({
-            type: 'POST',
-            url: $form.attr('action'),
-            data: $formData
+        $('.hero').css('background-image', 'url("' + images[nextImage++] + '")').fadeIn(500, function () {
+            setTimeout(SlideShow, 10000);
         });
     }
 }
-module.exports = Subscribe;
+module.exports = new Slider();
 
 /***/ })
 /******/ ]);
