@@ -37,6 +37,12 @@ gulp.task('watch', () => {
         gulp.start("copyWpJS");
     });
 
+    watch("./src/dist/fonts/*.*", function() {
+        gulp.start('copyWpFonts');
+    })
+
+    watch("./src/dist/img/**/*.{png, jpg, gif, svg}")
+        gulp.start('copyWpImg');
 });
 
 gulp.task('pugChanged', ['PugRender'], () => {

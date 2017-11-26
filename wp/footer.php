@@ -23,8 +23,8 @@
       </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="<?php bloginfo("stylesheet_directory"); ?>scripts.js"></script>
-    <script src="<?php blofinfo("stylesheet_directory"; ?>ajax.js"></script>
+    <script src="<?php bloginfo("stylesheet_directory"); ?>/scripts.js"></script>
+    <script src="<?php blofinfo("stylesheet_directory"); ?>/ajax.js"></script>
   </body>
 </html>
 <?php wp_footer(); ?>
