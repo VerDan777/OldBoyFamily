@@ -611,16 +611,6 @@ a:hover {
   border: 1px solid #d5a353;
 }
 
-.pagination__item--prev {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-
-.pagination__item--next {
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
 .pagination__link {
   padding: 8px 12px;
   display: block;

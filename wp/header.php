@@ -4,7 +4,6 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"/>
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>"/>
     <title>OldBoyFamily - <?php the_title(); ?></title>
   </head>
@@ -26,8 +25,8 @@
       <div class="menu-icon">
         <div class="menu-icon__middle"></div>
       </div>
-      <form class="form">
-        <input class="form__input" type="text" placeholder="Поиск" area-label="Поиск"/>
-        <button class="button" type="submit">Искать</button>
+      <form class="form" action="<?php bloginfo( 'url' ); ?>" method="get">
+        <input class="form__input" type="text" name="s" placeholder="Поиск" area-label="Поиск" value="<?php if(!empty($_GET['s'])){echo $_GET['s'];}?>"/>
+        <input class="button" type="submit">Искать</button>
       </form>
     </header>

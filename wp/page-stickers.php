@@ -1,6 +1,6 @@
 <?php
 /*
-    Template Name: Catalog Page
+    Template Name: Stickers Page
 */
     get_header();
 ?>
@@ -112,7 +112,7 @@
         <div class="cards__container cards__container--catalog">
         <?php
           $args = array(
-            'category_name'=> 'Banners'
+            'category_name'=> 'Stickers'
           );
           query_posts($args);
           

@@ -32,18 +32,18 @@
       <div class="menu-icon">
         <div class="menu-icon__middle"></div>
       </div>
-      <form class="form">
-        <input class="form__input" type="text" placeholder="Поиск" area-label="Поиск"/>
+      <form class="form" action="<?php bloginfo( 'url' ); ?>" method="get">
+        <input class="form__input" type="text" name="s" placeholder="Поиск" area-label="Поиск" value="<?php if(!empty($_GET['s'])){echo $_GET['s'];}?>"/>
         <button class="button" type="submit">Искать</button>
-      </form>
+    </form>
     </header>
     <?php
-                $args = array(
-                    'theme_location'    => 'primary',
-                    'container_class'   => 'main-menu',
-                    'menu_class'        => 'main-menu__list'
-                );
-                wp_nav_menu($args);
+        $args = array(
+            'theme_location'    => 'primary',
+            'container_class'   => 'main-menu main-menu__list main-menu__item main-menu__link main-menu__dropdown-item',
+            'menu_class'        => 'main-menu__list '
+        );
+        wp_nav_menu($args);
     ?>
    
     <section class="hero"></section>

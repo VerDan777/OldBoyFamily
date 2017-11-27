@@ -1,6 +1,6 @@
 <?php
 /*
-    Template Name: Catalog Page
+    Template Name: Logo Page
 */
     get_header();
 ?>
@@ -112,7 +112,7 @@
         <div class="cards__container cards__container--catalog">
         <?php
           $args = array(
-            'category_name'=> 'Banners'
+            'category_name'=> 'Logo'
           );
           query_posts($args);
           
@@ -143,14 +143,7 @@
           </div>
         </div>
         <div class="container">
-          <div class="pagination">
-            <ul class="pagination__list">
-              <li class="pagination__item pagination__item--prev"><a class="pagination__link pagination__link--prev" href="#">Предыдущая</a></li>
-              <li class="pagination__item"><a class="pagination__link" href="#">1</a></li>
-              <li class="pagination__item"><a class="pagination__link" href="#">2</a></li>
-              <li class="pagination__item"><a class="pagination__link" href="#">3</a></li>
-              <li class="pagination__item pagination__item--next"><a class="pagination__link" href="#">Следующая</a></li>
-            </ul>
+        <?php the_posts_pagination(); ?>
           </div>
         </div>
       </section>

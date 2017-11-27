@@ -1,6 +1,6 @@
 <?php
 /*
-    Template Name: Catalog Page
+    Template Name: Banner Page
 */
     get_header();
 ?>
