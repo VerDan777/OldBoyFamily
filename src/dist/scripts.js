@@ -10355,7 +10355,7 @@ function MobileMenu() {
     $menuLinks.on("click", toggleMenu);
     $menuLinks.on("tap", toggleMenu);
     $ArrowIcon.on("click", Accardeon);
-    // $ArrowIcon.on("tap", Accardeon);
+    $ArrowIcon.on("tap", Accardeon);
 
     function toggleMenu() {
         $mainMenu.toggleClass("main-menu--shown");
@@ -10365,16 +10365,25 @@ function MobileMenu() {
     function Accardeon() {
         var $this = $(this);
 
+        var current_id = $(this).data('id');
+
+        // We get the element and store it, so we don't get it twice later.
+        var element = $('#' + current_id);
+
+        element.prev().hide();
+        element.next().hide();
+
         if ($this.next().hasClass('main-menu__dropdown--shown')) {
-            $this.next().removeClass('main-menu__dropdown--shown');
-            $this.next().slideUp(350);
             $this.toggleClass('main-menu__icon--rotate');
+            $this.next().slideToggle(200);
+            $this.next().removeClass('main-menu__dropdown--shown');
+            $this.next().toggleClass('main-menu__dropdown--shown');
         } else {
             $this.parent().parent().find('li .main-menu__dropdown').removeClass('shown');
             $this.parent().find('.main-menu__dropdown').slideUp(250);
             $this.next().slideToggle(250);
-            $this.next().toggleClass('main-menu__dropdown--shown');
             $this.toggleClass('main-menu__icon--rotate');
+            $this.next().toggleClass('main-menu__dropdown--shown');
         }
     }
 }

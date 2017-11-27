@@ -19,7 +19,7 @@
 
     &__item {
     color: $mainColor;
-    text-decoration: none;
+    text-decoration: none !important;
 
     &:first-child {
         &::before {
@@ -39,7 +39,7 @@
         &--active {
             &:hover {
                 color: $accent;
-                transition: 0.3s
+                transition: 0.3s ease-in-out all;
             }
         }
     }

@@ -6,6 +6,8 @@
 
     // typography
     color: #fff;
+    font-family: 'Roboto',sans-serif;
+    
 
     // visual
     border: 1px solid $accent;
@@ -32,7 +34,7 @@
 
     &:hover {
         // typography
-        color: $white;
+        color: $accent;
 
         // visual
         background: none;

@@ -18,5 +18,8 @@ class Accardeon {
                 $this.next().toggleClass('main-menu__dropdown--shown');
             }
         })
+
+        
     }
+
 }
