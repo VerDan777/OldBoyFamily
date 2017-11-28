@@ -13,13 +13,13 @@
     background-color: #fff;
     cursor: pointer;
 
-@include atTabletsPortrait {
-        padding: 8px 20px;
-    }
+    @include atTabletsPortrait {
+            padding: 8px 20px;
+        }
 
     &__item {
     color: $mainColor;
-    text-decoration: none !important;
+    text-decoration: none;
 
     &:first-child {
         &::before {
@@ -37,8 +37,9 @@
     }
         
         &--active {
+            text-decoration: none;
+            color: $accent;
             &:hover {
-                color: $accent;
                 transition: 0.3s ease-in-out all;
             }
         }

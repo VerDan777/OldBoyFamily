@@ -10373,6 +10373,20 @@ function MobileMenu() {
         element.prev().hide();
         element.next().hide();
 
+        // Pug
+        if ($this.next().hasClass('main-menu__dropdown--shown')) {
+            $this.toggleClass('main-menu__icon--rotate');
+            $this.next().slideToggle(200);
+            $this.next().removeClass('main-menu__dropdown--shown');
+            $this.next().toggleClass('main-menu__dropdown--shown');
+        } else {
+            $this.parent().parent().find('li .main-menu__dropdown').removeClass('shown');
+            $this.parent().find('.main-menu__dropdown').slideUp(250);
+            $this.next().slideToggle(250);
+            $this.toggleClass('main-menu__icon--rotate');
+            $this.next().toggleClass('main-menu__dropdown--shown');
+        }
+        // Wordpess
         if ($this.next().hasClass('main-menu__dropdown--shown')) {
             $this.toggleClass('main-menu__icon--rotate');
             $this.next().slideToggle(200);

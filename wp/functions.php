@@ -41,12 +41,12 @@ function dimox_breadcrumbs() {
       $link_before = '<span class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">';
       $link_after = '</span>';
       $link_attr = ' itemprop="item"';
-      $link_in_before = '<span class="breadcrumb__item breadcrumb__item--active" itemprop="name">';
+      $link_in_before = '<span class="breadcrumb__item" itemprop="name">';
       $link_in_after = '</span>';
-      $link = $link_before . '<a href="%1$s"' . $link_attr . '>' . $link_in_before . '%2$s' . $link_in_after . '</a>' . $link_after;
+      $link = $link_before . '<a class="breadcrumb__item--active" href="%1$s"' . $link_attr . '>' . $link_in_before . '%2$s' . $link_in_after . '</a>' . $link_after;
       $frontpage_id = get_option('page_on_front');
       $parent_id = ($post) ? $post->post_parent : '';
-      $home_link = $link_before . '<a href="' . $home_url . '"' . $link_attr . ' class="home">' . $link_in_before . $text['home'] . $link_in_after . '</a>' . $link_after;
+      $home_link = $link_before . '<a class="breadcrumb__item" href="' . $home_url . '"' . $link_attr . ' class="home">' . $link_in_before . $text['home'] . $link_in_after . '</a>' . $link_after;
     
       if (is_home() || is_front_page()) {
     
@@ -231,6 +231,37 @@ function dimox_breadcrumbs() {
              echo "</div>\n";
          }
     }
+      add_filter( 'nav_menu_css_class', 'main_menu', 10, 2 );
+      add_filter( 'nav_menu_css_class', 'sub_menu', 10, 2 );
+      
+  function main_menu( $classes, $item ){
+    /* $classes содержит
+    Array(
+      [1] => menu-item
+      [2] => menu-item-type-post_type
+      [3] => menu-item-object-page
+      [4] => menu-item-284
+    )
+    */
+
+    $classes[] = 'main-menu__item';
+
+    return $classes;
+  }
+
+  function sub_menu( $classes1, $item ){
+    /* $classes1 содержит
+    Array(
+      [1] => sub_menu
+    
+    )
+    */
+
+    $classes1[] = 'sub-menu__shown';
+
+    return $classes1;
+  }
+
     ?>
     
     

@@ -1,6 +1,6 @@
 <?php
 /*
-    Template Name: Logo Page
+    Template Name: Envelopes Page
 */
     get_header();
 ?>
@@ -112,7 +112,7 @@
         <div class="cards__container cards__container--catalog">
         <?php
           $args = array(
-            'category_name'=> 'Logo'
+            'category_name'=> 'Envelopes'
           );
           query_posts($args);
           

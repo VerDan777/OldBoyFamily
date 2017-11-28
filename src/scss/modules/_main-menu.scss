@@ -177,6 +177,93 @@
     @include atDesktop {
         display: block;
     }
+    .menu-item {
+
+        // box model
+        padding-right: 45px;
+        padding-bottom: 30px;
+        display: block;
+        position: relative;
+        width: 100%;
+   
+        @include atDesktop {
+            // box model
+            padding-bottom: 0;
+            width: auto;
+            // visibility: hidden
+           
+        }
+    }
+        
+    .menu-item a {
+        // box model
+        padding: 0 8px;
+        padding-bottom: 20px;
+        display: inline-block;
+        color: #fff !important;
+        font-family: 'RexBold', sans-serif;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 1.50rem;
+        text-decoration: none;
+
+        @include atTabletsPortrait {
+            // box model
+            padding-bottom: 0;
+            
+            // typography
+            font-size: 1.25rem;
+        }
+    }
+    .sub-menu {
+        // display: none;
+    }
+
+    .sub-menu--shown {
+         // box model
+         display: block;
+         height: 100%;
+         // transition: 0.3s ease-in-out all;
+
+         @include atDesktop {
+             position: absolute;
+             top: 35px;
+             background-color: $accent;
+             // visibility: hidden;
+         }
+    }
+    .sub-menu li {
+         // box model
+         padding-bottom: 15px;
+         background-color: $accent;
+         
+         &::before {
+             content: '•';
+             color: $white;
+             display: inline-block;
+             width: 3px;
+         }
+
+         @include atDesktop {
+             padding-top: 0;
+             padding: 0 10px;
+             padding-bottom: 15px;
+         }
+    }
+    .sub-menu a {
+        // display: none;
+        font-size: 1.25rem;
+        
+        @include atTabletsPortrait {
+            // typography
+            font-size: 1rem;
+        }
+    }
+
+        
+
+ 
 }
 
 .hide {

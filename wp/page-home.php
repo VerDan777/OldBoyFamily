@@ -2,7 +2,6 @@
 /*
     Template Name: Home Page
 */
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,8 +39,16 @@
     <?php
         $args = array(
             'theme_location'    => 'primary',
-            'container_class'   => 'main-menu main-menu__list main-menu__item main-menu__link main-menu__dropdown-item',
-            'menu_class'        => 'main-menu__list '
+            'container_class'   => 'main-menu',
+            'menu_class'        => 'main-menu__list',
+            'link_after'       => '<svg class="main-menu__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewbox="0 0 129 129" enable-background="new 0 0 129 129" width="20px" height="20px">
+              <g>
+                <g>
+                  <path class="active-path" d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" data-original="#000000" data-old_color="#000000" fill="#FFFFFF"></path>
+                </g>
+              </g>',
+            'link_after'        => '</a>',
+            'fallback_cb'       => 'callable'
         );
         wp_nav_menu($args);
     ?>

@@ -126,6 +126,9 @@
                 $card_text = get_field('card-text');
                 $card_format = get_field('card-format');
                 $card_link = get_field('card-link');
+                $card_page_link = get_field('card-page-link');
+                $card_badge = get_field('card-badge');
+                
           ?>
           <div class="cards__card cards__card--catalog">
             <div class="cards__img"><img src="<?php echo $card_img; ?>" alt="card img"/></div>
@@ -134,7 +137,7 @@
               <p class="cards__text"><?php echo $card_text; ?></p>
               <p class="cards__format"><?php echo $card_format?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать архив</a>
             </div>
-            <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
+            <div class="cards__footer"><a class="cards__badge" href="#"><?php echo $card_badge; ?></a></div>
           </div>
           <?php 
               }

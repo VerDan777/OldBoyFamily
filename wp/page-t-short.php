@@ -1,6 +1,6 @@
 <?php
 /*
-    Template Name: Logo Page
+    Template Name: T-short Page
 */
     get_header();
 ?>
@@ -112,7 +112,7 @@
         <div class="cards__container cards__container--catalog">
         <?php
           $args = array(
-            'category_name'=> 'Logo'
+            'category_name'=> 'T-short'
           );
           query_posts($args);
           
@@ -126,15 +126,18 @@
                 $card_text = get_field('card-text');
                 $card_format = get_field('card-format');
                 $card_link = get_field('card-link');
+                $card_page_link = get_field('card-page-link');
+                $card_badge = get_field('card-badge');
+                
           ?>
           <div class="cards__card cards__card--catalog">
             <div class="cards__img"><img src="<?php echo $card_img; ?>" alt="card img"/></div>
             <div class="cards__body">
               <h4 class="cards__title"><?php echo $card_title; ?></h4>
               <p class="cards__text"><?php echo $card_text; ?></p>
-              <p class="cards__format"><?php echo $card_format; ?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать архив</a>
+              <p class="cards__format"><?php echo $card_format?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать архив</a>
             </div>
-            <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
+            <div class="cards__footer"><a class="cards__badge" href="#"><?php echo $card_badge; ?></a></div>
           </div>
           <?php 
               }
@@ -143,7 +146,14 @@
           </div>
         </div>
         <div class="container">
-        <?php the_posts_pagination(); ?>
+          <div class="pagination">
+            <ul class="pagination__list">
+              <li class="pagination__item pagination__item--prev"><a class="pagination__link pagination__link--prev" href="#">Предыдущая</a></li>
+              <li class="pagination__item"><a class="pagination__link" href="#">1</a></li>
+              <li class="pagination__item"><a class="pagination__link" href="#">2</a></li>
+              <li class="pagination__item"><a class="pagination__link" href="#">3</a></li>
+              <li class="pagination__item pagination__item--next"><a class="pagination__link" href="#">Следующая</a></li>
+            </ul>
           </div>
         </div>
       </section>
