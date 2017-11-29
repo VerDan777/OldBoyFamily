@@ -219,6 +219,10 @@ a:hover {
   text-decoration: none;
 }
 
+.main-menu .sub-menu {
+  display: none;
+}
+
 .main-menu .sub-menu--shown {
   display: block;
   height: 100%;

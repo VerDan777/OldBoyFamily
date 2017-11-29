@@ -10349,7 +10349,7 @@ function MobileMenu() {
     var $mainMenu = $(".main-menu");
     var $menuIcon = $(".menu-icon");
     var $menuLinks = $(".main-menu__link");
-    var $ArrowIcon = $(".main-menu__icon");
+    var $ArrowIcon = $(".main-menu__item");
 
     $menuIcon.on("click", toggleMenu);
     $menuLinks.on("click", toggleMenu);
@@ -10387,6 +10387,7 @@ function MobileMenu() {
             $this.next().toggleClass('main-menu__dropdown--shown');
         }
         // Wordpess
+
         if ($this.next().hasClass('main-menu__dropdown--shown')) {
             $this.toggleClass('main-menu__icon--rotate');
             $this.next().slideToggle(200);

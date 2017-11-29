@@ -232,7 +232,7 @@ function dimox_breadcrumbs() {
          }
     }
       add_filter( 'nav_menu_css_class', 'main_menu', 10, 2 );
-      add_filter( 'nav_menu_css_class', 'sub_menu', 10, 2 );
+
       
   function main_menu( $classes, $item ){
     /* $classes содержит
@@ -249,18 +249,12 @@ function dimox_breadcrumbs() {
     return $classes;
   }
 
-  function sub_menu( $classes, $item ){
-    /* $classes1 содержит
-    Array(
-      [1] => sub_menu
-    
-    )
-    */
+  function new_submenu_class($menu) {
+    $menu = preg_replace('/ class="sub-menu"/','/ class="main-menu main-menu__dropdown--shown" /',$menu);
+    return $menu;
+}
 
-    $classes[] = 'sub-menu__shown';
-
-    return $classes;
-  }
+add_filter('wp_nav_menu','new_submenu_class'); 
 
     ?>
     
