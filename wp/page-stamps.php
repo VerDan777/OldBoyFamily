@@ -1,6 +1,6 @@
 <?php
 /*
-    Template Name: Banner Page
+    Template Name: Stamps Page
 */
     get_header();
 ?>
@@ -112,7 +112,7 @@
         <div class="cards__container cards__container--catalog">
         <?php
           $args = array(
-            'category_name'=> 'Banners'
+            'category_name'=> 'Stamps'
           );
           query_posts($args);
           
@@ -146,15 +146,28 @@
           </div>
         </div>
         <div class="container">
-        
-        <?php wp_pagenavi(); ?>
-          <div class="pagination">
-            <!-- <ul class="pagination__list">
-              <li class="pagination__item pagination__item--prev"><a class="">Предыдущая</a></li>
+            <?php      
+        $args = array(
+          'show_all'     => false, // показаны все страницы участвующие в пагинации
+          'end_size'     => 1,     // количество страниц на концах
+          'mid_size'     => 1,     // количество страниц вокруг текущей
+          'prev_next'    => true,  // выводить ли боковые ссылки "предыдущая/следующая страница".
+          'prev_text'    => __('« Previous'),
+          'next_text'    => __('Next »'),
+          'add_args'     => false, // Массив аргументов (переменных запроса), которые нужно добавить к ссылкам.
+          'add_fragment' => '',     // Текст который добавиться ко всем ссылкам.
+          'screen_reader_text' => __( 'Posts navigation' ),
+        );
+        ?>
+  
+  <?php the_posts_pagination($args); ?>
+          <!-- <div class="pagination">
+            <ul class="pagination__list">
+              <li class="pagination__item pagination__item--prev"><a class="pagination__link pagination__link--prev" href="#">Предыдущая</a></li>
               <li class="pagination__item"><a class="pagination__link" href="#">1</a></li>
               <li class="pagination__item"><a class="pagination__link" href="#">2</a></li>
               <li class="pagination__item"><a class="pagination__link" href="#">3</a></li>
-              <li class="pagination__item pagination__item--next">"Cледующая</a></li>
+              <li class="pagination__item pagination__item--next"><a class="pagination__link" href="#">Следующая</a></li>
             </ul> -->
           </div>
         </div>

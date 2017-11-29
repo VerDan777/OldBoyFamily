@@ -249,7 +249,7 @@ function dimox_breadcrumbs() {
     return $classes;
   }
 
-  function sub_menu( $classes1, $item ){
+  function sub_menu( $classes, $item ){
     /* $classes1 содержит
     Array(
       [1] => sub_menu
@@ -257,9 +257,9 @@ function dimox_breadcrumbs() {
     )
     */
 
-    $classes1[] = 'sub-menu__shown';
+    $classes[] = 'sub-menu__shown';
 
-    return $classes1;
+    return $classes;
   }
 
     ?>

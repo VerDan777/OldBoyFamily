@@ -112,7 +112,7 @@
         <div class="cards__container cards__container--catalog">
         <?php
           $args = array(
-            'category_name'=> 'T-short'
+            'category_name'=> 'T-shirts'
           );
           query_posts($args);
           
