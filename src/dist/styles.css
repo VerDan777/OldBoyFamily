@@ -138,11 +138,22 @@ a:hover {
 }
 
 .main-menu__item {
+  position: relative;
   padding-right: 45px;
   padding-bottom: 30px;
   display: block;
   position: relative;
   width: 100%;
+}
+
+.main-menu__item::after {
+  position: absolute;
+  left: 50px;
+  content: '';
+  display: block;
+  height: 15px;
+  width: 15px;
+  background-size: 5px 5px;
 }
 
 .main-menu__link {
@@ -196,6 +207,10 @@ a:hover {
   transition: 0.25s ease-in-out all;
   -webkit-transform: rotate(-180deg);
   transform: rotate(-180deg);
+}
+
+.main-menu__icon:first-child() {
+  display: none;
 }
 
 .main-menu .menu-item {
@@ -925,7 +940,6 @@ a:hover {
   .main-menu__dropdown--shown {
     position: absolute;
     top: 35px;
-    background-color: #d5a353;
   }
 
   .main-menu__icon {
@@ -944,7 +958,6 @@ a:hover {
   .main-menu .sub-menu--shown {
     position: absolute;
     top: 35px;
-    background-color: #d5a353;
   }
 
   .main-menu .sub-menu li {

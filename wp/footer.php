@@ -23,8 +23,8 @@
       </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="<?php bloginfo("stylesheet_directory"); ?>/scripts.js"></script>
-    <script src="<?php bloginfo("stylesheet_directory"); ?>/slider.js"></script>
+    <script src="<?php bloginfo("stylesheet_directory"); ?>/scripts.js<?php echo '?v=' . rand(); ?>"></script>
+    <script src="<?php bloginfo("stylesheet_directory"); ?>/slider.js<?php echo '?v=' . rand(); ?>"></script>
   </body>
 </html>
 <?php wp_footer(); ?>

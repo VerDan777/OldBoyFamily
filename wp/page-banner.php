@@ -137,7 +137,7 @@
               <p class="cards__text"><?php echo $card_text; ?></p>
               <p class="cards__format"><?php echo $card_format?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать архив</a>
             </div>
-            <div class="cards__footer"><a class="cards__badge" href="#"><?php echo $card_badge; ?></a></div>
+            <div class="cards__footer"><a class="cards__badge" href="<?php the_permalink(); ?>"><?php echo get_cat_name(get_query_var('cat'));?></a></div>
           </div>
           <?php 
               }

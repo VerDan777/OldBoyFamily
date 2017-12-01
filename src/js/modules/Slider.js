@@ -5,6 +5,7 @@ function Slider() {
     var nextImage = 0;
     SlideShow();
 
+
     function SlideShow() {
         if(nextImage>= images.length) {
             nextImage=0;

@@ -64,6 +64,7 @@
     }
 
     &__item {
+        position: relative;
         // box model
         padding-right: 45px;
         padding-bottom: 30px;
@@ -77,6 +78,17 @@
             width: auto;
             // visibility: hidden
            
+        }
+
+        &::after {
+            position: absolute;
+            left: 50px;
+            content: '';
+            display: block;
+            height: 15px;
+            width: 15px;
+            // background: url('data:image/svg+xml;utf8,<svg class="main-menu__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewbox="0 0 129 129" enable-background="new 0 0 129 129" width="20px" height="20px"><g><g><path class="active-path" d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" data-original="#000000" data-old_color="#000000" fill="#FFFFFF"></path></g></g></svg>');
+            background-size: 5px 5px;
         }
     }
 
@@ -150,7 +162,7 @@
             @include atDesktop {
                 position: absolute;
                 top: 35px;
-                background-color: $accent;
+                // background-color: $accent;
                 // visibility: hidden;
             }
             
@@ -172,7 +184,11 @@
             transition: 0.25s ease-in-out all;
             transform: rotate(-180deg);
         }
-    }
+
+        &:first-child() {
+            display: none;
+        }
+     }
 
     @include atDesktop {
         display: block;
@@ -229,7 +245,7 @@
          @include atDesktop {
              position: absolute;
              top: 35px;
-             background-color: $accent;
+       
              // visibility: hidden;
          }
     }
@@ -268,4 +284,7 @@
 
 .hide {
     display: none;
+}
+ul.sub-menu .main-menu-icon {
+    // display: none !important;
 }

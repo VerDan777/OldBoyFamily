@@ -1,17 +1,18 @@
 <?php
-    function oldboyFamily_theme_setup() {
-        // Menu support
-        register_nav_menus(array(
-            "primary"   => __('Primary Menu'),
-        ));
-    }
-    add_action('after_setup_theme', 'oldboyFamily_theme_setup');
 
-    function remove_admin_login_header() {
-        remove_action('wp_head', '_admin_bar_bump_cb');
-    }
+  function oldboyFamily_theme_setup() {
+      // Menu support
+      register_nav_menus(array(
+          "primary"   => __('Primary Menu'),
+      ));
+  }
+  add_action('after_setup_theme', 'oldboyFamily_theme_setup');
 
+  function remove_admin_login_header() {
+      remove_action('wp_head', '_admin_bar_bump_cb');
+  }
 
+  
 function dimox_breadcrumbs() {
     
       /* === ОПЦИИ === */
@@ -231,31 +232,88 @@ function dimox_breadcrumbs() {
              echo "</div>\n";
          }
     }
-      add_filter( 'nav_menu_css_class', 'main_menu', 10, 2 );
+
+    class mywalker_nav_menu extends Walker_Nav_Menu {
+      
+        // add classes to ul sub-menus
+        function start_lvl( &$output, $depth ) {
+          // depth dependent classes
+          $indent = ( $depth > 0  ? str_repeat( "\t", $depth ) : '' ); // code indent
+          $display_depth = ( $depth + 1); // because it counts the first submenu as 0
+          $classes = array(
+            'sub-menu'
+            );
+          $class_names = implode( ' ', $classes );
+      
+          // build html
+          $output .= "\n" . $indent . '<ul class="' . $class_names . '">' . "\n";
+        }
+
+
+        
+        
+        function start_el(&$output, $item, $depth, $args) {
+          global $wp_query;
+
+          $indent = ( $depth > 0 ? str_repeat( "\t", $depth ) : '' ); // code indent
+          $depth_classes = array(
+            ( $depth == 0 ? 'main-menu__item' : 'main-menu__dropdown-item' ),
+            'menu-item-depth-' . $depth
+          );
+
+          $depth_class_names = esc_attr( implode( ' ', $depth_classes ) );
+          $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+          $class_names = esc_attr( implode( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) ) );
+      
+          // build html
+          $output .= $indent . '<li id="nav-menu-item-'. $item->ID . '" class="' . $depth_class_names . ' ' . $class_names . '">';
+      
+          // link attributes
+          $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+          $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+          $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+          $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+          $attributes .= ' class="main-menu__link ' . ( $depth > 0 ? 'main-menu__sublink' : '' ) . '"';
+      
+          $item_output = sprintf( '%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
+            $args->before,
+            $attributes,
+            $args->link_before,
+            apply_filters( 'the_title', $item->title, $item->ID ),
+            $args->link_after,
+            $args->after
+          );
+      
+          // build html
+          $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+ 
+        }
+      }
+//       add_filter( 'nav_menu_css_class', 'main_menu', 10, 2 );
 
       
-  function main_menu( $classes, $item ){
-    /* $classes содержит
-    Array(
-      [1] => menu-item
-      [2] => menu-item-type-post_type
-      [3] => menu-item-object-page
-      [4] => menu-item-284
-    )
-    */
+//   function main_menu( $classes, $item ){
+//     /* $classes содержит
+//     Array(
+//       [1] => menu-item
+//       [2] => menu-item-type-post_type
+//       [3] => menu-item-object-page
+//       [4] => menu-item-284
+//     )
+//     */
 
-    $classes[] = 'main-menu__item';
+//     $classes[] = 'main-menu__item';
 
-    return $classes;
-  }
+//     return $classes;
+//   }
 
-  function new_submenu_class($menu) {
-    $menu = preg_replace('/ class="sub-menu"/','/ class="main-menu main-menu__dropdown--shown" /',$menu);
-    return $menu;
-}
+//   function new_submenu_class($menu) {
+//     $menu = preg_replace('/ class="sub-menu"/','/ class="main-menu__dropdown" /',$menu);
+//     return $menu;
+// }
 
-add_filter('wp_nav_menu','new_submenu_class'); 
+//   add_filter('wp_nav_menu','new_submenu_class');
+  
+//  
 
-    ?>
-    
-    
+?>
