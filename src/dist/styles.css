@@ -468,6 +468,8 @@ a:hover {
 .cards__card {
   margin-bottom: 100px;
   border: 1px solid rgba(0, 0, 0, 0.125);
+  display: inline-block;
+  height: 100%;
 }
 
 .cards__card:last-child {
@@ -476,6 +478,11 @@ a:hover {
 
 .cards__card:hover {
   border-color: #d5a353;
+}
+
+.cards__container {
+  -webkit-column-gap: 1.25rem;
+  column-gap: 1.25rem;
 }
 
 .cards__container--catalog {
