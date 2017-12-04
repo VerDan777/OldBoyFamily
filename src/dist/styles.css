@@ -267,6 +267,10 @@ ul.sub-menu .main-menu-icon {
   display: none !important;
 }
 
+.active {
+  display: block;
+}
+
 .hero {
   background-image: url("./img/bw.jpg");
   background-size: cover;
@@ -470,7 +474,7 @@ ul.sub-menu .main-menu-icon {
 }
 
 .cards__card {
-  margin-bottom: 100px;
+  margin-bottom: 20px;
   border: 1px solid rgba(0, 0, 0, 0.125);
   display: inline-block;
   height: 100%;
@@ -482,11 +486,6 @@ ul.sub-menu .main-menu-icon {
 
 .cards__card:hover {
   border-color: #d5a353;
-}
-
-.cards__container {
-  -webkit-column-gap: 1.25rem;
-  column-gap: 1.25rem;
 }
 
 .cards__container--catalog {
@@ -800,9 +799,6 @@ ul.sub-menu .main-menu-icon {
     flex-direction: row;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
   }
 
   .tabs__item {
@@ -1021,10 +1017,10 @@ ul.sub-menu .main-menu-icon {
   }
 
   .cards__container {
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    padding: 0 35px;
+    -webkit-column-count: 5 !important;
+    column-count: 5 !important;
+    -webkit-column-gap: 1.25rem;
+    column-gap: 1.25rem;
   }
 
   .cards__container--catalog {

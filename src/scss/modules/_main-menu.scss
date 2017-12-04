@@ -238,6 +238,7 @@
 
     .sub-menu--shown {
          // box model
+         
         //  padding-top: 15px;
          display: block;
          height: 100%;
@@ -284,8 +285,14 @@
 }
 
     .hide {
+        // box model
         display: none;
     }
     ul.sub-menu .main-menu-icon {
+        // box model
         display: none !important;
+    }
+    .active {
+        // box model
+        display: block;
     }

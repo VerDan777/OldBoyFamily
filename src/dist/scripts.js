@@ -10334,7 +10334,6 @@ var menu = __webpack_require__(2);
 var tabs = __webpack_require__(3);
 var accardeon = __webpack_require__(4);
 var subscribe = __webpack_require__(5);
-// var validation = require("./modules/Validation.js");
 
 /***/ }),
 /* 2 */
@@ -10351,7 +10350,7 @@ function MobileMenu() {
     var $menuLinks = $(".main-menu__link");
     var $ArrowIcon = $(".main-menu__icon");
     DeleteArrow();
-
+    Hide();
     $menuIcon.on("click", toggleMenu);
     $menuLinks.on("click", toggleMenu);
     $menuLinks.on("tap", toggleMenu);
@@ -10360,6 +10359,10 @@ function MobileMenu() {
     function toggleMenu() {
         $mainMenu.toggleClass("main-menu--shown");
         $menuIcon.toggleClass("menu-icon--close-x");
+    }
+
+    function Hide() {
+        $('.sub-menu').addClass('hide');
     }
 
     function DeleteArrow() {
@@ -10378,7 +10381,14 @@ function MobileMenu() {
             $this.next().toggleClass('sub-menu--shown');
         } else {
             $('.main-menu__sublink').children('.main-menu__icon').addClass('hide');
+
+            if ($this.parent().hasClass('hide')) {
+                alert('works');
+                // $($this).removeClass('hide');
+            }
+
             // $this.parent().next().slideToggle(250);
+            // $this.parent().next().removeClass('hide');
             $this.parent().next().toggleClass('sub-menu--shown');
             $this.toggleClass('main-menu__icon--rotate');
             // $this.next().find('li').removeClass('shown');

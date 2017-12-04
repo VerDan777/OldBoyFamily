@@ -4,7 +4,7 @@
 
     &__card {
         // box model
-        margin-bottom: 100px;
+        margin-bottom: 20px;
         border: 1px solid rgba(0,0,0,.125);
         display: inline-block;
         height: 100%;
@@ -43,21 +43,19 @@
     &__container {
         // box model
         // padding: 0 25px;
-        // column-count: 5;
-        column-gap: 1.25rem;
 
         @include atTabletsPortrait {
             // box model
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: center;
+            // justify-content: center;
         }
 
         @include atDesktop {
             // box model
-            justify-content: flex-start;
-            padding: 0 35px;
+            column-count: 5 !important;
+            column-gap: 1.25rem;
         }
 
         &--catalog {
@@ -127,4 +125,8 @@
             border-top-right-radius: calc(.25rem - 1px);
         }
     }
+}
+
+.cards__container {
+    // column-break-inside: avoid;
 }

@@ -314,6 +314,16 @@ function dimox_breadcrumbs() {
 
 //   add_filter('wp_nav_menu','new_submenu_class');
   
-//  
+//
+  function get_the_category($id = false) {
+    $categories = get_the_terms($id, 'category');
+    if(! $categories || is_wp_error($categories) ) {
+      $categories = array();
+      $categories = array_values($categories);
+        foreach(array_keys($categories) as $key) {
+          _make_cat_compat($categories[$key]);
+        }
+    }
+  }
 
 ?>
