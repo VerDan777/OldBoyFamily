@@ -203,10 +203,10 @@ a:hover {
 }
 
 .main-menu__icon--rotate {
-  -webkit-transition: 0.25s ease-in-out all;
-  transition: 0.25s ease-in-out all;
   -webkit-transform: rotate(-180deg);
   transform: rotate(-180deg);
+  -webkit-transition: 0.25s ease-in-out all;
+  transition: 0.25s ease-in-out all;
 }
 
 .main-menu__icon:first-child() {
@@ -261,6 +261,10 @@ a:hover {
 
 .hide {
   display: none;
+}
+
+ul.sub-menu .main-menu-icon {
+  display: none !important;
 }
 
 .hero {

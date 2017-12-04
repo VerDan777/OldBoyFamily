@@ -174,15 +174,15 @@
         top: 3px;
         right: 11px;
         cursor: pointer;
-
+        
         @include atDesktop {
             // display: none;
             z-index: 4;
         }
-
+        
         &--rotate {
-            transition: 0.25s ease-in-out all;
             transform: rotate(-180deg);
+            transition: 0.25s ease-in-out all;
         }
 
         &:first-child() {
@@ -238,6 +238,7 @@
 
     .sub-menu--shown {
          // box model
+        //  padding-top: 15px;
          display: block;
          height: 100%;
          // transition: 0.3s ease-in-out all;
@@ -282,9 +283,9 @@
  
 }
 
-.hide {
-    display: none;
-}
-ul.sub-menu .main-menu-icon {
-    // display: none !important;
-}
+    .hide {
+        display: none;
+    }
+    ul.sub-menu .main-menu-icon {
+        display: none !important;
+    }
