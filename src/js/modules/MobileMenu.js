@@ -7,6 +7,7 @@ var $menuLinks = $(".main-menu__link");
 var $ArrowIcon = $(".main-menu__icon");
 DeleteArrow();
 Hide();
+
 $menuIcon.on("click", toggleMenu);
 $menuLinks.on("click", toggleMenu);
 $menuLinks.on("tap", toggleMenu);
@@ -18,11 +19,17 @@ function toggleMenu() {
 }
 
 function Hide() {
-    $('.sub-menu').addClass('hide');
+    // $('.sub-menu').addClass('hide');
 }
 
 function DeleteArrow() {
    $('.main-menu__link').children('.main-menu__icon').first().addClass('hide');
+   $('.main-menu__icon').filter(function(index) {}).addClass('hide');
+   
+}
+
+function DeleteBadge() {
+    // $('.cards__footer').children('.cards__badge').addClass('hide');
 }
 
 function Accardeon(e) {

@@ -42,7 +42,7 @@
             <p class="cards__text"><?php echo $card_text; ?></p>
             <p class="cards__format"><?php echo $card_format?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать архив</a>
           </div>
-          <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
+          <div class="cards__footer"><a class="cards__badge" href="#"><?php categories(); ?></a></div>
                 </div>
             </div>
             </div>
@@ -50,7 +50,7 @@
           }
         ?>
         </div>
-      </div> 
+      </div>
 <?php
 get_footer();
 ?>

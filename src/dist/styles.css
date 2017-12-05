@@ -265,7 +265,7 @@ a:hover {
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }
 
 ul.sub-menu .main-menu-icon {
@@ -527,7 +527,7 @@ ul.sub-menu .main-menu-icon {
 }
 
 .cards__footer {
-  padding: 12px 20px;
+  padding: 17px 20px;
   background-color: rgba(0, 0, 0, 0.03);
   border-top: 1px solid rgba(0, 0, 0, 0.125);
 }

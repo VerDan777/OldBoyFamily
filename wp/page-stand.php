@@ -45,7 +45,7 @@
           </div>
         </div>
         <div class="container">
-        <?php the_posts_pagination(); ?>
+        <?php wp_corenavi(); ?>
           </div>
         </div>
       </section>

@@ -13,14 +13,18 @@
       <section class="cards">
         <div class="cards__container cards__container--catalog">
         <?php
+          $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
           $args = array(
-            'category_name'=> 'Documents'
+            'category_name'=> 'Documents',
+            'post_per_page'=> '3',
+            'paged'=> $paged
           );
-          query_posts($args);
+          $wp_query = new WP_Query($args);
+          
           
             if(have_posts()) {
-              while(have_posts()) {
-                the_post();
+              while($wp_query->have_posts()) {
+                $wp_query->the_post();
 
                 // vars
                 $card_img = get_field('card-img');
@@ -46,13 +50,10 @@
         </div>
         <div class="container">
           <div class="pagination">
-            <ul class="pagination__list">
-              <li class="pagination__item pagination__item--prev"><a class="pagination__link pagination__link--prev" href="#">Предыдущая</a></li>
-              <li class="pagination__item"><a class="pagination__link" href="#">1</a></li>
-              <li class="pagination__item"><a class="pagination__link" href="#">2</a></li>
-              <li class="pagination__item"><a class="pagination__link" href="#">3</a></li>
-              <li class="pagination__item pagination__item--next"><a class="pagination__link" href="#">Следующая</a></li>
-            </ul>
+          <nav id="<?php echo $html_id; ?>" class="pagination" role="navigation">
+          <h3 class="assistive-text"><?php _e( 'Post navigation', 'OldBoy Family' ); ?></h3>
+            <?php if ( function_exists( 'wp_pagenavi' ) ) wp_pagenavi($args); ?>
+        </nav><!-- #<?php echo $html_id; ?> .navigation -->
           </div>
         </div>
       </section>

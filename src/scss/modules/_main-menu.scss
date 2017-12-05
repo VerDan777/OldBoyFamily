@@ -286,7 +286,7 @@
 
     .hide {
         // box model
-        display: none;
+        display: none !important;
     }
     ul.sub-menu .main-menu-icon {
         // box model

@@ -14,7 +14,7 @@
         <div class="cards__container cards__container--catalog">
         <?php
           $args = array(
-            'category_name'=> 'Banners'
+            'category_name'=> 'poly'
           );
           query_posts($args);
           

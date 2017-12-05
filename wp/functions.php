@@ -290,8 +290,22 @@ function dimox_breadcrumbs() {
         }
       }
       function categories() {
+       
         foreach((get_the_category()) as $category) {
-          echo $category->cat_name . ' ';
+          $string = '<a href="#" class="cards__badge">'. $category->cat_name .'</a>';
+          echo $string;
         }
       }
+
+      function has_children() {
+        global $post;
+    
+        $children = get_pages( array( 'child_of' => $post->ID ) );
+        if( count( $children ) == 0 ) {
+            echo "true";
+        } else {
+            return true;
+        }
+    }
+
 ?>

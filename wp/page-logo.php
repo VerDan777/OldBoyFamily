@@ -13,15 +13,18 @@
       <section class="cards">
         <div class="cards__container cards__container--catalog">
         <?php
+          $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
           $args = array(
             'category_name'=> 'Logo,Banners',
+            'posts_per_page' => 3,
+            'paged' => $paged
 
           );
-          query_posts($args);
+          $wp_query = new WP_Query( $args );
           
             if(have_posts()) {
-              while(have_posts()) {
-                the_post();
+              while( $wp_query ->have_posts()) {
+                $wp_query ->the_post();
 
                 // vars
                 $card_img = get_field('card-img');
@@ -46,7 +49,11 @@
           </div>
         </div>
         <div class="container">
-        <?php the_posts_pagination(); ?>
+        <nav id="<?php echo $html_id; ?>" class="pagination" role="navigation">
+          <h3 class="assistive-text"><?php _e( 'Post navigation', 'OldBoy Family' ); ?></h3>
+           
+        </nav><!-- #<?php echo $html_id; ?> .navigation -->
+            </div>
           </div>
         </div>
       </section>

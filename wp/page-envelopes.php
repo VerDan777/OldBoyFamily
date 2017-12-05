@@ -14,7 +14,7 @@
         <div class="cards__container cards__container--catalog">
         <?php
           $args = array(
-            'category_name'=> 'Envelopes'
+            'category_name'=> 'envelopes'
           );
           query_posts($args);
           
