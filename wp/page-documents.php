@@ -1,10 +1,11 @@
 <?php
 /*
-    Template Name: Stamps Page
+    Template Name: Documents Page
 */
     get_header();
 ?>
     <div class="container">
+     
       <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
 
     </div>
@@ -13,7 +14,7 @@
         <div class="cards__container cards__container--catalog">
         <?php
           $args = array(
-            'category_name'=> 'Stamps'
+            'category_name'=> 'Documents'
           );
           query_posts($args);
           
@@ -27,9 +28,6 @@
                 $card_text = get_field('card-text');
                 $card_format = get_field('card-format');
                 $card_link = get_field('card-link');
-                $card_page_link = get_field('card-page-link');
-                $card_badge = get_field('card-badge');
-                
           ?>
           <div class="cards__card cards__card--catalog">
             <div class="cards__img"><img src="<?php echo $card_img; ?>" alt="card img"/></div>
@@ -47,29 +45,14 @@
           </div>
         </div>
         <div class="container">
-            <?php      
-        $args = array(
-          'show_all'     => false, // показаны все страницы участвующие в пагинации
-          'end_size'     => 1,     // количество страниц на концах
-          'mid_size'     => 1,     // количество страниц вокруг текущей
-          'prev_next'    => true,  // выводить ли боковые ссылки "предыдущая/следующая страница".
-          'prev_text'    => __('« Previous'),
-          'next_text'    => __('Next »'),
-          'add_args'     => false, // Массив аргументов (переменных запроса), которые нужно добавить к ссылкам.
-          'add_fragment' => '',     // Текст который добавиться ко всем ссылкам.
-          'screen_reader_text' => __( 'Posts navigation' ),
-        );
-        ?>
-  
-  <?php the_posts_pagination($args); ?>
-          <!-- <div class="pagination">
+          <div class="pagination">
             <ul class="pagination__list">
               <li class="pagination__item pagination__item--prev"><a class="pagination__link pagination__link--prev" href="#">Предыдущая</a></li>
               <li class="pagination__item"><a class="pagination__link" href="#">1</a></li>
               <li class="pagination__item"><a class="pagination__link" href="#">2</a></li>
               <li class="pagination__item"><a class="pagination__link" href="#">3</a></li>
               <li class="pagination__item pagination__item--next"><a class="pagination__link" href="#">Следующая</a></li>
-            </ul> -->
+            </ul>
           </div>
         </div>
       </section>

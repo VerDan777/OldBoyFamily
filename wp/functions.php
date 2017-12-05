@@ -289,41 +289,9 @@ function dimox_breadcrumbs() {
  
         }
       }
-//       add_filter( 'nav_menu_css_class', 'main_menu', 10, 2 );
-
-      
-//   function main_menu( $classes, $item ){
-//     /* $classes содержит
-//     Array(
-//       [1] => menu-item
-//       [2] => menu-item-type-post_type
-//       [3] => menu-item-object-page
-//       [4] => menu-item-284
-//     )
-//     */
-
-//     $classes[] = 'main-menu__item';
-
-//     return $classes;
-//   }
-
-//   function new_submenu_class($menu) {
-//     $menu = preg_replace('/ class="sub-menu"/','/ class="main-menu__dropdown" /',$menu);
-//     return $menu;
-// }
-
-//   add_filter('wp_nav_menu','new_submenu_class');
-  
-//
-  function get_the_category($id = false) {
-    $categories = get_the_terms($id, 'category');
-    if(! $categories || is_wp_error($categories) ) {
-      $categories = array();
-      $categories = array_values($categories);
-        foreach(array_keys($categories) as $key) {
-          _make_cat_compat($categories[$key]);
+      function categories() {
+        foreach((get_the_category()) as $category) {
+          echo $category->cat_name . ' ';
         }
-    }
-  }
-
+      }
 ?>

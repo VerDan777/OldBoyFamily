@@ -1,6 +1,7 @@
 .cards {
     // display: flex;
     // flex-direction: column;
+    // flex: 1 0 auto;
 
     &__card {
         // box model
@@ -118,7 +119,7 @@
 
     &__img {
         width: 100%;
-
+        height: 100%;
         img {
             width: 100%;
             border-top-left-radius: calc(.25rem - 1px);
