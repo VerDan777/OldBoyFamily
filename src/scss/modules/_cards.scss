@@ -17,18 +17,15 @@
         @include atTabletsPortrait {
             // box model
             width: 49%;
-            margin-right: 5px;
         }
 
         @include atTabletsLandscape {
             // box model
-            width: 32%;
-            margin-right: 5px;
+            width: 32.45%;
             justify-content: flex-start;
         }
         @include atDesktop {
             max-width: 33.33%;
-            margin-right: 10px;
         }
 
         &--main {
@@ -36,6 +33,7 @@
                 max-width: 19%;
             }
         }
+
 
         &:hover {
             border-color: $accent;
@@ -50,7 +48,7 @@
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            // justify-content: center;
+            justify-content: space-between;
         }
 
         @include atDesktop {
@@ -66,6 +64,16 @@
             @include atDesktop {
                 // box model
                 padding: 0 15px;
+                // display: flex;
+                // flex-direction: column;
+                // // align-items: space-between;
+                // flex-wrap: wrap;
+                // height: 100%;
+
+                &:nth-child(3) {
+
+                    margin-right: 0;
+                }
             }
         }
     }
@@ -76,7 +84,9 @@
     }
 
     &__title {
+        // box model
         margin-bottom: 12px;
+
         // typography
         font-size: 1.5rem;
         font-family: $mainFont;
@@ -112,6 +122,13 @@
         text-decoration: none;
         border-radius: 5px;
 
+        &:hover {
+            color: #868e96;
+            background-color: #fff;
+            transition: 0.3s ease-in-out all;
+            // border: 1px solid #868e96;
+        }
+
         &:last-child {
             margin-top: 5px;
         }
@@ -120,6 +137,7 @@
     &__img {
         width: 100%;
         height: 100%;
+
         img {
             width: 100%;
             border-top-left-radius: calc(.25rem - 1px);
@@ -128,6 +146,7 @@
     }
 }
 
-.cards__container {
-    // column-break-inside: avoid;
+
+.cards__card--main:nth-child(5) {
+    margin-right: 0;
 }

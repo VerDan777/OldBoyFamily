@@ -13,18 +13,21 @@
       <section class="cards">
         <div class="cards__container cards__container--catalog">
         <?php
+          $pagename = get_query_var('pagename');
+          $page_link = 'http://localhost/OldBoyFamily/'+$pagename;
           $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+
           $args = array(
             'category_name'=> 'Logo,Banners',
-            'posts_per_page' => 3,
+            'posts_per_page' => 6,
             'paged' => $paged
 
           );
-          $wp_query = new WP_Query( $args );
-          
+            query_posts($args);
+
             if(have_posts()) {
-              while( $wp_query ->have_posts()) {
-                $wp_query ->the_post();
+              while(have_posts()) {
+                the_post();
 
                 // vars
                 $card_img = get_field('card-img');
@@ -32,6 +35,12 @@
                 $card_text = get_field('card-text');
                 $card_format = get_field('card-format');
                 $card_link = get_field('card-link');
+                
+                // links
+                $get_cat        = get_the_category($id );
+                $first_cat      = $get_cat[2];
+                $category_name  = $first_cat->cat_name;
+                $category_link  = get_category_link( $first_cat->cat_ID );
           ?>
           <div class="cards__card cards__card--catalog">
             <div class="cards__img"><img src="<?php echo $card_img; ?>" alt="card img"/></div>
@@ -40,19 +49,16 @@
               <p class="cards__text"><?php echo $card_text; ?></p>
               <p class="cards__format"><?php echo $card_format; ?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать архив</a>
             </div>
-            <div class="cards__footer"><a class="cards__badge" href="#"><?php categories(); ?></a></div>
+            <div class="cards__footer"><a class="cards__badge" href="<?php echo esc_url($category_link); ?>"><?php categories(); ?></a></div>
           </div>
-          <?php 
+          <?php
               }
             }
           ?>
           </div>
         </div>
         <div class="container">
-        <nav id="<?php echo $html_id; ?>" class="pagination" role="navigation">
-          <h3 class="assistive-text"><?php _e( 'Post navigation', 'OldBoy Family' ); ?></h3>
-           
-        </nav><!-- #<?php echo $html_id; ?> .navigation -->
+          <?php wp_pagenavi(); ?>
             </div>
           </div>
         </div>

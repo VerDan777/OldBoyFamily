@@ -13,21 +13,29 @@
       <section class="cards">
         <div class="cards__container cards__container--catalog">
         <?php
+          $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
           $args = array(
-            'category_name'=> 'poly'
+            'category_name'=> 'poly',
+            'posts_per_page' => 6,
+            'paged' => $paged
           );
-          query_posts($args);
+          $wp_query = new WP_Query( $args );
           
             if(have_posts()) {
-              while(have_posts()) {
-                the_post();
-
+              while( $wp_query ->have_posts()) {
+                $wp_query ->the_post();
+                
                 // vars
                 $card_img = get_field('card-img');
                 $card_title = get_field('card-title');
                 $card_text = get_field('card-text');
                 $card_format = get_field('card-format');
                 $card_link = get_field('card-link');
+
+                // links
+                $category_id = get_cat_ID('Logo');
+    
+                $category_link = get_category_link( $category_id )
           ?>
           <div class="cards__card cards__card--catalog">
             <div class="cards__img"><img src="<?php echo $card_img; ?>" alt="card img"/></div>
@@ -36,7 +44,7 @@
               <p class="cards__text"><?php echo $card_text; ?></p>
               <p class="cards__format"><?php echo $card_format?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать архив</a>
             </div>
-            <div class="cards__footer"><a class="cards__badge" href="#"><?php categories(); ?></a></div>
+            <div class="cards__footer"><a class="cards__badge" href="<?php echo esc_url($category_link); ?>"><?php categories(); ?></a></div>
           </div>
           <?php 
               }
@@ -45,15 +53,7 @@
           </div>
         </div>
         <div class="container">
-          <div class="pagination">
-            <ul class="pagination__list">
-              <li class="pagination__item pagination__item--prev"><a class="pagination__link pagination__link--prev" href="#">Предыдущая</a></li>
-              <li class="pagination__item"><a class="pagination__link" href="#">1</a></li>
-              <li class="pagination__item"><a class="pagination__link" href="#">2</a></li>
-              <li class="pagination__item"><a class="pagination__link" href="#">3</a></li>
-              <li class="pagination__item pagination__item--next"><a class="pagination__link" href="#">Следующая</a></li>
-            </ul>
-          </div>
+            <?php wp_pagenavi(); ?>
         </div>
       </section>
     </div>

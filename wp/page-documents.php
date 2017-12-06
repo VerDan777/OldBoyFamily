@@ -16,15 +16,16 @@
           $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
           $args = array(
             'category_name'=> 'Documents',
-            'post_per_page'=> '3',
-            'paged'=> $paged
+            'posts_per_page' => 6,
+            'paged' => $paged
+
           );
-          $wp_query = new WP_Query($args);
+          $wp_query = new WP_Query( $args );
           
           
             if(have_posts()) {
-              while($wp_query->have_posts()) {
-                $wp_query->the_post();
+              while( $wp_query ->have_posts()) {
+                $wp_query ->the_post();
 
                 // vars
                 $card_img = get_field('card-img');
@@ -49,11 +50,7 @@
           </div>
         </div>
         <div class="container">
-          <div class="pagination">
-          <nav id="<?php echo $html_id; ?>" class="pagination" role="navigation">
-          <h3 class="assistive-text"><?php _e( 'Post navigation', 'OldBoy Family' ); ?></h3>
-            <?php if ( function_exists( 'wp_pagenavi' ) ) wp_pagenavi($args); ?>
-        </nav><!-- #<?php echo $html_id; ?> .navigation -->
+          <?php wp_pagenavi(); ?>
           </div>
         </div>
       </section>

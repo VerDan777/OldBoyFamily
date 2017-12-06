@@ -7,6 +7,13 @@
     <section class="cards">
       <div class="cards__container cards__container--catalog">
       <?php
+          // $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+          $args = array(
+            'category_name'  => 'Card',
+            'posts_per_page' => 6,
+            'paged' => $paged
+          );
+          // $wp_query = new WP_Query( $args );
           if(have_posts()) {
             while(have_posts()) {
               the_post();
@@ -49,6 +56,9 @@
           <?php
           }
         ?>
+        <div class="container">
+          
+        </div>
         </div>
       </div>
 <?php

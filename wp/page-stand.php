@@ -13,14 +13,17 @@
       <section class="cards">
         <div class="cards__container cards__container--catalog">
         <?php
+          $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
           $args = array(
-            'category_name'=> 'Stands'
+            'category_name'=> 'Stands',
+            'posts_per_page' => 6,
+            'paged' => $paged
           );
-          query_posts($args);
+          $wp_query = new WP_Query( $args );
           
             if(have_posts()) {
-              while(have_posts()) {
-                the_post();
+              while( $wp_query ->have_posts()) {
+                $wp_query ->the_post();
 
                 // vars
                 $card_img = get_field('card-img');
@@ -45,7 +48,7 @@
           </div>
         </div>
         <div class="container">
-        <?php wp_corenavi(); ?>
+          <?php wp_corenavi(); ?>
           </div>
         </div>
       </section>

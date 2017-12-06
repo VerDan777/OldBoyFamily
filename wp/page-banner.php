@@ -13,14 +13,19 @@
       <section class="cards">
         <div class="cards__container cards__container--catalog">
         <?php
+          $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+
           $args = array(
-            'category_name'=> 'Banners'
+            'category_name'=> 'Banners',
+            'posts_per_page' => 6,
+            'paged' => $paged
           );
-          query_posts($args);
+
+          $wp_query = new WP_Query( $args );
           
             if(have_posts()) {
-              while(have_posts()) {
-                the_post();
+              while($wp_query ->have_posts()) {
+                $wp_query ->the_post();
 
                 // vars
                 $card_img = get_field('card-img');
@@ -30,16 +35,21 @@
                 $card_link = get_field('card-link');
                 $card_page_link = get_field('card-page-link');
                 $card_badge = get_field('card-badge');
-                
+                $card_structure = get_field('card__structure');
+
+                // links
+                $category_id = get_cat_ID( 'Banners' );
+                $category_link = get_category_link( $category_id );
           ?>
+
           <div class="cards__card cards__card--catalog">
             <div class="cards__img"><img src="<?php echo $card_img; ?>" alt="card img"/></div>
             <div class="cards__body">
               <h4 class="cards__title"><?php echo $card_title; ?></h4>
               <p class="cards__text"><?php echo $card_text; ?></p>
-              <p class="cards__format"><?php echo $card_format?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать архив</a>
+              <p class="cards__format">Формат: <?php echo $card_format?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать <?php switch($card_structure) {case "yes": echo "архив"; break; case "no": echo "файл"; break;} ?></a>
             </div>
-            <div class="cards__footer"><a class="cards__badge" href="<?php the_permalink(); ?>"><?php categories(); ?></a></div>
+            <div class="cards__footer"><a class="cards__badge" href="<?php echo $category_link; ?>"><?php categories(); ?></a></div>
           </div>
           <?php
               }
@@ -48,16 +58,7 @@
           </div>
         </div>
         <div class="container">
-        
-        <?php wp_pagenavi(); ?>
-          <div class="pagination">
-            <!-- <ul class="pagination__list">
-              <li class="pagination__item pagination__item--prev"><a class="">Предыдущая</a></li>
-              <li class="pagination__item"><a class="pagination__link" href="#">1</a></li>
-              <li class="pagination__item"><a class="pagination__link" href="#">2</a></li>
-              <li class="pagination__item"><a class="pagination__link" href="#">3</a></li>
-              <li class="pagination__item pagination__item--next">"Cледующая</a></li>
-            </ul> -->
+          <?php wp_pagenavi(); ?>
           </div>
         </div>
       </section>

@@ -290,7 +290,7 @@ function dimox_breadcrumbs() {
         }
       }
       function categories() {
-       
+       $count = 1;
         foreach((get_the_category()) as $category) {
           $string = '<a href="#" class="cards__badge">'. $category->cat_name .'</a>';
           echo $string;
@@ -302,10 +302,21 @@ function dimox_breadcrumbs() {
     
         $children = get_pages( array( 'child_of' => $post->ID ) );
         if( count( $children ) == 0 ) {
-            echo "true";
+            return false;
         } else {
             return true;
         }
     }
+    function get_category_links( $category ) {
+      if ( ! is_object( $category ) )
+          $category = (int) $category;
+   
+      $category = get_term_link( $category, 'category' );
+   
+      if ( is_wp_error( $category ) )
+          return '';
+   
+      return $category;
+  }
 
 ?>

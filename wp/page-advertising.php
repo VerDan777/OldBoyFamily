@@ -13,14 +13,17 @@
       <section class="cards">
         <div class="cards__container cards__container--catalog">
         <?php
+          $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
           $args = array(
-            'category_name'=> 'Advertising'
+            'category_name'=> 'Advertising',
+            'posts_per_page' => 6,
+            'paged' => $paged
           );
-          query_posts($args);
+          $wp_query = new WP_Query( $args );
           
             if(have_posts()) {
-              while(have_posts()) {
-                the_post();
+              while($wp_query ->have_posts()) {
+                $wp_query ->the_post();
 
                 // vars
                 $card_img = get_field('card-img');
@@ -36,7 +39,7 @@
               <p class="cards__text"><?php echo $card_text; ?></p>
               <p class="cards__format"><?php echo $card_format; ?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать архив</a>
             </div>
-            <div class="cards__footer"><a class="cards__badge" href="#">Веб</a><a class="cards__badge" href="#">Квадратные</a><a class="cards__badge" href="#">ВКонтакте</a><a class="cards__badge" href="#">Баннер</a></div>
+            <div class="cards__footer"><a class="cards__badge" href="#"><?php categories(); ?></a></div>
           </div>
           <?php 
               }
@@ -45,7 +48,7 @@
           </div>
         </div>
         <div class="container">
-        <?php the_posts_pagination(); ?>
+          <?php wp_pagenavi(); ?>
           </div>
         </div>
       </section>

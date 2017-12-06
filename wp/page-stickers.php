@@ -14,14 +14,17 @@
       <section class="cards">
         <div class="cards__container cards__container--catalog">
         <?php
+          $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
           $args = array(
-            'category_name'=> 'Stickers'
+            'category_name'=> 'Stickers',
+            'posts_per_page' => 6,
+            'paged' => $paged
           );
-          query_posts($args);
+          $wp_query = new WP_Query( $args );
           
             if(have_posts()) {
-              while(have_posts()) {
-                the_post();
+              while( $wp_query ->have_posts()) {
+                $wp_query ->the_post();
 
                 // vars
                 $card_img = get_field('card-img');
@@ -46,15 +49,7 @@
           </div>
         </div>
         <div class="container">
-          <div class="pagination">
-            <ul class="pagination__list">
-              <li class="pagination__item pagination__item--prev"><a class="pagination__link pagination__link--prev" href="#">Предыдущая</a></li>
-              <li class="pagination__item"><a class="pagination__link" href="#">1</a></li>
-              <li class="pagination__item"><a class="pagination__link" href="#">2</a></li>
-              <li class="pagination__item"><a class="pagination__link" href="#">3</a></li>
-              <li class="pagination__item pagination__item--next"><a class="pagination__link" href="#">Следующая</a></li>
-            </ul>
-          </div>
+          <?php wp_pagenavi(); ?>
         </div>
       </section>
     </div>

@@ -1,4 +1,4 @@
-.pagination {
+.wp-pagenavi {
     display: flex;
     justify-content: center;
     padding: 40px 0;
@@ -50,5 +50,24 @@
             // typography
             color: $silver;
         }
+    }
+}
+
+.pages, .page, .current, .nextpostslink, .previouspostslink, .first, .last {
+    border: 1px solid $accent !important;
+    padding: 8px 12px;
+    display: block;
+    color: $mainColor;
+    font-family: $mainFont;
+    border:none;
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 1.25;
+    background-color: #fff;
+    
+        &:hover {
+        background-color: #d5a353;
+        color: #fff;
+        transition: 0.3s ease-in-out all;
     }
 }
