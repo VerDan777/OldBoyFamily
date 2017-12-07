@@ -33,13 +33,19 @@
                 $card_text = get_field('card-text');
                 $card_format = get_field('card-format');
                 $card_link = get_field('card-link');
+                $card_structure = get_field('card_structure');
+
+                // links
+                $category_id = get_cat_ID( 'Documents' );
+                $category_link = get_category_link( $category_id );
+
           ?>
           <div class="cards__card cards__card--catalog">
             <div class="cards__img"><img src="<?php echo $card_img; ?>" alt="card img"/></div>
             <div class="cards__body">
               <h4 class="cards__title"><?php echo $card_title; ?></h4>
               <p class="cards__text"><?php echo $card_text; ?></p>
-              <p class="cards__format"><?php echo $card_format?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать архив</a>
+              <p class="cards__format">Формат:<?php echo $card_format?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать <?php switch($card_structure) {case "yes": echo "архив"; break; case "no": echo "файл"; break; case "video": echo "видео"; break;} ?></a>
             </div>
             <div class="cards__footer"><a class="cards__badge" href="#"><?php categories(); ?></a></div>
           </div>
