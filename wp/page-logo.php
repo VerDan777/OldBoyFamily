@@ -18,7 +18,7 @@
           $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 
           $args = array(
-            'category_name'=> 'Logo,Banners',
+            'category_name'=> 'Logo',
             'posts_per_page' => 6,
             'paged' => $paged
 
@@ -47,7 +47,7 @@
             <div class="cards__body">
               <h4 class="cards__title"><?php echo $card_title; ?></h4>
               <p class="cards__text"><?php echo $card_text; ?></p>
-              <p class="cards__format"><?php echo $card_format; ?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать архив</a>
+              <p class="cards__format">Формат:<?php echo $card_format; ?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать архив</a>
             </div>
             <div class="cards__footer"><a class="cards__badge" href="<?php echo esc_url($category_link); ?>"><?php categories(); ?></a></div>
           </div>

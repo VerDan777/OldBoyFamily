@@ -1,6 +1,6 @@
 <?php
 /*
-    Template Name: Video Page
+    Template Name: Card Discounts Page
 */
     get_header();
 ?>
@@ -16,7 +16,7 @@
           $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 
           $args = array(
-            'category_name'=> 'documents',
+            'category_name'=> 'discounts-card',
             'posts_per_page' => 6,
             'paged' => $paged
           );

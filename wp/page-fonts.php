@@ -1,6 +1,6 @@
 <?php
 /*
-    Template Name: Video Page
+    Template Name: Fonts Page
 */
     get_header();
 ?>
@@ -14,9 +14,8 @@
         <div class="cards__container cards__container--catalog">
         <?php
           $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-
           $args = array(
-            'category_name'=> 'documents',
+            'category_name'=> 'fonts',
             'posts_per_page' => 6,
             'paged' => $paged
           );
@@ -38,7 +37,7 @@
                 $card_structure = get_field('card__structure');
 
                 // links
-                $category_id = get_cat_ID( 'Documents' );
+                $category_id = get_cat_ID( 'Banners' );
                 $category_link = get_category_link( $category_id );
           ?>
 
@@ -47,7 +46,7 @@
             <div class="cards__body">
               <h4 class="cards__title"><?php echo $card_title; ?></h4>
               <p class="cards__text"><?php echo $card_text; ?></p>
-              <p class="cards__format">Формат: <?php echo $card_format?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать <?php switch($card_structure) {case "yes": echo "архив"; break; case "no": echo "файл"; break;case "video": echo "видео"; break;} ?></a>
+              <p class="cards__format">Формат: <?php echo $card_format?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать <?php switch($card_structure) {case "yes": echo "архив"; break; case "no": echo "файл"; break;} ?></a>
             </div>
             <div class="cards__footer"><a class="cards__badge" href="<?php echo $category_link; ?>"><?php categories(); ?></a></div>
           </div>

@@ -72,10 +72,10 @@
         position: relative;
         width: 100%;
 
-        &:hover {
-            background-color: #000000;
-            transition: 0.3s ease-in-out all;
-        }
+        // &:hover {
+        //     background-color: #000000;
+        //     transition: 0.3s ease-in-out all;
+        // }
 
         @include atDesktop {
             // box model
@@ -110,10 +110,10 @@
         font-size: 1.50rem;
         text-decoration: none;
 
-        &:hover {
-            background-color: #000000;
-            transition: 0.3s ease-in-out all;
-        }
+        // &:hover {
+        //     background-color: #000000;
+        //     transition: 0.3s ease-in-out all;
+        // }
 
         @include atTabletsPortrait {
             // box model
@@ -243,7 +243,13 @@
         }
     }
     .sub-menu {
+        // box model
         display: none;
+
+        @include atDesktop {
+            // box model
+            padding-left: 0;
+        }
     }
 
     .sub-menu--shown {

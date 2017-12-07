@@ -1,6 +1,6 @@
 <?php
 /*
-    Template Name: Video Page
+    Template Name: Info-Stands Page
 */
     get_header();
 ?>
@@ -16,7 +16,7 @@
           $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 
           $args = array(
-            'category_name'=> 'documents',
+            'category_name'=> 'info-stand',
             'posts_per_page' => 6,
             'paged' => $paged
           );
@@ -38,7 +38,7 @@
                 $card_structure = get_field('card__structure');
 
                 // links
-                $category_id = get_cat_ID( 'Documents' );
+                $category_id = get_cat_ID( 'info-stands' );
                 $category_link = get_category_link( $category_id );
           ?>
 

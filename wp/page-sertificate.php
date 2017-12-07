@@ -1,6 +1,6 @@
 <?php
 /*
-    Template Name: Video Page
+    Template Name: Sertificate Page
 */
     get_header();
 ?>
@@ -14,13 +14,11 @@
         <div class="cards__container cards__container--catalog">
         <?php
           $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-
           $args = array(
-            'category_name'=> 'documents',
+            'category_name'=> 'sertificate',
             'posts_per_page' => 6,
             'paged' => $paged
           );
-
           $wp_query = new WP_Query( $args );
           
             if(have_posts()) {
@@ -33,25 +31,19 @@
                 $card_text = get_field('card-text');
                 $card_format = get_field('card-format');
                 $card_link = get_field('card-link');
-                $card_page_link = get_field('card-page-link');
-                $card_badge = get_field('card-badge');
-                $card_structure = get_field('card__structure');
-
-                // links
-                $category_id = get_cat_ID( 'Documents' );
-                $category_link = get_category_link( $category_id );
+                $card_structure = get_field('card-structure');
+                
           ?>
-
           <div class="cards__card cards__card--catalog">
             <div class="cards__img"><img src="<?php echo $card_img; ?>" alt="card img"/></div>
             <div class="cards__body">
               <h4 class="cards__title"><?php echo $card_title; ?></h4>
               <p class="cards__text"><?php echo $card_text; ?></p>
-              <p class="cards__format">Формат: <?php echo $card_format?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать <?php switch($card_structure) {case "yes": echo "архив"; break; case "no": echo "файл"; break;case "video": echo "видео"; break;} ?></a>
+              <p class="cards__format">Формат:</p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать <?php switch($card_structure) {case "yes": echo "архив"; break; case "no": echo "файл"; break;case "video": echo "видео"; break;} ?></a>
             </div>
-            <div class="cards__footer"><a class="cards__badge" href="<?php echo $category_link; ?>"><?php categories(); ?></a></div>
+            <div class="cards__footer"><a class="cards__badge" href="#"><?php categories(); ?></a></div>
           </div>
-          <?php
+          <?php 
               }
             }
           ?>
@@ -59,7 +51,7 @@
         </div>
         <div class="container">
           <?php wp_pagenavi(); ?>
-          </div>
+        </div>
         </div>
       </section>
     </div>

@@ -21,11 +21,12 @@
 
         @include atTabletsLandscape {
             // box model
-            width: 32.45%;
+            width: 32%;
             justify-content: flex-start;
+
         }
         @include atDesktop {
-            max-width: 33.33%;
+            // width: 33.33%;
         }
 
         &--main {
@@ -60,7 +61,8 @@
         &--catalog {
             // box model
             padding: 0 20px;
-            
+
+           
             @include atDesktop {
                 // box model
                 padding: 0 15px;

@@ -26,7 +26,7 @@ a:hover {
 
 .container {
   margin: 0 auto;
-  max-width: 1140px;
+  max-width: 1170px;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -151,12 +151,6 @@ a:hover {
   width: 100%;
 }
 
-.main-menu__item:hover {
-  background-color: #000000;
-  -webkit-transition: 0.3s ease-in-out all;
-  transition: 0.3s ease-in-out all;
-}
-
 .main-menu__item::after {
   position: absolute;
   left: 50px;
@@ -178,12 +172,6 @@ a:hover {
   font-weight: 400;
   font-size: 1.50rem;
   text-decoration: none;
-}
-
-.main-menu__link:hover {
-  background-color: #000000;
-  -webkit-transition: 0.3s ease-in-out all;
-  transition: 0.3s ease-in-out all;
 }
 
 .main-menu__sublink {
@@ -917,7 +905,7 @@ ul.sub-menu .main-menu-icon {
   }
 
   .cards__card {
-    width: 32.45%;
+    width: 32%;
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
@@ -1019,6 +1007,10 @@ ul.sub-menu .main-menu-icon {
     width: auto;
   }
 
+  .main-menu .sub-menu {
+    padding-left: 0;
+  }
+
   .main-menu .sub-menu--shown {
     position: absolute;
     top: 35px;
@@ -1062,10 +1054,6 @@ ul.sub-menu .main-menu-icon {
 
   .menu-icon {
     display: none;
-  }
-
-  .cards__card {
-    max-width: 33.33%;
   }
 
   .cards__card--main {
