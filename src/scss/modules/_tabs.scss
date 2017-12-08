@@ -75,5 +75,10 @@
     &__current {
         // box model
         display: inherit;
+
+    }
+
+    &__active-bg {
+        background-color: $accent;
     }
 }

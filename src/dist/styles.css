@@ -636,6 +636,10 @@ ul.sub-menu .main-menu-icon {
   display: inherit;
 }
 
+.tabs__active-bg {
+  background-color: #d5a353;
+}
+
 .site-footer {
   background-color: #222;
 }
