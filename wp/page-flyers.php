@@ -32,6 +32,7 @@
                 $card_link = get_field('card-link');
                 $card_page_link = get_field('card-page-link');
                 $card_badge = get_field('card-badge');
+                $card_structure = get_field('card__structure');
                 
           ?>
           <div class="cards__card cards__card--catalog">
@@ -39,7 +40,7 @@
             <div class="cards__body">
               <h4 class="cards__title"><?php echo $card_title; ?></h4>
               <p class="cards__text"><?php echo $card_text; ?></p>
-              <p class="cards__format"><?php echo $card_format?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать архив</a>
+              <p class="cards__format">Формат:<?php echo $card_format?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать <?php switch($card_structure) {case "yes": echo "архив"; break; case "no": echo "файл"; break;} ?></a>
             </div>
             <div class="cards__footer"><a class="cards__badge" href="#"><?php categories(); ?></a></div>
           </div>

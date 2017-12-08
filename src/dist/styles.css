@@ -36,10 +36,6 @@ a:hover {
   justify-content: center;
 }
 
-.content {
-  min-height: calc(100vh - 170px);
-}
-
 .site-header {
   position: relative;
   padding: 25px;
@@ -145,6 +141,8 @@ a:hover {
 .main-menu__item {
   position: relative;
   padding-right: 45px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   padding-bottom: 30px;
   display: block;
   position: relative;
@@ -202,7 +200,7 @@ a:hover {
 
 .main-menu__icon {
   position: absolute;
-  top: 3px;
+  top: 18px;
   right: 11px;
   cursor: pointer;
 }
@@ -527,6 +525,7 @@ ul.sub-menu .main-menu-icon {
 }
 
 .cards__footer {
+  display: none;
   padding: 17px 20px;
   background-color: rgba(0, 0, 0, 0.03);
   border-top: 1px solid rgba(0, 0, 0, 0.125);
@@ -959,6 +958,8 @@ ul.sub-menu .main-menu-icon {
     position: static;
     display: block;
     padding: 15px 25px;
+    padding-top: 0;
+    padding-bottom: 0;
     visibility: visible;
   }
 
@@ -975,7 +976,7 @@ ul.sub-menu .main-menu-icon {
   }
 
   .main-menu__item {
-    padding-bottom: 0;
+    padding-bottom: 15px !important;
     width: auto;
   }
 
@@ -1013,7 +1014,7 @@ ul.sub-menu .main-menu-icon {
 
   .main-menu .sub-menu--shown {
     position: absolute;
-    top: 35px;
+    top: 55px;
   }
 
   .main-menu .sub-menu li {

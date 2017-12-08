@@ -108,6 +108,8 @@
     }
 
     &__footer {
+        // box model
+        display: none;
         padding: 17px 20px;
         background-color: rgba(0,0,0,.03);
         border-top: 1px solid rgba(0,0,0,.125);

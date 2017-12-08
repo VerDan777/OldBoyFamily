@@ -14,7 +14,6 @@
         <div class="cards__container cards__container--catalog">
         <?php
           $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-
           $args = array(
             'category_name'=> 'Banners',
             'posts_per_page' => 6,

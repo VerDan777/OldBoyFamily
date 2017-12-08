@@ -28,6 +28,9 @@
         // box model
         display: block;
         padding: 15px 25px;
+        padding-top: 0;
+        padding-bottom: 0;
+
         // visual
         visibility: visible;
         
@@ -67,6 +70,8 @@
         position: relative;
         // box model
         padding-right: 45px;
+        padding-top: 15px;
+        padding-bottom: 15px;
         padding-bottom: 30px;
         display: block;
         position: relative;
@@ -79,10 +84,13 @@
 
         @include atDesktop {
             // box model
-            padding-bottom: 0;
+            padding-bottom: 15px !important;
             width: auto;
-            // visibility: hidden
-           
+            
+            // &:hover {
+            //     background-color: #000;
+            //     transition: 0.3s ease-in-out all;
+            // }
         }
 
         &::after {
@@ -181,7 +189,7 @@
 
     &__icon {
         position: absolute;
-        top: 3px;
+        top: 18px;
         right: 11px;
         cursor: pointer;
         
@@ -262,7 +270,7 @@
 
          @include atDesktop {
              position: absolute;
-             top: 35px;
+             top: 55px;
        
              // visibility: hidden;
          }
