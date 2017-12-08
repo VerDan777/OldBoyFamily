@@ -264,13 +264,17 @@
         
         @include atDesktop {
             // box model
-            padding-left: 30px;
+            // padding-left: 30px;
+            padding-left: 0 !important;
             display: flex;
             position: absolute;
             top: 55px;
             left: -100%;
             // width: 1920px;
             overflow-x: hidden;
+
+            // visual
+            box-shadow: 0px 7px 16px -8px rgba(0, 0, 0, 0.75);
         }
     }
 
@@ -325,10 +329,6 @@
 
         
     }
-
-        
-
- 
 }
 
     .hide {

@@ -21,6 +21,12 @@
     }
 }
 
+@mixin atDesktopLarge {
+    @media(min-width: 1400px) {
+        @content;
+    }
+}
+
 @mixin centerer {
     position: absolute;
     top: 50%;
