@@ -174,16 +174,23 @@ a:hover {
 
 .main-menu__sublink {
   font-size: 1.25rem;
+  color: #424242 !important;
+}
+
+.main-menu__sublink:hover {
+  color: #d5a353 !important;
+  -webkit-transition: 0.3s ease-in-out all !important;
+  transition: 0.3s ease-in-out all !important;
 }
 
 .main-menu__dropdown {
-  display: none;
+  height: 100%;
   list-style: none;
 }
 
 .main-menu__dropdown li {
   padding-bottom: 15px;
-  background-color: #d5a353;
+  background-color: #d5a353 !important;
 }
 
 .main-menu__dropdown li::before {
@@ -237,10 +244,6 @@ a:hover {
   text-decoration: none;
 }
 
-.main-menu .sub-menu {
-  display: none;
-}
-
 .main-menu .sub-menu--shown {
   display: block;
   height: 100%;
@@ -260,6 +263,10 @@ a:hover {
 
 .main-menu .sub-menu a {
   font-size: 1.25rem;
+}
+
+.main-menu .sub-menu a:hover {
+  color: #d5a353 !important;
 }
 
 .hide {
@@ -658,6 +665,10 @@ ul.sub-menu .main-menu-icon {
   cursor: pointer;
 }
 
+.breadcrumb--mrtop {
+  margin-top: 86px;
+}
+
 .breadcrumb__item {
   color: #222;
   text-decoration: none;
@@ -799,6 +810,7 @@ ul.sub-menu .main-menu-icon {
 
   .main-menu .sub-menu a {
     font-size: 1rem;
+    color: #424242 !important;
   }
 
   .socials {
@@ -988,6 +1000,7 @@ ul.sub-menu .main-menu-icon {
     padding-top: 0;
     padding: 0 10px;
     padding-bottom: 15px;
+    background-color: white;
   }
 
   .main-menu__dropdown--shown {
@@ -1009,18 +1022,29 @@ ul.sub-menu .main-menu-icon {
   }
 
   .main-menu .sub-menu {
-    padding-left: 0;
+    padding-left: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    top: 55px;
+    left: -100%;
+    overflow-x: hidden;
   }
 
   .main-menu .sub-menu--shown {
     position: absolute;
     top: 55px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 
   .main-menu .sub-menu li {
     padding-top: 0;
-    padding: 0 10px;
-    padding-bottom: 15px;
+    padding: 0 20px;
+    padding-bottom: 20px;
+    background-color: white;
   }
 
   .hero {

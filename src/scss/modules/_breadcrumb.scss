@@ -13,6 +13,10 @@
     background-color: #fff;
     cursor: pointer;
 
+    &--mrtop {
+        margin-top: 86px;
+    }
+
     
 
     @include atTabletsPortrait {

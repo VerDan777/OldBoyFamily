@@ -136,16 +136,23 @@
     &__sublink {
         // display: none;
         font-size: 1.25rem;
+        color: #424242 !important;
 
         @include atTabletsPortrait {
             // typography
             font-size: 1rem;
         }
+
+        &:hover {
+            color: $accent !important;
+            transition: 0.3s ease-in-out all !important;
+        }
     }
 
     &__dropdown {
         // box model
-        display: none;
+        // display: none;
+        height: 100%;
         list-style: none;
 
         @include atDesktop {
@@ -155,19 +162,20 @@
         li {
             // box model
             padding-bottom: 15px;
-            background-color: $accent;
-
+            background-color: $accent !important;
+            
             &::before {
                 content: '•';
                 color: $white;
                 display: inline-block;
                 width: 3px;
             }
-
+            
             @include atDesktop {
                 padding-top: 0;
                 padding: 0 10px;
                 padding-bottom: 15px;
+                background-color: white;
             }
         }
 
@@ -252,11 +260,17 @@
     }
     .sub-menu {
         // box model
-        display: none;
-
+        // display: none;
+        
         @include atDesktop {
             // box model
-            padding-left: 0;
+            padding-left: 30px;
+            display: flex;
+            position: absolute;
+            top: 55px;
+            left: -100%;
+            // width: 1920px;
+            overflow-x: hidden;
         }
     }
 
@@ -271,7 +285,8 @@
          @include atDesktop {
              position: absolute;
              top: 55px;
-       
+             display: flex;
+             
              // visibility: hidden;
          }
     }
@@ -289,8 +304,9 @@
 
          @include atDesktop {
              padding-top: 0;
-             padding: 0 10px;
-             padding-bottom: 15px;
+             padding: 0 20px;
+             padding-bottom: 20px;
+             background-color: white;
          }
     }
     .sub-menu a {
@@ -300,7 +316,14 @@
         @include atTabletsPortrait {
             // typography
             font-size: 1rem;
+            color: #424242 !important;
         }
+        
+        &:hover {
+            color: $accent !important;
+        }
+
+        
     }
 
         
