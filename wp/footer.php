@@ -1,12 +1,10 @@
 <footer class="site-footer">
       <div class="site-footer__container"><a href="<?php echo esc_url(home_url('/index')); ?>">
           <div class="logo logo--footer"><img src="<?php bloginfo('stylesheet_directory');?>./img/logo-new.png"/></div></a>
-        <form class="form form--footer" id="subscribe-form" method="post" action="send.php">
-          <div class="form__input-group">
+        <form class="form form--footer" id="subscribe-form" action="send.php" method="POST">
             <input class="form__input form__input--footer" type="email" placeholder="Подписаться на рассылку" area-label="Поиск"/>
-            <input class="button button--footer" type="submit" required="true" name="field[email]" value="Подписаться"/>
+            <input class="button button--footer" type="submit" required="true" value="Подписаться"/>
             <div id="form-messages"></div>
-          </div>
         </form>
         <div class="socials"><a class="socials__link" href="https://vk.com/oldboyfamily" target="_blank">
             <svg class="socials__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewbox="0 0 112.196 112.196" style="enable-background:new 0 0 112.196 112.196;" xml:space="preserve" width="40px" height="40px">

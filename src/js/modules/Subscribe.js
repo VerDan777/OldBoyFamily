@@ -1,20 +1,25 @@
 var $ = require("jquery");
 
 function Subscribe() {
-
     var $form = $("#subscribe-form");
-    var $form_message = $("#form-message");
-
-    $form.submit(Submit);
-
-    function Submit(e) {
+    $form.submit(function(e) {
         e.preventDefault();
-        var $formData = $($form).serialize();
+        var form_data = $(this).serialize();
         $.ajax({
-            type: 'POST',
-            url: $form.attr('action'),
-            data: $formData
-        })
-    }
+        type: "POST",
+        url: "http://localhost/OldBoyFamily/send",
+        data: form_data,
+        complete: function() {
+            console.log("Отправлено!");
+        },
+        success: function() {
+            alert('Успешно!');
+        },
+        error: function() {
+            console.log(error);
+        }
+    })
+})
 }
-module.exports = Subscribe;
+
+module.exports =  new Subscribe;

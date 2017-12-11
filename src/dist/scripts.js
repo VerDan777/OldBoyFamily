@@ -10332,8 +10332,8 @@ return jQuery;
 
 var menu = __webpack_require__(2);
 var tabs = __webpack_require__(3);
-// var accardeon = require("./modules/Accardeon.js");
-var subscribe = __webpack_require__(4);
+// var accardeon = require("./modules/Accardeon.js")
+var Subscribe = __webpack_require__(4);
 
 /***/ }),
 /* 2 */
@@ -10438,23 +10438,38 @@ module.exports = new Tabs();
 var $ = __webpack_require__(0);
 
 function Subscribe() {
-
     var $form = $("#subscribe-form");
-    var $form_message = $("#form-message");
-
-    $form.submit(Submit);
-
-    function Submit(e) {
+    $form.submit(function (e) {
         e.preventDefault();
-        var $formData = $($form).serialize();
+        var form_data = $(this).serialize();
         $.ajax({
-            type: 'POST',
-            url: $form.attr('action'),
-            data: $formData
+            type: "POST",
+            url: "http://localhost/OldBoyFamily/send",
+            data: form_data,
+            complete: function complete() {
+                console.log("Отправлено!");
+            },
+            success: function success() {
+                alert('Успешно!');
+            },
+            error: function (_error) {
+                function error() {
+                    return _error.apply(this, arguments);
+                }
+
+                error.toString = function () {
+                    return _error.toString();
+                };
+
+                return error;
+            }(function () {
+                console.log(error);
+            })
         });
-    }
+    });
 }
-module.exports = Subscribe;
+
+module.exports = new Subscribe();
 
 /***/ })
 /******/ ]);

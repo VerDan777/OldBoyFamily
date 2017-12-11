@@ -32,6 +32,7 @@
 
         &--catalog {
             margin-right: 10px;
+            justify-content: stretch;
         }
 
         &--main {
@@ -39,27 +40,20 @@
     }
     &__container {
         // box model
-        // padding: 0 25px;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: space-evenly;
 
 
         &--catalog {
             // box model
             padding: 0 20px;
-            display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
-           
+            
             @include atDesktop {
                 // box model
                 padding: 0 15px;
-                // display: flex;
-                // flex-direction: column;
-                // // align-items: space-between;
-                // flex-wrap: wrap;
-                // height: 100%;
+                align-items: flex-start;
 
                 &:nth-child(3) {
 

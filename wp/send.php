@@ -1,35 +1,24 @@
-<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-if ($post = mso_check_post('field')) 
-{
-	$to = 'vereshhagin98@mail.ru'; // адрес получателя
-	$subject = 'Тема письма'; // тема письма
-	
-	$email = $post['field']['email']; // поле email
-	
-	// проверка emil
-	if (!filter_var($email, FILTER_VALIDATE_EMAIL))
-	{
-		echo 'Неверный email! Обновите страницу (F5) и укажите правильный адрес';
-		exit;
-	}
-		
-	
-	// формируем headers для письма
-	$headers = 'From: '. $email . "\r\n"; // от кого
-
-	// формируем тело сообщения
-	$message = 'Email: ' . $email . NR . NR . NR . $message; 
-	 
-	// кодируем заголовок в UTF-8
-	$subject = preg_replace("/(\r\n)|(\r)|(\n)/", "", $subject);
-	$subject = preg_replace("/(\t)/", " ", $subject);
-	$subject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
-
-	// отправка
-	@mail($to, $subject, $message, $headers);
-
-	echo 'Спасибо, ваше сообщение отправлено!';
+<?php
+/*
+    Template Name: Send Page
+*/
+?>
+<?
+if((isset($_POST['email'])&&$_POST['email']!="")){
+        $to = 'CoolBariga98@yandex.ru';
+        $subject = 'Обратный звонок';
+        $message = '
+                <html>
+                    <head>
+                        <title>'.$subject.'</title>
+                    </head>
+                    <body>
+                        <p>Имя: '.$_POST['name'].'</p>
+                    </body>
+                </html>';
+        $headers  = "Content-type: text/html; charset=utf-8 \r\n";
+        $headers .= "From: Отправитель <from@example.com>\r\n";
+        mail($to, $subject, $message, $headers); 
 }
-
-# end of file
+?>
