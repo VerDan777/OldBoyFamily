@@ -78,6 +78,7 @@
                   $card_text = get_field('card-text');
                   $card_format = get_field('card-format');
                   $card_link = get_field('card-link');
+                  $post_tags = get_the_tags();
             ?> 
 
                 <div class="cards__card cards__card--main">
@@ -88,7 +89,13 @@
                     <p class="cards__format"><?php echo $card_format; ?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать архив</a>
                   </div>
                   <div class="cards__footer">
-                 <a class="cards__badge" href="<?php the_permalink(); ?>"><?php categories(); ?></a>
+                    <?php if($post_tags) {
+                      foreach($post_tags as $tag) {
+                      ?><a href="" class="cards__badge"><?php echo $tag->name . '';?></a>
+                      <?php
+                      }
+                    }?>
+
                 </div>
               </div>
           <?php
