@@ -1,4 +1,3 @@
-
 <?php
 /*
     Template Name: Send Page
@@ -6,7 +5,7 @@
 ?>
 <?
 if((isset($_POST['email'])&&$_POST['email']!="")){
-        $to = 'CoolBariga98@yandex.ru';
+        $to = 'vereshhagin98@mail.ru';
         $subject = 'Обратный звонок';
         $message = '
                 <html>
@@ -19,6 +18,6 @@ if((isset($_POST['email'])&&$_POST['email']!="")){
                 </html>';
         $headers  = "Content-type: text/html; charset=utf-8 \r\n";
         $headers .= "From: Отправитель <from@example.com>\r\n";
-        mail($to, $subject, $message, $headers); 
+        mail($to, $subject, $message, $headers);
 }
 ?>

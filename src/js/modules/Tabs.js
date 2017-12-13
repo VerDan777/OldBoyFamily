@@ -1,6 +1,7 @@
 var $ = require("jquery");
 
 function Tabs() {
+    $("#tab").addClass("tabs__active-bg");
     $('.tabs__item').on("click",TabsChanged);
 
 function TabsChanged() {

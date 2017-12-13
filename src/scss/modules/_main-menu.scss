@@ -77,20 +77,15 @@
         position: relative;
         width: 100%;
 
-        // &:hover {
-        //     background-color: #000000;
-        //     transition: 0.3s ease-in-out all;
-        // }
-
         @include atDesktop {
             // box model
             padding-bottom: 15px !important;
             width: auto;
             
-            // &:hover {
-            //     background-color: #000;
-            //     transition: 0.3s ease-in-out all;
-            // }
+            &:hover {
+                background-color: #222222;
+                transition: 0.3s ease-in-out all;
+            }
         }
 
         &::after {
@@ -100,10 +95,25 @@
             display: block;
             height: 15px;
             width: 15px;
-            // background: url('data:image/svg+xml;utf8,<svg class="main-menu__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewbox="0 0 129 129" enable-background="new 0 0 129 129" width="20px" height="20px"><g><g><path class="active-path" d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" data-original="#000000" data-old_color="#000000" fill="#FFFFFF"></path></g></g></svg>');
             background-size: 5px 5px;
         }
     }
+
+    &__arrow {
+            &::after {
+                content: "";
+                // display: none;
+                position:absolute;
+                bottom: 13px;
+                left: 150px;
+                width:0px;
+                height:0px;
+                border-top: 10px solid white;
+                border-right: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+                border-left: 10px solid transparent;
+            }
+        }
 
     &__link {
         // box model
@@ -117,11 +127,6 @@
         font-weight: 400;
         font-size: 1.50rem;
         text-decoration: none;
-
-        // &:hover {
-        //     background-color: #000000;
-        //     transition: 0.3s ease-in-out all;
-        // }
 
         @include atTabletsPortrait {
             // box model
@@ -170,6 +175,10 @@
                 display: inline-block;
                 width: 3px;
             }
+        &-item {
+            padding-left: 25px !important;
+            padding-right: 25px !important;
+        }
             
             @include atDesktop {
                 padding-top: 0;
@@ -220,13 +229,16 @@
         display: block;
     }
     .menu-item {
-
-        // box model
-        padding-right: 45px;
-        padding-bottom: 30px;
-        display: block;
+        // positioning
         position: relative;
-        width: 100%;
+        
+        // box model
+        // width: 100%;
+        padding-left: 22px;
+        padding-right: 22px;
+        padding-bottom: 25px;
+        display: block;
+
    
         @include atDesktop {
             // box model
@@ -267,11 +279,11 @@
             // padding-left: 30px;
             padding-left: 0 !important;
             display: flex;
+            justify-content: space-between;
             position: absolute;
             top: 55px;
             left: -100%;
-            // width: 1920px;
-            overflow-x: hidden;
+            // overflow-x: hidden;
 
             // visual
             box-shadow: 0px 7px 16px -8px rgba(0, 0, 0, 0.75);
@@ -280,18 +292,13 @@
 
     .sub-menu--shown {
          // box model
-         
-        //  padding-top: 15px;
          display: block;
          height: 100%;
-         // transition: 0.3s ease-in-out all;
 
          @include atDesktop {
              position: absolute;
              top: 55px;
              display: flex;
-             
-             // visibility: hidden;
          }
     }
     .sub-menu li {
@@ -307,10 +314,14 @@
          }
 
          @include atDesktop {
+             // box model
              padding-top: 0;
-             padding: 0 20px;
              padding-bottom: 20px;
              background-color: white;
+
+             &:hover {
+
+             }
          }
     }
     .sub-menu a {
@@ -320,14 +331,16 @@
         @include atTabletsPortrait {
             // typography
             font-size: 1rem;
+        }
+
+        @include atDesktop {
             color: #424242 !important;
         }
+
         
         &:hover {
             color: $accent !important;
         }
-
-        
     }
 }
 

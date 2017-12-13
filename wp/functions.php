@@ -202,7 +202,7 @@ function dimox_breadcrumbs() {
         $text['404'] = 'Ошибка 404'; // текст для страницы 404
         $text['page'] = 'Страница %s'; // текст 'Страница N'
         $text['cpage'] = 'Страница комментариев %s'; // текст 'Страница комментариев N'
-        $wrap_before = '<div class="breadcrumb breadcrumb--mrtop" itemscope itemtype="http://schema.org/BreadcrumbList">'; // открывающий тег обертки
+        $wrap_before = '<div class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">'; // открывающий тег обертки
           $wrap_after = '</div><!-- .breadcrumb -->'; // закрывающий тег обертки
         //   $sep = '›'; // разделитель между "крошками"
         //   $sep_before = '<span class="sep">'; // тег перед разделителем
@@ -419,16 +419,13 @@ function dimox_breadcrumbs() {
           $indent = ( $depth > 0  ? str_repeat( "\t", $depth ) : '' ); // code indent
           $display_depth = ( $depth + 1); // because it counts the first submenu as 0
           $classes = array(
-            'sub-menu'
+            'sub-menu sub-menu--check'
             );
           $class_names = implode( ' ', $classes );
       
           // build html
           $output .= "\n" . $indent . '<ul class="' . $class_names . '">' . "\n";
         }
-
-
-        
         
         function start_el(&$output, $item, $depth, $args) {
           global $wp_query;

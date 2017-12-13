@@ -49,12 +49,20 @@
         wp_nav_menu($args);
     ?>
 
-    <section class="hero"></section>
+    <section class="hero">
+      <a href="#" class="button--prev">
+        <img src="<?php bloginfo(stylesheet_directory);?>/img/prev.svg" alt="prev"></a>
+      </a>
+      <a href="#" class="button--next">
+        <img src="<?php bloginfo(stylesheet_directory);?>/img/next.svg" alt="next">
+      </a>
+
+    </section>
     <section class="cards">
       <div class="tabs"></div>
       <div class="tabs-pane">
         <ul class="tabs__list" id="myTab" role="tablist">
-          <li class="tabs__item tabs__current" data-tab="tab-1"><a class="tabs__link">Последние</a></li>
+          <li class="tabs__item tabs__current" id="tab" data-tab="tab-1"><a class="tabs__link">Последние</a></li>
           <li class="tabs__item" data-tab="tab-2"><a class="tabs__link">Новые</a></li>
           <li class="tabs__item" data-tab="tab-3"><a class="tabs__link">Популярные</a></li>
         </ul>

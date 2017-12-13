@@ -4,4 +4,15 @@
     height: 100%;
     display: flex;
     justify-content: center;
+
+    &--breadcrumb {
+        @include atDesktop {
+            justify-content: center!important;
+        }
+    }
+
+    @include atDesktop {
+        justify-content: stretch;
+    }
 }
+

@@ -10350,7 +10350,8 @@ function MobileMenu() {
     var $menuLinks = $(".main-menu__link");
     var $ArrowIcon = $(".main-menu__icon");
     DeleteArrow();
-    Hide();
+    Checking();
+    ActiveMenu();
 
     $menuIcon.on("click", toggleMenu);
     $menuLinks.on("click", toggleMenu);
@@ -10362,17 +10363,22 @@ function MobileMenu() {
         $menuIcon.toggleClass("menu-icon--close-x");
     }
 
-    function Hide() {
-        // $('.sub-menu').addClass('hide');
+    function Checking() {
+        if ($(".sub-menu").hasClass("sub-menu--check")) {
+            console.log('найден!');
+            $(".breadcrumb").addClass("breadcrumb--mrtop");
+        } else {
+            console.log("не найден!");
+        }
+    }
+
+    function ActiveMenu() {
+        $('.main-menu__item').has('ul.sub-menu.sub-menu--check').addClass('main-menu__arrow');
     }
 
     function DeleteArrow() {
         $('.main-menu__link').children('.main-menu__icon').first().addClass('hide');
         $('.main-menu__icon').filter(function (index) {}).addClass('hide');
-    }
-
-    function DeleteBadge() {
-        // $('.cards__footer').children('.cards__badge').addClass('hide');
     }
 
     function Accardeon(e) {
@@ -10416,6 +10422,7 @@ module.exports = new MobileMenu();
 var $ = __webpack_require__(0);
 
 function Tabs() {
+    $("#tab").addClass("tabs__active-bg");
     $('.tabs__item').on("click", TabsChanged);
 
     function TabsChanged() {
@@ -10438,13 +10445,13 @@ module.exports = new Tabs();
 var $ = __webpack_require__(0);
 
 function Subscribe() {
+
     var $form = $("#subscribe-form");
-    $form.submit(function (e) {
-        e.preventDefault();
+    $form.submit(function () {
         var form_data = $(this).serialize();
         $.ajax({
             type: "POST",
-            url: "http://localhost/OldBoyFamily/send",
+            url: "send.php",
             data: form_data,
             complete: function complete() {
                 console.log("Отправлено!");

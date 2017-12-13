@@ -1,13 +1,13 @@
 var $ = require("jquery");
 
 function Subscribe() {
+
     var $form = $("#subscribe-form");
-    $form.submit(function(e) {
-        e.preventDefault();
+    $form.submit(function() {
         var form_data = $(this).serialize();
         $.ajax({
         type: "POST",
-        url: "http://localhost/OldBoyFamily/send",
+        url: "send.php",
         data: form_data,
         complete: function() {
             console.log("Отправлено!");
@@ -22,4 +22,4 @@ function Subscribe() {
 })
 }
 
-module.exports =  new Subscribe;
+module.exports = new Subscribe;

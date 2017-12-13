@@ -2,8 +2,8 @@
       <div class="site-footer__container"><a href="<?php echo esc_url(home_url('/index')); ?>">
           <div class="logo logo--footer"><img src="<?php bloginfo('stylesheet_directory');?>./img/logo-new.png"/></div></a>
         <form class="form form--footer" id="subscribe-form" action="send.php" method="POST">
-            <input class="form__input form__input--footer" type="email" placeholder="Подписаться на рассылку" area-label="Поиск"/>
-            <input class="button button--footer" type="submit" required="true" value="Подписаться"/>
+            <input class="form__input form__input--footer" type="email" placeholder="Подписаться на рассылку" area-label="Поиск" name="email"/>
+            <input class="button button--footer" type="submit" name="button " required="true" value="Подписаться"/>
             <div id="form-messages"></div>
         </form>
         <div class="socials"><a class="socials__link" href="https://vk.com/oldboyfamily" target="_blank">

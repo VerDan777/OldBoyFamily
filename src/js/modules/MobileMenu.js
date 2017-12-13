@@ -6,7 +6,8 @@ var $menuIcon = $(".menu-icon");
 var $menuLinks = $(".main-menu__link");
 var $ArrowIcon = $(".main-menu__icon");
 DeleteArrow();
-Hide();
+Checking();
+ActiveMenu();
 
 $menuIcon.on("click", toggleMenu);
 $menuLinks.on("click", toggleMenu);
@@ -18,18 +19,23 @@ function toggleMenu() {
     $menuIcon.toggleClass("menu-icon--close-x");
 }
 
-function Hide() {
-    // $('.sub-menu').addClass('hide');
+function Checking() {
+   if($(".sub-menu").hasClass("sub-menu--check")) {
+       console.log('найден!');
+        $(".breadcrumb").addClass("breadcrumb--mrtop");
+   }else {
+       console.log("не найден!");
+   }
+}
+
+function ActiveMenu() {
+    $('.main-menu__item').has('ul.sub-menu.sub-menu--check').addClass('main-menu__arrow');
 }
 
 function DeleteArrow() {
    $('.main-menu__link').children('.main-menu__icon').first().addClass('hide');
    $('.main-menu__icon').filter(function(index) {}).addClass('hide');
    
-}
-
-function DeleteBadge() {
-    // $('.cards__footer').children('.cards__badge').addClass('hide');
 }
 
 function Accardeon(e) {
