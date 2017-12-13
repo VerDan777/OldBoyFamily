@@ -20,7 +20,8 @@ function toggleMenu() {
 }
 
 function Checking() {
-   if($(".sub-menu").hasClass("sub-menu--check")) {
+    var width = $(window).width();
+   if($(".sub-menu").hasClass("sub-menu--check") && width>=1200) {
        console.log('найден!');
         $(".breadcrumb").addClass("breadcrumb--mrtop");
    }else {

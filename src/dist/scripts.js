@@ -10364,7 +10364,8 @@ function MobileMenu() {
     }
 
     function Checking() {
-        if ($(".sub-menu").hasClass("sub-menu--check")) {
+        var width = $(window).width();
+        if ($(".sub-menu").hasClass("sub-menu--check") && width >= 1200) {
             console.log('найден!');
             $(".breadcrumb").addClass("breadcrumb--mrtop");
         } else {
@@ -10447,31 +10448,22 @@ var $ = __webpack_require__(0);
 function Subscribe() {
 
     var $form = $("#subscribe-form");
-    $form.submit(function () {
+    $form.submit(function (e) {
+        e.preventDefault();
         var form_data = $(this).serialize();
         $.ajax({
             type: "POST",
             url: "send.php",
             data: form_data,
             complete: function complete() {
-                console.log("Отправлено!");
+                console.log(form_data);
             },
             success: function success() {
                 alert('Успешно!');
             },
-            error: function (_error) {
-                function error() {
-                    return _error.apply(this, arguments);
-                }
-
-                error.toString = function () {
-                    return _error.toString();
-                };
-
-                return error;
-            }(function () {
-                console.log(error);
-            })
+            error: function error(_error) {
+                console.log(_error);
+            }
         });
     });
 }

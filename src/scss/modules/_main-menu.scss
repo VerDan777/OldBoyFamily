@@ -104,14 +104,14 @@
                 content: "";
                 // display: none;
                 position:absolute;
-                bottom: 13px;
-                left: 150px;
+                bottom: -30px;
+                left: 70px;
                 width:0px;
                 height:0px;
-                border-top: 10px solid white;
-                border-right: 10px solid transparent;
-                border-bottom: 10px solid transparent;
-                border-left: 10px solid transparent;
+                border-top: 15px solid $accent;
+                border-right: 15px solid transparent;
+                border-bottom: 15px solid transparent;
+                border-left: 15px solid transparent;
             }
         }
 

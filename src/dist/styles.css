@@ -162,14 +162,14 @@ a:hover {
 .main-menu__arrow::after {
   content: "";
   position: absolute;
-  bottom: 13px;
-  left: 150px;
+  bottom: -30px;
+  left: 70px;
   width: 0px;
   height: 0px;
-  border-top: 10px solid white;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid transparent;
+  border-top: 15px solid #d5a353;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid transparent;
 }
 
 .main-menu__link {
@@ -549,7 +549,7 @@ ul.sub-menu .main-menu-icon {
   border: 1px solid rgba(0, 0, 0, 0.125);
   display: inline-block;
   vertical-align: top;
-  width: 100%;
+  width: auto;
 }
 
 .cards__card:last-child {
@@ -560,11 +560,8 @@ ul.sub-menu .main-menu-icon {
   border-color: #d5a353;
 }
 
-.cards__card--catalog {
-  margin-right: 10px;
-  -webkit-box-pack: stretch;
-  -ms-flex-pack: stretch;
-  justify-content: stretch;
+.cards__card--main {
+  position: relative;
 }
 
 .cards__container--catalog {
@@ -574,9 +571,6 @@ ul.sub-menu .main-menu-icon {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
@@ -605,6 +599,7 @@ ul.sub-menu .main-menu-icon {
 }
 
 .cards__footer {
+  width: 100%;
   padding: 17px 20px;
   background-color: rgba(0, 0, 0, 0.03);
   border-top: 1px solid rgba(0, 0, 0, 0.125);
@@ -989,6 +984,21 @@ ul.sub-menu .main-menu-icon {
 
   .cards__card {
     width: 325px;
+    height: 650px;
+  }
+
+  .cards__card--catalog {
+    position: relative;
+  }
+
+  .cards__footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .cards__img {
+    height: 323px;
   }
 
   .site-footer__container {
@@ -1175,6 +1185,17 @@ ul.sub-menu .main-menu-icon {
     display: none;
   }
 
+  .cards__card--catalog {
+    margin-right: 75px;
+    -webkit-box-pack: stretch;
+    -ms-flex-pack: stretch;
+    justify-content: stretch;
+  }
+
+  .cards__card--catalog:nth-child(3n+3) {
+    margin-right: 0;
+  }
+
   .cards__container--catalog {
     padding: 0 15px;
   }
@@ -1182,11 +1203,20 @@ ul.sub-menu .main-menu-icon {
   .cards__container--catalog:nth-child(3) {
     margin-right: 0;
   }
+
+  .cards__img {
+    height: 373px;
+  }
 }
 
 @media (min-width: 1400px) {
   .cards__card {
-    width: 350px;
+    width: 375px;
+    height: 750px;
+  }
+
+  .cards__card--catalog {
+    margin-right: 0;
   }
 }
 

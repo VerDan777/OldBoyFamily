@@ -6,7 +6,7 @@
         border: 1px solid rgba(0,0,0,.125);
         display: inline-block;
         vertical-align: top;
-        width: 100%;
+        width: auto;
 
         &:last-child {
             margin-bottom: 100px;
@@ -15,12 +15,12 @@
         @include atTabletsLandscape {
             // box model
             width: 325px;
-            // height: 650px
+            height: 650px;
         }
 
         @include atDesktopLarge {
-            width: 350px;
-            // max-height: 700px;
+            width: 375px;
+            height: 750px;
         }
 
         &:hover {
@@ -28,12 +28,29 @@
         }
 
         &--catalog {
-            margin-right: 10px;
-            justify-content: stretch;
+
+            @include atTabletsLandscape {
+                position: relative;
+               
+            }
+            @include atDesktop {
+                // box model
+                margin-right: 75px;
+                justify-content: stretch;
+                &:nth-child(3n+3) {
+                    // box model
+                    margin-right: 0;
+                }
+            }
+
+
+            @include atDesktopLarge {
+                margin-right: 0;
+            }
         }
 
         &--main {
-
+            position: relative;
         }
     }
     &__container {
@@ -45,9 +62,8 @@
             padding: 0 20px;
             flex-wrap: wrap;
             justify-content: center;
-            display: flex;
             align-items: flex-start;
-            
+ 
             
             @include atDesktop {
                 // box model
@@ -85,15 +101,21 @@
         margin-bottom: 16px;
         font-family: -apple-system,BlinkMacSystemFont, "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
         color: #868e96;
-        
     }
 
     &__footer {
         // box model
         // display: none;
+        width: 100%;
         padding: 17px 20px;
         background-color: rgba(0,0,0,.03);
         border-top: 1px solid rgba(0,0,0,.125);
+
+        @include atTabletsLandscape {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
     }
 
     &__badge {
@@ -120,7 +142,14 @@
     }
 
     &__img {
-        width: 100%;    
+        width: 100%;
+
+        @include atTabletsLandscape {
+            height: 323px;
+        }
+        @include atDesktop {
+            height: 373px;
+        }
 
         img {
             width: 100%;
