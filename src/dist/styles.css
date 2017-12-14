@@ -576,6 +576,19 @@ ul.sub-menu .main-menu-icon {
   align-items: flex-start;
 }
 
+.cards__container--not-found {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 .cards__body {
   padding: 20px;
 }
@@ -843,6 +856,16 @@ ul.sub-menu .main-menu-icon {
   height: 100vh;
 }
 
+.info__text {
+  padding: 20px;
+}
+
+.not-found__text {
+  font-family: "RexBold", sans-serif;
+  font-size: 2rem;
+  text-align: center;
+}
+
 @font-face {
   font-family:'RexBold';src:url("./fonts/RexBold.woff2") format("woff2"), url("./fonts/RexBold.ttf") format("truetype"), url("./fonts/RexBold.woff") format("woff");font-weight:400;
 }
@@ -1018,12 +1041,6 @@ ul.sub-menu .main-menu-icon {
     -webkit-box-pack: center !important;
     -ms-flex-pack: center !important;
     justify-content: center !important;
-  }
-
-  .container {
-    -webkit-box-pack: stretch;
-    -ms-flex-pack: stretch;
-    justify-content: stretch;
   }
 
   .site-header {
@@ -1231,5 +1248,10 @@ ul.sub-menu .main-menu-icon {
 
   .wp-pagenavi__link {
     padding: 8px 6px;
+  }
+
+  .pages,.page,.current,.nextpostslink,.previouspostslink,.first,.last {
+    padding: 8px 8px;
+    font-size: 1rem;
   }
 }

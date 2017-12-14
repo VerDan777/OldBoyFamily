@@ -11,7 +11,7 @@
 
     </div>
     <div class="container">
-        <p>
+        <p class="info__text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis eligendi mollitia minima! Aliquid sed doloremque cum, minima veritatis tempora sapiente vel, explicabo nisi vero modi harum, quia omnis! Ipsum, ad!
             Iure, dignissimos pariatur. Veniam hic sit dolor itaque dolorem accusantium incidunt ipsum animi qui molestias! Libero consequatur reprehenderit veniam alias maiores, quod ea voluptate sed recusandae architecto labore assumenda delectus!
             A voluptatem aut temporibus voluptatum. Repudiandae fugit eveniet a itaque beatae cumque ad. At a qui voluptatem vel autem ut! Quis expedita aut aliquam nesciunt nihil, laborum modi velit exercitationem.

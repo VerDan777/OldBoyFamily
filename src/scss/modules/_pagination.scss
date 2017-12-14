@@ -64,6 +64,11 @@
     letter-spacing: 1px;
     line-height: 1.25;
     background-color: #fff;
+
+    @include atSmall {
+        padding: 8px 8px;
+        font-size: 1rem;
+    }
     
         &:hover {
         background-color: #d5a353;

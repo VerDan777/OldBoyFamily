@@ -75,7 +75,9 @@
                 $card_page_link = get_field('card-page-link');
                 $card_badge = get_field('card-badge');
                 $card_structure = get_field('card__structure');
-                
+
+                // Tags
+                $post_tags = get_the_tags();
           ?>
           <div class="cards__card cards__card--catalog">
             <div class="cards__img"><img src="<?php echo $card_img; ?>" alt="card img"/></div>
@@ -84,9 +86,17 @@
               <p class="cards__text"><?php echo $card_text; ?></p>
               <p class="cards__format">Формат:<?php echo $card_format?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать <?php switch($card_structure) {case "yes": echo "архив"; break; case "no": echo "файл"; break;} ?></a>
             </div>
-            <div class="cards__footer"><a class="cards__badge" href="#"><?php categories(); ?></a></div>
+            <div class="cards__footer">
+              <?php if($post_tags) {
+                    foreach($post_tags as $tag) {
+                  ?><a class="cards__badge" href="<?php echo esc_url(home_url('/')); ?>"><?php echo $tag->name . '';?></a>
+            <?php
+                }
+              }
+            ?>
+            </div>
           </div>
-          <?php 
+          <?php
               }
             }
           ?>

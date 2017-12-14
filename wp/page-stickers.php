@@ -80,6 +80,10 @@
                 $first_cat      = $get_cat[2];
                 $category_name  = $first_cat->cat_name;
                 $category_link  = get_category_link( $first_cat->cat_ID );
+
+                // Tags
+                $post_tags = get_the_tags();
+                
           ?>
           <div class="cards__card cards__card--catalog">
             <div class="cards__img"><img src="<?php echo $card_img; ?>" alt="card img"/></div>
@@ -88,7 +92,15 @@
               <p class="cards__text"><?php echo $card_text; ?></p>
               <p class="cards__format">Формат:<?php echo $card_format; ?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать архив</a>
             </div>
-            <div class="cards__footer"><a class="cards__badge" href="<?php echo esc_url($category_link); ?>"><?php categories(); ?></a></div>
+            <div class="cards__footer">
+                <?php if($post_tags) {
+                      foreach($post_tags as $tag) {
+                    ?><a class="cards__badge" href="<?php echo esc_url(home_url('/')); ?>"><?php echo $tag->name . '';?></a>
+              <?php
+                  }
+                }
+              ?>
+            </div>
           </div>
           <?php
               }
