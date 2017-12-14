@@ -108,7 +108,7 @@
           ?>
           </div>
         </div>
-        <div class="container">
+        <div class="container container--breadcrumb">
           <?php wp_pagenavi(); ?>
             </div>
           </div>

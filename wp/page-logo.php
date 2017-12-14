@@ -53,7 +53,7 @@
                     ?><a class="cards__badge" href="<?php echo esc_url(home_url('/')); ?>"><?php echo $tag->name . '';?></a>
               <?php
                   }
-                }
+                } 
               ?>
             </div>
           </div>
@@ -63,7 +63,7 @@
           ?>
           </div>
         </div>
-        <div class="container">
+        <div class="container container--breadcrumb">
           <?php wp_pagenavi(); ?>
             </div>
           </div>

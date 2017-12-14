@@ -24,6 +24,10 @@
               $card_text = get_field('card-text');
               $card_format = get_field('card-format');
               $card_link = get_field('card-link');
+
+              // Tags
+              $post_tags = get_the_tags();
+              
         ?>
         <div class="cards__card cards__card--catalog">
           <div class="cards__img"><img src="<?php echo $card_img; ?>" alt="card img"/></div>
@@ -64,11 +68,11 @@
           <?php
           }
         ?>
-        <div class="container">
-          <?php wp_pagenavi(); ?>
-        </div>
         </div>
       </div>
+            <div class="container container--breadcrumb">
+              <?php wp_pagenavi(); ?>
+            </div>
 <?php
 get_footer();
 ?>

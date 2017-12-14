@@ -55,15 +55,21 @@
     }
     &__container {
         // box model
-
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
 
         &--catalog {
             // box model
             padding: 0 20px;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: space-between;
             align-items: flex-start;
             
+            @include atTabletsLandscape {
+                display: flex;
+                justify-content: space-around;
+            }
             
             @include atDesktop {
                 // box model
