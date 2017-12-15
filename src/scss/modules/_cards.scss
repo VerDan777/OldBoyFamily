@@ -7,18 +7,22 @@
         display: inline-block;
         vertical-align: top;
         width: auto;
+        position: relative;
 
         &:last-child {
             margin-bottom: 100px;
         }
 
+        @include atTabletsPortrait {
+            width: 300px;
+            height: 700px;
+        }
         @include atTabletsLandscape {
             // box model
             width: 325px;
-            height: 650px;
         }
 
-        @include atDesktopLarge {
+        @include atDesktop {
             width: 375px;
             height: 750px;
         }
@@ -37,15 +41,21 @@
                 // box model
                 margin-right: 75px;
                 justify-content: stretch;
+
                 &:nth-child(3n+3) {
                     // box model
-                    margin-right: 0;
+                    // margin-right: 0;
                 }
             }
 
 
             @include atDesktopLarge {
                 margin-right: 0;
+
+                &:nth-child(3n+3) {
+                    // box model
+                    margin-right: 0;
+                }
             }
         }
 
@@ -122,7 +132,7 @@
         background-color: rgba(0,0,0,.03);
         border-top: 1px solid rgba(0,0,0,.125);
 
-        @include atTabletsLandscape {
+        @include atTabletsPortrait {
             position: absolute;
             bottom: 0;
             left: 0;
@@ -154,9 +164,11 @@
 
     &__img {
         width: 100%;
-
+        
         @include atTabletsLandscape {
             height: 323px;
+            display: flex;
+            justify-content: center;
         }
         @include atDesktop {
             height: 373px;

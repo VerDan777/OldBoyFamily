@@ -8,6 +8,7 @@ var $ArrowIcon = $(".main-menu__icon");
 DeleteArrow();
 Checking();
 ActiveMenu();
+Color();
 
 $menuIcon.on("click", toggleMenu);
 $menuLinks.on("click", toggleMenu);
@@ -17,6 +18,10 @@ $ArrowIcon.on("click", Accardeon);
 function toggleMenu() {
     $mainMenu.toggleClass("main-menu--shown");
     $menuIcon.toggleClass("menu-icon--close-x");
+}
+
+function Color() {
+    // $('.current_page_item ').first().css('background-color', '#d5a353');
 }
 
 function Checking() {

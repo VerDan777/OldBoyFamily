@@ -14,5 +14,10 @@
     @include atDesktop {
         justify-content: stretch;
     }
+
+    &--info {
+        flex-direction: column;
+        padding: 0 20px;
+    }
 }
 

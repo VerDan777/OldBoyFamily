@@ -1,0 +1,20 @@
+.version {
+    color: $white;
+    font-family: $mainFont;
+    font-size: 1rem;
+    padding-top: 15px;
+    // position: absolute;
+    // bottom: 10px;
+    @include atTabletsPortrait {
+        padding-top: 0;
+        
+    }
+    @include atTabletsLandscape {
+        right: 150px;
+    }
+
+    @include atDesktop {
+
+        right: 250px;
+    }
+}

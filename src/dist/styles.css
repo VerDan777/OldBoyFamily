@@ -36,6 +36,14 @@ a:hover {
   justify-content: center;
 }
 
+.container--info {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
 .site-header {
   position: relative;
   padding: 25px;
@@ -138,6 +146,13 @@ a:hover {
   align-items: center;
 }
 
+.main-menu__list--info {
+  padding-top: 0;
+  background-color: white;
+  -webkit-box-shadow: 0px 7px 16px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 7px 16px -8px rgba(0, 0, 0, 0.75);
+}
+
 .main-menu__item {
   position: relative;
   padding-right: 45px;
@@ -162,11 +177,18 @@ a:hover {
 .main-menu__arrow::after {
   content: "";
   position: absolute;
-  bottom: -30px;
+  bottom: -29px;
   left: 70px;
   width: 0px;
   height: 0px;
-  border-top: 15px solid #d5a353;
+  border-top: 15px solid #222222;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid transparent;
+}
+
+.main-menu__arrow:hover::after {
+  border-top: 15px solid #222222;
   border-right: 15px solid transparent;
   border-bottom: 15px solid transparent;
   border-left: 15px solid transparent;
@@ -196,9 +218,21 @@ a:hover {
   transition: 0.3s ease-in-out all !important;
 }
 
+.main-menu__sublink--info {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .main-menu__dropdown {
   height: 100%;
   list-style: none;
+}
+
+.main-menu__dropdown-item--info {
+  padding-left: 25px !important;
+  padding-right: 25px !important;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 .main-menu__dropdown li {
@@ -211,11 +245,6 @@ a:hover {
   color: #ffffff;
   display: inline-block;
   width: 3px;
-}
-
-.main-menu__dropdown li-item {
-  padding-left: 25px !important;
-  padding-right: 25px !important;
 }
 
 .main-menu__dropdown--shown {
@@ -244,8 +273,6 @@ a:hover {
 .main-menu .menu-item {
   position: relative;
   padding-left: 22px;
-  padding-right: 22px;
-  padding-bottom: 25px;
   display: block;
 }
 
@@ -548,6 +575,7 @@ ul.sub-menu .main-menu-icon {
   display: inline-block;
   vertical-align: top;
   width: auto;
+  position: relative;
 }
 
 .cards__card:last-child {
@@ -865,14 +893,68 @@ ul.sub-menu .main-menu-icon {
   height: 100vh;
 }
 
+.info__main-title {
+  color: #d5a353;
+  font-family: "RexBold", sans-serif;
+}
+
+.info__title {
+  color: #d5a353;
+  font-family: "RexBold", sans-serif;
+}
+
+.info__sub-title {
+  color: #d5a353;
+  font-family: "RexBold", sans-serif;
+  font-size: 2rem;
+  padding-bottom: 20px;
+  margin: 0;
+}
+
+.info__list {
+  list-style: none;
+}
+
+.info__item {
+  font-weight: 500;
+  padding-bottom: 20px;
+  font-family: -apple-system,BlinkMacSystemFont, "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+
 .info__text {
   padding: 20px;
+  margin: 0;
+  padding-left: 20px;
+  font-family: -apple-system,BlinkMacSystemFont, "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+
+.info__scroll {
+  position: fixed;
+  right: 20px;
+  bottom: 140px;
+  background: transparent url("./img/scroll.svg") no-repeat left top;
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+  display: none;
+}
+
+a {
+  color: #d5a353;
+  text-decoration: none;
 }
 
 .not-found__text {
   font-family: "RexBold", sans-serif;
   font-size: 2rem;
   text-align: center;
+}
+
+.version {
+  color: #ffffff;
+  font-family: "RexBold", sans-serif;
+  font-size: 1rem;
+  padding-top: 15px;
 }
 
 @font-face {
@@ -949,6 +1031,17 @@ ul.sub-menu .main-menu-icon {
     height: 70px;
   }
 
+  .cards__card {
+    width: 300px;
+    height: 700px;
+  }
+
+  .cards__footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
   .tabs__item {
     border-radius: 5px;
   }
@@ -959,6 +1052,10 @@ ul.sub-menu .main-menu-icon {
 
   .breadcrumb {
     padding: 8px 20px;
+  }
+
+  .version {
+    padding-top: 0;
   }
 }
 
@@ -1016,7 +1113,6 @@ ul.sub-menu .main-menu-icon {
 
   .cards__card {
     width: 325px;
-    height: 650px;
   }
 
   .cards__card--catalog {
@@ -1031,14 +1127,14 @@ ul.sub-menu .main-menu-icon {
     justify-content: space-around;
   }
 
-  .cards__footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-  }
-
   .cards__img {
     height: 323px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
 
   .site-footer__container {
@@ -1050,6 +1146,10 @@ ul.sub-menu .main-menu-icon {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+  }
+
+  .version {
+    right: 150px;
   }
 }
 
@@ -1133,6 +1233,11 @@ ul.sub-menu .main-menu-icon {
     padding-left: 0;
   }
 
+  .main-menu__dropdown li-item {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+
   .main-menu__dropdown li {
     padding-top: 0;
     padding: 0 10px;
@@ -1168,7 +1273,7 @@ ul.sub-menu .main-menu-icon {
     justify-content: space-between;
     position: absolute;
     top: 55px;
-    left: -100%;
+    left: -110%;
     -webkit-box-shadow: 0px 7px 16px -8px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 7px 16px -8px rgba(0, 0, 0, 0.75);
   }
@@ -1185,10 +1290,16 @@ ul.sub-menu .main-menu-icon {
     padding-top: 0;
     padding-bottom: 20px;
     background-color: white;
+    padding-left: 20px;
+    padding-right: 29px;
   }
 
   .main-menu .sub-menu a {
     color: #424242 !important;
+  }
+
+  .current_page_item {
+    background-color: #222222;
   }
 
   .hero {
@@ -1225,15 +1336,16 @@ ul.sub-menu .main-menu-icon {
     display: none;
   }
 
+  .cards__card {
+    width: 375px;
+    height: 750px;
+  }
+
   .cards__card--catalog {
     margin-right: 75px;
     -webkit-box-pack: stretch;
     -ms-flex-pack: stretch;
     justify-content: stretch;
-  }
-
-  .cards__card--catalog:nth-child(3n+3) {
-    margin-right: 0;
   }
 
   .cards__container--catalog {
@@ -1247,15 +1359,23 @@ ul.sub-menu .main-menu-icon {
   .cards__img {
     height: 373px;
   }
+
+  .version {
+    right: 250px;
+  }
 }
 
 @media (min-width: 1400px) {
-  .cards__card {
-    width: 375px;
-    height: 750px;
+  .main-menu .menu-item {
+    padding-left: 20px;
+    padding-right: 26px;
   }
 
   .cards__card--catalog {
+    margin-right: 0;
+  }
+
+  .cards__card--catalog:nth-child(3n+3) {
     margin-right: 0;
   }
 }

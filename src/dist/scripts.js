@@ -10334,6 +10334,7 @@ var menu = __webpack_require__(2);
 var tabs = __webpack_require__(3);
 // var accardeon = require("./modules/Accardeon.js")
 var Subscribe = __webpack_require__(4);
+var scroll = __webpack_require__(5);
 
 /***/ }),
 /* 2 */
@@ -10352,6 +10353,7 @@ function MobileMenu() {
     DeleteArrow();
     Checking();
     ActiveMenu();
+    Color();
 
     $menuIcon.on("click", toggleMenu);
     $menuLinks.on("click", toggleMenu);
@@ -10361,6 +10363,10 @@ function MobileMenu() {
     function toggleMenu() {
         $mainMenu.toggleClass("main-menu--shown");
         $menuIcon.toggleClass("menu-icon--close-x");
+    }
+
+    function Color() {
+        // $('.current_page_item ').first().css('background-color', '#d5a353');
     }
 
     function Checking() {
@@ -10469,6 +10475,34 @@ function Subscribe() {
 }
 
 module.exports = new Subscribe();
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var $ = __webpack_require__(0);
+
+function Scroll() {
+    var scroll = $('.info__scroll');
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 0) {
+            $(scroll).fadeIn();
+        } else {
+            $(scroll).fadeOut();
+        }
+    });
+    $(scroll).click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 400);
+        return false;
+    });
+}
+module.exports = new Scroll();
 
 /***/ })
 /******/ ]);
