@@ -8,10 +8,10 @@
 
     &--footer {
         // box model
-        display: flex;
+        // display: flex;
         flex-direction: column;
         align-items: center;
-        // display: none;
+        display: none;
 
         @include atTabletsPortrait {
             // box model
