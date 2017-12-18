@@ -55,7 +55,7 @@
             <div class="cards__footer">
             <?php if($post_tags) {
                   foreach($post_tags as $tag) {
-                ?><a class="cards__badge" href="<?php echo esc_url(home_url('/')); ?>"><?php echo $tag->name . '';?></a>
+                ?><a class="cards__badge"><?php echo $tag->name . '';?></a>
           <?php
               }
             }

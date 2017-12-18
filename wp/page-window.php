@@ -9,6 +9,12 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" sizes="64x64" href="<?php bloginfo('stylesheet_directory'); ?>./img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('stylesheet_directory'); ?>./img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="<?php bloginfo('stylesheet_directory'); ?>./img/favicons/manifest.json">
+    <link rel="mask-icon" href="<?php bloginfo('stylesheet_directory'); ?>./img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url');?><?php echo '?v=' . rand(); ?>"/>
     <title>OldBoyFamily - <?php the_title(); ?></title>
   </head>
@@ -96,7 +102,7 @@
             <div class="cards__footer">
               <?php if($post_tags) {
                     foreach($post_tags as $tag) {
-                  ?><a class="cards__badge" href="<?php echo esc_url(home_url('/')); ?>"><?php echo $tag->name . '';?></a>
+                  ?><a class="cards__badge"><?php echo $tag->name . '';?></a>
             <?php
                 }
               }

@@ -111,6 +111,9 @@
     }
 
     &__arrow {
+
+        @include atDesktop {
+
             &::after {
                 content: "";
                 // display: none;
@@ -124,6 +127,7 @@
                 border-bottom: 15px solid transparent;
                 border-left: 15px solid transparent;
             }
+        
             &:hover {
                 &::after {
                     border-top: 15px solid #222222;
@@ -133,6 +137,7 @@
                 }
             }
         }
+    }
 
     &__link {
         // box model

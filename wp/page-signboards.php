@@ -9,12 +9,18 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('stylesheet_directory'); ?>./img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" sizes="64x64" href="<?php bloginfo('stylesheet_directory'); ?>./img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('stylesheet_directory'); ?>./img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="<?php bloginfo('stylesheet_directory'); ?>./img/favicons/manifest.json">
+    <link rel="mask-icon" href="<?php bloginfo('stylesheet_directory'); ?>./img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url');?><?php echo '?v=' . rand(); ?>"/>
     <title>OldBoyFamily - <?php the_title(); ?></title>
   </head>
   <body>
     <header class="site-header">
-      <a href="<?php echo esc_url(home_url('/index')); ?>"><div class="logo"><img src="<?php bloginfo('stylesheet_directory'); ?>./img/logo-new.png"/></div></a>
+      <a href="<?php echo esc_url(home_url('/index')); ?>"><div class="logo"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo-new.png"/></div></a>
       <div class="socials"><a class="socials__link" href="https://vk.com/oldboyfamily" target="_blank">
           <svg class="socials__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewbox="0 0 112.196 112.196" style="enable-background:new 0 0 112.196 112.196;" xml:space="preserve" width="40px" height="40px">
             <circle id="vk" fill="#D5A353" cx="56.098" cy="56.098" r="56.098" data-original="#4D76A1" data-old_color="#d5a353"></circle>
@@ -90,7 +96,15 @@
               <p class="cards__text"><?php echo $card_text; ?></p>
               <p class="cards__format">Формат: <?php echo $card_format?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать <?php switch($card_structure) {case "yes": echo "архив"; break; case "no": echo "файл"; break;} ?></a>
             </div>
-            <div class="cards__footer"><a class="cards__badge" href="<?php echo $category_link; ?>"><?php categories(); ?></a></div>
+            <div class="cards__footer">
+            <?php if($post_tags) {
+                    foreach($post_tags as $tag) {
+                  ?><a class="cards__badge"><?php echo $tag->name . '';?></a>
+            <?php
+                }
+              }
+            ?>
+            </div>
           </div>
           <?php
               }

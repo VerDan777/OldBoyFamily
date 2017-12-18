@@ -19,13 +19,17 @@
     }
 
     &__list {
-        list-style: none;
+        list-style-type: square;
+        &--without {
+            
+            list-style: none;
+        }
     }
 
     &__item {
         font-weight: 500;
         padding-bottom: 20px;
-        font-family: -apple-system,BlinkMacSystemFont, "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;        
+        font-family: -apple-system,BlinkMacSystemFont, "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
     }
 
     &__text {
@@ -33,6 +37,7 @@
         margin: 0;
         padding-left: 20px;
         font-family: -apple-system,BlinkMacSystemFont, "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+        font-weight: 500;
     }
 
     &__scroll {
