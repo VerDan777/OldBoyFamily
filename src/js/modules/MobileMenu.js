@@ -30,7 +30,6 @@ function Checking() {
        console.log('найден!');
         $(".breadcrumb").addClass("breadcrumb--mrtop");
    }else {
-       console.log("не найден!");
    }
 }
 
