@@ -1,23 +1,33 @@
 <?php
-/*
-    Template Name: Send Page
-*/
-?>
-<?
-if((isset($_POST['email'])&&$_POST['email']!="")){
-        $to = 'vereshhagin98@mail.ru';
-        $subject = 'Обратный звонок';
-        $message = '
-                <html>
-                    <head>
-                        <title>'.$subject.'</title>
-                    </head>
-                    <body>
-                        <p>Имя: '.$_POST['name'].'</p>
-                    </body>
-                </html>';
-        $headers  = "Content-type: text/html; charset=utf-8 \r\n";
-        $headers .= "From: Отправитель <from@example.com>\r\n";
-        mail($to, $subject, $message, $headers);
+echo 'start<br>';
+require('./mail/PHPMailerAutoload.php');
+require_once('./mail/config.php');
+$mail = new PHPMailer;
+$mail->isSMTP();
+try {
+    $subject            = $_POST['subject'];
+    $content            = $_POST['content'];
+    $to                 = $__smtp['mailto'];
+    $mail->Host         = $__smtp['host'];
+    $mail->SMTPDebug    = $__smtp['debug'];
+    $mail->SMTPAuth     = $__smtp['auth'];
+    $mail->Port         = $__smtp['port'];
+    $mail->Username     = $__smtp['username'];
+    $mail->Password     = $__smtp['password'];
+    $mail->AddReplyTo($__smtp['addreply'], $__smtp['nickname']);
+    $mail->AddAddress($to);
+    $mail->SetFrom($__smtp['addreply'], $__smtp['nickname']);
+    $mail->isHTML(true);
+    $mail->Subject = utf8_encode(htmlspecialchars($subject));
+    $mail->Body = $content;
+
+    $mail->Send();
+} catch(phpmailerException $e) {
+    echo $e->errorMessage();
+} catch(Exception $e) {
+    echo $e->getMessage();
 }
+echo $subject . '<br>';
+echo $content . '<br>';
+echo 'end';
 ?>

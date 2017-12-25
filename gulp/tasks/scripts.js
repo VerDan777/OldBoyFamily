@@ -26,7 +26,6 @@ const config = {
         }),
         new webpack2.optimize.UglifyJsPlugin()
       ]
-  
 };
 gulp.task("scripts", ()=> {
     return gulp.src("./src/js/scripts.js")

@@ -1,7 +1,8 @@
 <?php
 /*
-    Template Name: Stamps Page
+    Template Name: New Year Page
 */
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +43,7 @@
       </form>
       <div class="version">Версия: 1.0.1</div>
     </header>
- <?php
+    <?php
     $args = array(
             'theme_location'    => 'primary',
             'container_id'      => 'top-navigation-primary',
@@ -73,9 +74,8 @@
         <div class="cards__container cards__container--catalog">
         <?php
           $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-
           $args = array(
-            'category_name'=> 'stamps',
+            'category_name'=> 'newyear',
             'posts_per_page' => 6,
             'paged' => $paged
           );
@@ -96,13 +96,9 @@
                 $card_badge = get_field('card-badge');
                 $card_structure = get_field('card__structure');
 
-                // links
-                $category_id = get_cat_ID( 'video' );
-                $category_link = get_category_link( $category_id );
-
                 // Tags
                 $post_tags = get_the_tags();
-                
+
           ?>
 
           <div class="cards__card cards__card--catalog">
@@ -110,16 +106,16 @@
             <div class="cards__body">
               <h4 class="cards__title"><?php echo $card_title; ?></h4>
               <p class="cards__text"><?php echo $card_text; ?></p>
-              <p class="cards__format">Формат: <?php echo $card_format?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать <?php switch($card_structure) {case "yes": echo "архив"; break; case "no": echo "файл"; break;case "video": echo "видео"; break;} ?></a>
+              <p class="cards__format">Формат: <?php echo $card_format?></p><a class="button button--download" href="<?php echo $card_link; ?>">Скачать <?php switch($card_structure) {case "yes": echo "архив"; break; case "no": echo "файл"; break;} ?></a>
             </div>
             <div class="cards__footer">
-              <?php if($post_tags) {
-                    foreach($post_tags as $tag) {
-                  ?><a class="cards__badge"><?php echo $tag->name . '';?></a>
-            <?php
+                <?php if($post_tags) {
+                      foreach($post_tags as $tag) {
+                    ?><a class="cards__badge"><?php echo $tag->name . '';?></a>
+              <?php
+                  }
                 }
-              }
-            ?>
+              ?>
             </div>
           </div>
           <?php

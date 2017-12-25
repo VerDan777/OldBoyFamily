@@ -21,17 +21,19 @@
 
      <!-- FAVICONS -->
 
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('stylesheet_directory'); ?>./img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/x-icon" sizes="64x64" href="<?php bloginfo('stylesheet_directory'); ?>./img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('stylesheet_directory'); ?>./img/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('stylesheet_directory'); ?>./img/favicons/apple-touch-icon.png?v=2">
+    <link rel="icon" type="image/x-icon" sizes="64x64" href="<?php bloginfo('stylesheet_directory'); ?>./img/favicons/favicon-32x32.png?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('stylesheet_directory'); ?>./img/favicons/favicon-16x16.png?v=2">
     <link rel="manifest" href="<?php bloginfo('stylesheet_directory'); ?>./img/favicons/manifest.json">
-    <link rel="mask-icon" href="<?php bloginfo('stylesheet_directory'); ?>./img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="mask-icon" href="<?php bloginfo('stylesheet_directory'); ?>./img/favicons/safari-pinned-tab.svg?v=2" color="#5bbad5">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?><?php echo '?v=' . rand(); ?>"/>
     <title>Главная</title>
     <?php wp_head(); ?>
+    	<!-- Yandex.Metrika counter --> <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter47136123 = new Ya.Metrika({ id:47136123, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/47136123" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
   </head>
   <body>
+  
     <header class="site-header">
       <a href="<?php echo esc_url(home_url('/index')); ?>"<div class="logo"><img src="<?php bloginfo('stylesheet_directory');?>/img/logo-new.png"/></div>
       <div class="socials"><a class="socials__link" href="https://vk.com/oldboyfamily" target="_blank">
@@ -67,15 +69,14 @@
         );
         wp_nav_menu($args);
     ?>
-
+  
     <section class="hero">
-      <a href="#" class="button--prev">
-        <img src="<?php bloginfo(stylesheet_directory);?>/img/prev.svg" alt="prev"></a>
-      </a>
-      <a href="#" class="button--next">
-        <img src="<?php bloginfo(stylesheet_directory);?>/img/next.svg" alt="next">
-      </a>
-
+        <a href="#" class="button--prev">
+          <img src="<?php bloginfo(stylesheet_directory);?>/img/prev.svg" alt="prev">
+        </a>
+        <a href="#" class="button--next">
+          <img src="<?php bloginfo(stylesheet_directory);?>/img/next.svg" alt="next">
+        </a>
     </section>
     <section class="cards">
       <div class="tabs"></div>
@@ -235,7 +236,6 @@
           </div>
         </div>
         </div>
-
     </section>
     <?php get_footer(); ?>
   </body>

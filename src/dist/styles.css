@@ -306,6 +306,34 @@ ul.sub-menu .main-menu-icon {
   display: block;
 }
 
+.menu {
+  display: none;
+}
+
+.menu-item {
+  padding-left: 22px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.menu-item:last-child {
+  padding-right: 22px;
+}
+
+.menu-item a {
+  color: #424242 !important;
+  font-family: "RexBold", sans-serif;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.menu-item a:hover {
+  color: #d5a353 !important;
+  -webkit-transition: 0.3s ease-in-out all;
+  transition: 0.3s ease-in-out all;
+}
+
 .hero {
   background-image: url("./img/bw.jpg");
   background-size: cover;
@@ -322,6 +350,10 @@ ul.sub-menu .main-menu-icon {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.slider__link {
+  display: block;
 }
 
 .socials {
@@ -778,7 +810,7 @@ ul.sub-menu .main-menu-icon {
 .breadcrumb__item:first-child::before {
   content: '';
   display: inline-block;
-  padding: 0 5px;
+  padding: 0 0px;
   color: #868e96;
 }
 
@@ -1270,15 +1302,13 @@ a {
 
   .main-menu .sub-menu {
     padding-left: 0 !important;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
     position: absolute;
     top: 55px;
     left: -110%;
+    display: none;
     -webkit-box-shadow: 0px 7px 16px -8px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 7px 16px -8px rgba(0, 0, 0, 0.75);
   }
@@ -1295,8 +1325,8 @@ a {
     padding-top: 0;
     padding-bottom: 20px;
     background-color: white;
-    padding-left: 20px;
-    padding-right: 29px;
+    padding-left: 0.1%;
+    padding-right: 0.1%;
   }
 
   .main-menu .sub-menu a {
@@ -1305,6 +1335,30 @@ a {
 
   .current_page_item {
     background-color: #222222;
+  }
+
+  .current-menu-item {
+    background-color: none !important;
+  }
+
+  .current-page-parent {
+    background-color: #222222;
+  }
+
+  .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 0;
+    list-style: none;
+    background-color: #fff;
+    margin: 0;
+    -webkit-box-shadow: 0px 7px 16px -8px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 7px 16px -8px rgba(0, 0, 0, 0.75);
   }
 
   .hero {

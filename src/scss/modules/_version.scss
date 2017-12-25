@@ -6,15 +6,17 @@
     // position: absolute;
     // bottom: 10px;
     @include atTabletsPortrait {
+        // box model
         padding-top: 0;
-        
     }
+
     @include atTabletsLandscape {
+        // positioning
         right: 150px;
     }
 
     @include atDesktop {
-
+        // positioning
         right: 250px;
     }
 }
