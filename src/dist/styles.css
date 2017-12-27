@@ -357,7 +357,10 @@ ul.sub-menu .main-menu-icon {
 }
 
 .socials {
-  padding-bottom: 27px;
+  padding-left: 30px;
+  padding-right: 15px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .socials__link {
@@ -1337,12 +1340,16 @@ a {
     background-color: #222222;
   }
 
-  .current-menu-item {
-    background-color: none !important;
+  .current_page_parent {
+    background-color: #222222;
   }
 
-  .current-page-parent {
+  .current-menu-item {
     background-color: #222222;
+  }
+
+  ul.menu li.current_page_item {
+    background-color: #fff !important;
   }
 
   .menu {

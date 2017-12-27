@@ -404,20 +404,25 @@
     }
     .current_page_item {
         @include atDesktop {
-            
+
+            background-color: #222222;
+            // background-color: none !important;
+        }
+    }
+    .current_page_parent {
+        @include atDesktop {
             background-color: #222222;
         }
     }
-    .current-menu-item  {
+    .current-menu-item {
         @include atDesktop {
-            
-            background-color: none !important;
+            background-color: #222222;
         }
     }
-    .current-page-parent {
+    ul.menu li.current_page_item {
         @include atDesktop {
-            
-            background-color: #222222;
+            // visual
+            background-color: #fff !important;
         }
     }
 .menu {

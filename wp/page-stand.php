@@ -9,11 +9,11 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('stylesheet_directory'); ?>./img/favicons/apple-touch-icon.png?v=2">
-    <link rel="icon" type="image/x-icon" sizes="64x64" href="<?php bloginfo('stylesheet_directory'); ?>./img/favicons/favicon-32x32.png?v=2">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('stylesheet_directory'); ?>./img/favicons/favicon-16x16.png?v=2">
-    <link rel="manifest" href="<?php bloginfo('stylesheet_directory'); ?>./img/favicons/manifest.json">
-    <link rel="mask-icon" href="<?php bloginfo('stylesheet_directory'); ?>./img/favicons/safari-pinned-tab.svg?v=2" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicons/apple-touch-icon.png?v=2">
+    <link rel="icon" type="image/x-icon" sizes="64x64" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicons/favicon-32x32.png?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicons/favicon-16x16.png?v=2">
+    <link rel="manifest" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicons/manifest.json">
+    <link rel="mask-icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicons/safari-pinned-tab.svg?v=2" color="#5bbad5">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url');?><?php echo '?v=' . rand(); ?>"/>
     <title>OldBoyFamily - <?php the_title(); ?></title>
@@ -40,7 +40,7 @@
         <input class="form__input" type="text" name="s" placeholder="Поиск" area-label="Поиск" value="<?php if(!empty($_GET['s'])){echo $_GET['s'];}?>"/>
         <button class="button" type="submit">Искать</button>
       </form>
-      <div class="version">Версия: 1.0.1</div>
+      <div class="version">Версия: 1.3.1</div>
     </header>
  <?php
     $args = array(

@@ -1,6 +1,9 @@
 .socials {
     // box model
-    padding-bottom: 27px;
+    padding-left: 30px;
+    padding-right: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 
     @include atTabletsPortrait {
         // box model

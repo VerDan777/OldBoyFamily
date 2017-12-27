@@ -6,7 +6,7 @@
             <input class="button button--footer" type="submit" name="button " required="true" value="Подписаться"/>
             <div id="form-messages"></div>
         </form>
-        <div class="version">Версия: 1.0.1</div>
+        <div class="version">Версия: 1.3.1</div>
         <div class="socials"><a class="socials__link" href="https://vk.com/oldboyfamily" target="_blank">
             <svg class="socials__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewbox="0 0 112.196 112.196" style="enable-background:new 0 0 112.196 112.196;" xml:space="preserve" width="40px" height="40px">
               <circle id="vk" fill="#D5A353" cx="56.098" cy="56.098" r="56.098" data-original="#4D76A1" data-old_color="#d5a353"></circle>

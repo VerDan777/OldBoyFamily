@@ -33,6 +33,7 @@ function Checking() {
    }
 }
 
+
 function ActiveMenu() {
     $('.main-menu__item').has('ul.sub-menu.sub-menu--check').addClass('main-menu__arrow');
 }
